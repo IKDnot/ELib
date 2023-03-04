@@ -1,24 +1,21 @@
 #include <Arduino.h>
 #include <M5Core2.h>
 #include "EJ_DCMotor.h"
+#include "EJ_PinAssign.h"
 
 const size_t MAX_MOTOR_NUM = 4;
-const uint8_t M1_P1 = 13;
-const uint8_t M1_P2 = 14;
-
-typedef enum {
-  MOTOR1
-} MotorId;
 
 EJ_DCMotor_Manager* motorManager = NULL;
 EJ_DCMotor* motor = NULL;
+EJ_DCMotor* motor4 = NULL;
 EJ_DCMotor* motorAlias = NULL;
 
 void setup() {
   M5.begin();
   motorManager = EJ_DCMotor_Manager::getInstance(MAX_MOTOR_NUM);
-  motor = motorManager->createMotor(M1_P1, M1_P2, MOTOR1);
-  motorAlias = motorManager->getMotor(MOTOR1);
+  motor = motorManager->createMotor(MOTOR1.pin1, MOTOR1.pin2, MOTOR1.id);
+  motorAlias = motorManager->getMotor(MOTOR1.id);
+  motor4 = motorManager->createMotor(1,3,5); // Error 出力テスト用
 }
 
 void loop() {
