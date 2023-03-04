@@ -21,7 +21,7 @@ private:
     uint8_t _pin2;
 };
 
-class EJ_DCMotor_Manager : public EJ_DCMotor
+class EJ_DCMotor_Manager
 {
 private:
     EJ_DCMotor_Manager(size_t maxInstanceSize);
