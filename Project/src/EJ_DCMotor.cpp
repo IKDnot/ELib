@@ -158,7 +158,7 @@ EJ_DCMotor* EJ_DCMotor_Manager::getMotor(MotorDef motor)
         M5.Lcd.printf("[ERROR] Class:%s, Line:%d\n", _classname, __LINE__);
         return NULL;
     }
-    if (instance->_pin1 != motor.pin1 && instance->_pin2 != motor.pin2) {
+    if (instance->_pin1 != motor.pin1 || instance->_pin2 != motor.pin2) {
         /*
         ERROLOG
             内容：指定されたidが指すインスタンスと、確保済みの同じidのインスタンスが一致しない
