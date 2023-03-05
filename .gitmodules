@@ -1,0 +1,4 @@
+[submodule "Project/lib/ELib"]
+	path = Project/lib/ELib
+	url = https://github.com/IKDnot/ELib
+	branch = lib
