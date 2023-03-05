@@ -3,6 +3,7 @@
 {\ttfamily \#include $<$Arduino.\+h$>$}\newline
 {\ttfamily \#include $<$M5\+Core2.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}EJ\+\_\+\+DCMotor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}EJ\+\_\+\+Servo\+Motor.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}EJ\+\_\+\+Pin\+Assign.\+h\char`\"{}}\newline
 \doxysubsection*{関数}
 \begin{DoxyCompactItemize}
@@ -14,15 +15,27 @@ void \mbox{\hyperlink{main_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop}} ()
 \doxysubsection*{変数}
 \begin{DoxyCompactItemize}
 \item 
+const char $\ast$ \mbox{\hyperlink{main_8cpp_a72ab620ed835eeabfa9834b008e67314}{\+\_\+classname}} = \char`\"{}main\char`\"{}
+\item 
 const size\+\_\+t \mbox{\hyperlink{main_8cpp_ad1e11b2cc68be48fc8c2bea633a735e8}{MAX\+\_\+\+MOTOR\+\_\+\+NUM}} = 4
+\item 
+const size\+\_\+t \mbox{\hyperlink{main_8cpp_a1af8a3877f99984d9b2e7a6b9f99cb1a}{MAX\+\_\+\+SERVO\+\_\+\+SIZE}} = 1
 \item 
 \mbox{\hyperlink{classEJ__DCMotor__Manager}{EJ\+\_\+\+DCMotor\+\_\+\+Manager}} $\ast$ \mbox{\hyperlink{main_8cpp_a6e7b738b3ce0ef2203aeed41ab63e399}{motor\+Manager}} = NULL
 \item 
 \mbox{\hyperlink{classEJ__DCMotor}{EJ\+\_\+\+DCMotor}} $\ast$ \mbox{\hyperlink{main_8cpp_a644fcbd84e8709ecffe4f8ceb8db4dab}{motor}} = NULL
 \item 
-\mbox{\hyperlink{classEJ__DCMotor}{EJ\+\_\+\+DCMotor}} $\ast$ \mbox{\hyperlink{main_8cpp_af6680a9a30a46bcc4394246c49b97fde}{motor4}} = NULL
-\item 
 \mbox{\hyperlink{classEJ__DCMotor}{EJ\+\_\+\+DCMotor}} $\ast$ \mbox{\hyperlink{main_8cpp_a8dc3f522415638cc2f4b9a5ae4333a8c}{motor\+Alias}} = NULL
+\item 
+\mbox{\hyperlink{classEJ__DCMotor}{EJ\+\_\+\+DCMotor}} $\ast$ \mbox{\hyperlink{main_8cpp_a81d12b793f7fa32cd6d04f49d8dcaaaf}{invalid\+Motor}} = NULL
+\item 
+\mbox{\hyperlink{classEJ__ServoMotor__Manager}{EJ\+\_\+\+Servo\+Motor\+\_\+\+Manager}} $\ast$ \mbox{\hyperlink{main_8cpp_a5b41b642f17fa8557d9aa203d3c3b168}{servo\+Manager}} = NULL
+\item 
+\mbox{\hyperlink{classEJ__ServoMotor}{EJ\+\_\+\+Servo\+Motor}} $\ast$ \mbox{\hyperlink{main_8cpp_a76ffe5860735d6110228cef9dd1831ac}{servo}} = NULL
+\item 
+\mbox{\hyperlink{classEJ__ServoMotor}{EJ\+\_\+\+Servo\+Motor}} $\ast$ \mbox{\hyperlink{main_8cpp_a82aa2cf01ebac4fe0c5ca1060af6c7ea}{servo\+Alias}} = NULL
+\item 
+\mbox{\hyperlink{classEJ__ServoMotor}{EJ\+\_\+\+Servo\+Motor}} $\ast$ \mbox{\hyperlink{main_8cpp_a0474c6c10f79c5f7e38d71f357e5c9d6}{invalid\+Servo}} = NULL
 \end{DoxyCompactItemize}
 
 
@@ -35,7 +48,7 @@ const size\+\_\+t \mbox{\hyperlink{main_8cpp_ad1e11b2cc68be48fc8c2bea633a735e8}{
 
 
 
- main.\+cpp の 21 行目に定義があります。
+ main.\+cpp の 73 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}\label{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}} 
 \index{main.cpp@{main.cpp}!setup@{setup}}
@@ -45,11 +58,41 @@ const size\+\_\+t \mbox{\hyperlink{main_8cpp_ad1e11b2cc68be48fc8c2bea633a735e8}{
 
 
 
- main.\+cpp の 13 行目に定義があります。
+ main.\+cpp の 22 行目に定義があります。
 
 
 
 \doxysubsection{変数詳解}
+\mbox{\Hypertarget{main_8cpp_a72ab620ed835eeabfa9834b008e67314}\label{main_8cpp_a72ab620ed835eeabfa9834b008e67314}} 
+\index{main.cpp@{main.cpp}!\_classname@{\_classname}}
+\index{\_classname@{\_classname}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{\_classname}{\_classname}}
+{\footnotesize\ttfamily const char$\ast$ \+\_\+classname = \char`\"{}main\char`\"{}}
+
+
+
+ main.\+cpp の 7 行目に定義があります。
+
+\mbox{\Hypertarget{main_8cpp_a81d12b793f7fa32cd6d04f49d8dcaaaf}\label{main_8cpp_a81d12b793f7fa32cd6d04f49d8dcaaaf}} 
+\index{main.cpp@{main.cpp}!invalidMotor@{invalidMotor}}
+\index{invalidMotor@{invalidMotor}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{invalidMotor}{invalidMotor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEJ__DCMotor}{EJ\+\_\+\+DCMotor}}$\ast$ invalid\+Motor = NULL}
+
+
+
+ main.\+cpp の 15 行目に定義があります。
+
+\mbox{\Hypertarget{main_8cpp_a0474c6c10f79c5f7e38d71f357e5c9d6}\label{main_8cpp_a0474c6c10f79c5f7e38d71f357e5c9d6}} 
+\index{main.cpp@{main.cpp}!invalidServo@{invalidServo}}
+\index{invalidServo@{invalidServo}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{invalidServo}{invalidServo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEJ__ServoMotor}{EJ\+\_\+\+Servo\+Motor}}$\ast$ invalid\+Servo = NULL}
+
+
+
+ main.\+cpp の 20 行目に定義があります。
+
 \mbox{\Hypertarget{main_8cpp_ad1e11b2cc68be48fc8c2bea633a735e8}\label{main_8cpp_ad1e11b2cc68be48fc8c2bea633a735e8}} 
 \index{main.cpp@{main.cpp}!MAX\_MOTOR\_NUM@{MAX\_MOTOR\_NUM}}
 \index{MAX\_MOTOR\_NUM@{MAX\_MOTOR\_NUM}!main.cpp@{main.cpp}}
@@ -58,7 +101,17 @@ const size\+\_\+t \mbox{\hyperlink{main_8cpp_ad1e11b2cc68be48fc8c2bea633a735e8}{
 
 
 
- main.\+cpp の 6 行目に定義があります。
+ main.\+cpp の 9 行目に定義があります。
+
+\mbox{\Hypertarget{main_8cpp_a1af8a3877f99984d9b2e7a6b9f99cb1a}\label{main_8cpp_a1af8a3877f99984d9b2e7a6b9f99cb1a}} 
+\index{main.cpp@{main.cpp}!MAX\_SERVO\_SIZE@{MAX\_SERVO\_SIZE}}
+\index{MAX\_SERVO\_SIZE@{MAX\_SERVO\_SIZE}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_SERVO\_SIZE}{MAX\_SERVO\_SIZE}}
+{\footnotesize\ttfamily const size\+\_\+t MAX\+\_\+\+SERVO\+\_\+\+SIZE = 1}
+
+
+
+ main.\+cpp の 10 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_a644fcbd84e8709ecffe4f8ceb8db4dab}\label{main_8cpp_a644fcbd84e8709ecffe4f8ceb8db4dab}} 
 \index{main.cpp@{main.cpp}!motor@{motor}}
@@ -68,17 +121,7 @@ const size\+\_\+t \mbox{\hyperlink{main_8cpp_ad1e11b2cc68be48fc8c2bea633a735e8}{
 
 
 
- main.\+cpp の 9 行目に定義があります。
-
-\mbox{\Hypertarget{main_8cpp_af6680a9a30a46bcc4394246c49b97fde}\label{main_8cpp_af6680a9a30a46bcc4394246c49b97fde}} 
-\index{main.cpp@{main.cpp}!motor4@{motor4}}
-\index{motor4@{motor4}!main.cpp@{main.cpp}}
-\doxysubsubsection{\texorpdfstring{motor4}{motor4}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classEJ__DCMotor}{EJ\+\_\+\+DCMotor}}$\ast$ motor4 = NULL}
-
-
-
- main.\+cpp の 10 行目に定義があります。
+ main.\+cpp の 13 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_a8dc3f522415638cc2f4b9a5ae4333a8c}\label{main_8cpp_a8dc3f522415638cc2f4b9a5ae4333a8c}} 
 \index{main.cpp@{main.cpp}!motorAlias@{motorAlias}}
@@ -88,7 +131,7 @@ const size\+\_\+t \mbox{\hyperlink{main_8cpp_ad1e11b2cc68be48fc8c2bea633a735e8}{
 
 
 
- main.\+cpp の 11 行目に定義があります。
+ main.\+cpp の 14 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_a6e7b738b3ce0ef2203aeed41ab63e399}\label{main_8cpp_a6e7b738b3ce0ef2203aeed41ab63e399}} 
 \index{main.cpp@{main.cpp}!motorManager@{motorManager}}
@@ -98,5 +141,35 @@ const size\+\_\+t \mbox{\hyperlink{main_8cpp_ad1e11b2cc68be48fc8c2bea633a735e8}{
 
 
 
- main.\+cpp の 8 行目に定義があります。
+ main.\+cpp の 12 行目に定義があります。
+
+\mbox{\Hypertarget{main_8cpp_a76ffe5860735d6110228cef9dd1831ac}\label{main_8cpp_a76ffe5860735d6110228cef9dd1831ac}} 
+\index{main.cpp@{main.cpp}!servo@{servo}}
+\index{servo@{servo}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{servo}{servo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEJ__ServoMotor}{EJ\+\_\+\+Servo\+Motor}}$\ast$ servo = NULL}
+
+
+
+ main.\+cpp の 18 行目に定義があります。
+
+\mbox{\Hypertarget{main_8cpp_a82aa2cf01ebac4fe0c5ca1060af6c7ea}\label{main_8cpp_a82aa2cf01ebac4fe0c5ca1060af6c7ea}} 
+\index{main.cpp@{main.cpp}!servoAlias@{servoAlias}}
+\index{servoAlias@{servoAlias}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{servoAlias}{servoAlias}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEJ__ServoMotor}{EJ\+\_\+\+Servo\+Motor}}$\ast$ servo\+Alias = NULL}
+
+
+
+ main.\+cpp の 19 行目に定義があります。
+
+\mbox{\Hypertarget{main_8cpp_a5b41b642f17fa8557d9aa203d3c3b168}\label{main_8cpp_a5b41b642f17fa8557d9aa203d3c3b168}} 
+\index{main.cpp@{main.cpp}!servoManager@{servoManager}}
+\index{servoManager@{servoManager}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{servoManager}{servoManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEJ__ServoMotor__Manager}{EJ\+\_\+\+Servo\+Motor\+\_\+\+Manager}}$\ast$ servo\+Manager = NULL}
+
+
+
+ main.\+cpp の 17 行目に定義があります。
 

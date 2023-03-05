@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['servodef_32',['ServoDef',['../structServoDef.html',1,'']]],
-  ['setup_33',['setup',['../main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d',1,'main.cpp']]],
-  ['stop_34',['stop',['../classEJ__DCMotor.html#a219456d25f8f6061bde0d2124ad57e5d',1,'EJ_DCMotor']]]
+  ['read_32',['read',['../classEJ__ServoMotor.html#a49f21e5ca3c3e8a14d0940bb19c343a9',1,'EJ_ServoMotor']]],
+  ['readme_2emd_33',['README.md',['../README_8md.html',1,'']]],
+  ['reverse_34',['reverse',['../classEJ__DCMotor.html#af29356a1a185a6bfd734e1cf416824ee',1,'EJ_DCMotor']]]
 ];

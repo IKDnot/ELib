@@ -91,6 +91,7 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
 <div class="textblock"><code>#include &lt;Arduino.h&gt;</code><br />
 <code>#include &lt;M5Core2.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="EJ__DCMotor_8h_source.html">EJ_DCMotor.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="EJ__ServoMotor_8h_source.html">EJ_ServoMotor.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="EJ__PinAssign_8h_source.html">EJ_PinAssign.h</a>&quot;</code><br />
 </div>
 <p><a href="main_8cpp_source.html">[ソースコード]</a></p>
@@ -104,16 +105,28 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 変数</h2></td></tr>
+<tr class="memitem:a72ab620ed835eeabfa9834b008e67314"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a72ab620ed835eeabfa9834b008e67314">_classname</a> = &quot;main&quot;</td></tr>
+<tr class="separator:a72ab620ed835eeabfa9834b008e67314"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1e11b2cc68be48fc8c2bea633a735e8"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ad1e11b2cc68be48fc8c2bea633a735e8">MAX_MOTOR_NUM</a> = 4</td></tr>
 <tr class="separator:ad1e11b2cc68be48fc8c2bea633a735e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1af8a3877f99984d9b2e7a6b9f99cb1a"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a1af8a3877f99984d9b2e7a6b9f99cb1a">MAX_SERVO_SIZE</a> = 1</td></tr>
+<tr class="separator:a1af8a3877f99984d9b2e7a6b9f99cb1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e7b738b3ce0ef2203aeed41ab63e399"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEJ__DCMotor__Manager.html">EJ_DCMotor_Manager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a6e7b738b3ce0ef2203aeed41ab63e399">motorManager</a> = NULL</td></tr>
 <tr class="separator:a6e7b738b3ce0ef2203aeed41ab63e399"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a644fcbd84e8709ecffe4f8ceb8db4dab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEJ__DCMotor.html">EJ_DCMotor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a644fcbd84e8709ecffe4f8ceb8db4dab">motor</a> = NULL</td></tr>
 <tr class="separator:a644fcbd84e8709ecffe4f8ceb8db4dab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6680a9a30a46bcc4394246c49b97fde"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEJ__DCMotor.html">EJ_DCMotor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af6680a9a30a46bcc4394246c49b97fde">motor4</a> = NULL</td></tr>
-<tr class="separator:af6680a9a30a46bcc4394246c49b97fde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8dc3f522415638cc2f4b9a5ae4333a8c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEJ__DCMotor.html">EJ_DCMotor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a8dc3f522415638cc2f4b9a5ae4333a8c">motorAlias</a> = NULL</td></tr>
 <tr class="separator:a8dc3f522415638cc2f4b9a5ae4333a8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81d12b793f7fa32cd6d04f49d8dcaaaf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEJ__DCMotor.html">EJ_DCMotor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a81d12b793f7fa32cd6d04f49d8dcaaaf">invalidMotor</a> = NULL</td></tr>
+<tr class="separator:a81d12b793f7fa32cd6d04f49d8dcaaaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b41b642f17fa8557d9aa203d3c3b168"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEJ__ServoMotor__Manager.html">EJ_ServoMotor_Manager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a5b41b642f17fa8557d9aa203d3c3b168">servoManager</a> = NULL</td></tr>
+<tr class="separator:a5b41b642f17fa8557d9aa203d3c3b168"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76ffe5860735d6110228cef9dd1831ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEJ__ServoMotor.html">EJ_ServoMotor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a76ffe5860735d6110228cef9dd1831ac">servo</a> = NULL</td></tr>
+<tr class="separator:a76ffe5860735d6110228cef9dd1831ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82aa2cf01ebac4fe0c5ca1060af6c7ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEJ__ServoMotor.html">EJ_ServoMotor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a82aa2cf01ebac4fe0c5ca1060af6c7ea">servoAlias</a> = NULL</td></tr>
+<tr class="separator:a82aa2cf01ebac4fe0c5ca1060af6c7ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0474c6c10f79c5f7e38d71f357e5c9d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEJ__ServoMotor.html">EJ_ServoMotor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a0474c6c10f79c5f7e38d71f357e5c9d6">invalidServo</a> = NULL</td></tr>
+<tr class="separator:a0474c6c10f79c5f7e38d71f357e5c9d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">関数詳解</h2>
 <a id="afe461d27b9c48d5921c00d521181f12f"></a>
@@ -131,7 +144,7 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00021">21</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00073">73</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -150,11 +163,59 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00013">13</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00022">22</a> 行目に定義があります。</p>
 
 </div>
 </div>
 <h2 class="groupheader">変数詳解</h2>
+<a id="a72ab620ed835eeabfa9834b008e67314"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72ab620ed835eeabfa9834b008e67314">&#9670;&nbsp;</a></span>_classname</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* _classname = &quot;main&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00007">7</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a81d12b793f7fa32cd6d04f49d8dcaaaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81d12b793f7fa32cd6d04f49d8dcaaaf">&#9670;&nbsp;</a></span>invalidMotor</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEJ__DCMotor.html">EJ_DCMotor</a>* invalidMotor = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00015">15</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0474c6c10f79c5f7e38d71f357e5c9d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0474c6c10f79c5f7e38d71f357e5c9d6">&#9670;&nbsp;</a></span>invalidServo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEJ__ServoMotor.html">EJ_ServoMotor</a>* invalidServo = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00020">20</a> 行目に定義があります。</p>
+
+</div>
+</div>
 <a id="ad1e11b2cc68be48fc8c2bea633a735e8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad1e11b2cc68be48fc8c2bea633a735e8">&#9670;&nbsp;</a></span>MAX_MOTOR_NUM</h2>
 
@@ -167,7 +228,23 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00006">6</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00009">9</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a1af8a3877f99984d9b2e7a6b9f99cb1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1af8a3877f99984d9b2e7a6b9f99cb1a">&#9670;&nbsp;</a></span>MAX_SERVO_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t MAX_SERVO_SIZE = 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00010">10</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -183,23 +260,7 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00009">9</a> 行目に定義があります。</p>
-
-</div>
-</div>
-<a id="af6680a9a30a46bcc4394246c49b97fde"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6680a9a30a46bcc4394246c49b97fde">&#9670;&nbsp;</a></span>motor4</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classEJ__DCMotor.html">EJ_DCMotor</a>* motor4 = NULL</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition"> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00010">10</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00013">13</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -215,7 +276,7 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00011">11</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00014">14</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -231,7 +292,55 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00008">8</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00012">12</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a76ffe5860735d6110228cef9dd1831ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76ffe5860735d6110228cef9dd1831ac">&#9670;&nbsp;</a></span>servo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEJ__ServoMotor.html">EJ_ServoMotor</a>* servo = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00018">18</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a82aa2cf01ebac4fe0c5ca1060af6c7ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82aa2cf01ebac4fe0c5ca1060af6c7ea">&#9670;&nbsp;</a></span>servoAlias</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEJ__ServoMotor.html">EJ_ServoMotor</a>* servoAlias = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00019">19</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a5b41b642f17fa8557d9aa203d3c3b168"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b41b642f17fa8557d9aa203d3c3b168">&#9670;&nbsp;</a></span>servoManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEJ__ServoMotor__Manager.html">EJ_ServoMotor_Manager</a>* servoManager = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="main_8cpp_source.html">main.cpp</a> の <a class="el" href="main_8cpp_source.html#l00017">17</a> 行目に定義があります。</p>
 
 </div>
 </div>

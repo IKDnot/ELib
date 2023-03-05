@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['read_29',['read',['../classEJ__ServoMotor.html#a49f21e5ca3c3e8a14d0940bb19c343a9',1,'EJ_ServoMotor']]],
-  ['readme_2emd_30',['README.md',['../README_8md.html',1,'']]],
-  ['reverse_31',['reverse',['../classEJ__DCMotor.html#af29356a1a185a6bfd734e1cf416824ee',1,'EJ_DCMotor']]]
+  ['pin_29',['pin',['../structServoDef.html#ae450f6594fef38e6945ec860b500fcdf',1,'ServoDef']]],
+  ['pin1_30',['pin1',['../structMotorDef.html#aef6a2e6a35c8af7a1f40d20f897f6557',1,'MotorDef']]],
+  ['pin2_31',['pin2',['../structMotorDef.html#a3c8a8496eabbce67500c55ac87314c71',1,'MotorDef']]]
 ];

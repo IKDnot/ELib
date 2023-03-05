@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['max_5fmotor_5fnum_72',['MAX_MOTOR_NUM',['../main_8cpp.html#ad1e11b2cc68be48fc8c2bea633a735e8',1,'main.cpp']]],
-  ['motor_73',['motor',['../main_8cpp.html#a644fcbd84e8709ecffe4f8ceb8db4dab',1,'main.cpp']]],
-  ['motor1_74',['MOTOR1',['../EJ__PinAssign_8h.html#a3239a1f705d30506d6c37331fc91ac09',1,'EJ_PinAssign.h']]],
-  ['motor4_75',['motor4',['../main_8cpp.html#af6680a9a30a46bcc4394246c49b97fde',1,'main.cpp']]],
-  ['motoralias_76',['motorAlias',['../main_8cpp.html#a8dc3f522415638cc2f4b9a5ae4333a8c',1,'main.cpp']]],
-  ['motormanager_77',['motorManager',['../main_8cpp.html#a6e7b738b3ce0ef2203aeed41ab63e399',1,'main.cpp']]]
+  ['id_79',['id',['../structMotorDef.html#a0d6122fcb9c882ec0d6f9be5f1e6240f',1,'MotorDef::id()'],['../structServoDef.html#a84b15a8a2f16c2d3eb276300a171b3c5',1,'ServoDef::id()']]],
+  ['invalidmotor_80',['invalidMotor',['../main_8cpp.html#a81d12b793f7fa32cd6d04f49d8dcaaaf',1,'main.cpp']]],
+  ['invalidservo_81',['invalidServo',['../main_8cpp.html#a0474c6c10f79c5f7e38d71f357e5c9d6',1,'main.cpp']]]
 ];
