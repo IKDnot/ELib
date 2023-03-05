@@ -1,0 +1,139 @@
+\hypertarget{classEJ__ServoMotor}{}\doxysection{EJ\+\_\+\+Servo\+Motor クラス}
+\label{classEJ__ServoMotor}\index{EJ\_ServoMotor@{EJ\_ServoMotor}}
+
+
+サーボモーターを制御するクラス  
+
+
+
+
+{\ttfamily \#include $<$EJ\+\_\+\+Servo\+Motor.\+h$>$}
+
+EJ\+\_\+\+Servo\+Motor の継承関係図\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classEJ__ServoMotor}
+\end{center}
+\end{figure}
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEJ__ServoMotor_af18c45d021f6e1dd5a4a283a938c426e}{$\sim$\+EJ\+\_\+\+Servo\+Motor}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classEJ__ServoMotor}{EJ\+\_\+\+Servo\+Motor}} クラスのデストラクタ \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEJ__ServoMotor_ab23d9ee0cd1b40e2fb592c32db9f3849}{write}} (int angle)
+\begin{DoxyCompactList}\small\item\em 指定した角度までサーボモータを回転させる \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEJ__ServoMotor_ac0522386851faafefe2f1916be4ae888}{write\+Microseconds}} (int us)
+\begin{DoxyCompactList}\small\item\em 出力をマイクロ秒単位で角度指定してサーボモータを回転させる。サーボモータに与えられるパルスは20ms周期で、1周期中の\+High時間を直接指定する。 \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classEJ__ServoMotor_a49f21e5ca3c3e8a14d0940bb19c343a9}{read}} ()
+\begin{DoxyCompactList}\small\item\em 現在のサーボの角度(最後にwriteした値)を読み取る \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{フレンド}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classEJ__ServoMotor_a8b4752749c761b7e59a25687b6ccb555}{EJ\+\_\+\+Servo\+Motor\+\_\+\+Manager}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{詳解}
+サーボモーターを制御するクラス 
+
+\begin{DoxyAttention}{注意}
+$\ast$注意\+:本クラスのインスタンスは\+EJ\+\_\+\+Servo\+Motor\+\_\+\+Managerクラス以外からは生成できない
+\end{DoxyAttention}
+\href{https://github.com/jkb-git/ESP32Servo/blob/master/src/ESP32_Servo.h}{\texttt{ ESP32\+Servo.\+h}} で定義される\+Servoクラスを基底とした派生クラス 
+
+ EJ\+\_\+\+Servo\+Motor.\+h の 52 行目に定義があります。
+
+
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{classEJ__ServoMotor_af18c45d021f6e1dd5a4a283a938c426e}\label{classEJ__ServoMotor_af18c45d021f6e1dd5a4a283a938c426e}} 
+\index{EJ\_ServoMotor@{EJ\_ServoMotor}!````~EJ\_ServoMotor@{$\sim$EJ\_ServoMotor}}
+\index{````~EJ\_ServoMotor@{$\sim$EJ\_ServoMotor}!EJ\_ServoMotor@{EJ\_ServoMotor}}
+\doxysubsubsection{\texorpdfstring{$\sim$EJ\_ServoMotor()}{~EJ\_ServoMotor()}}
+{\footnotesize\ttfamily EJ\+\_\+\+Servo\+Motor\+::$\sim$\+EJ\+\_\+\+Servo\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classEJ__ServoMotor}{EJ\+\_\+\+Servo\+Motor}} クラスのデストラクタ 
+
+
+
+ EJ\+\_\+\+Servo\+Motor.\+cpp の 22 行目に定義があります。
+
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{classEJ__ServoMotor_a49f21e5ca3c3e8a14d0940bb19c343a9}\label{classEJ__ServoMotor_a49f21e5ca3c3e8a14d0940bb19c343a9}} 
+\index{EJ\_ServoMotor@{EJ\_ServoMotor}!read@{read}}
+\index{read@{read}!EJ\_ServoMotor@{EJ\_ServoMotor}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily int EJ\+\_\+\+Servo\+Motor\+::read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+現在のサーボの角度(最後にwriteした値)を読み取る 
+
+\begin{DoxyReturn}{戻り値}
+angle 現在のサーボの角度 
+\end{DoxyReturn}
+
+
+ EJ\+\_\+\+Servo\+Motor.\+cpp の 45 行目に定義があります。
+
+\mbox{\Hypertarget{classEJ__ServoMotor_ab23d9ee0cd1b40e2fb592c32db9f3849}\label{classEJ__ServoMotor_ab23d9ee0cd1b40e2fb592c32db9f3849}} 
+\index{EJ\_ServoMotor@{EJ\_ServoMotor}!write@{write}}
+\index{write@{write}!EJ\_ServoMotor@{EJ\_ServoMotor}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void EJ\+\_\+\+Servo\+Motor\+::write (\begin{DoxyParamCaption}\item[{int}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+指定した角度までサーボモータを回転させる 
+
+
+\begin{DoxyParams}{引数}
+{\em value} & 静止させたい角度 (0$\sim$180) \\
+\hline
+\end{DoxyParams}
+
+
+ EJ\+\_\+\+Servo\+Motor.\+cpp の 27 行目に定義があります。
+
+\mbox{\Hypertarget{classEJ__ServoMotor_ac0522386851faafefe2f1916be4ae888}\label{classEJ__ServoMotor_ac0522386851faafefe2f1916be4ae888}} 
+\index{EJ\_ServoMotor@{EJ\_ServoMotor}!writeMicroseconds@{writeMicroseconds}}
+\index{writeMicroseconds@{writeMicroseconds}!EJ\_ServoMotor@{EJ\_ServoMotor}}
+\doxysubsubsection{\texorpdfstring{writeMicroseconds()}{writeMicroseconds()}}
+{\footnotesize\ttfamily void EJ\+\_\+\+Servo\+Motor\+::write\+Microseconds (\begin{DoxyParamCaption}\item[{int}]{us }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+出力をマイクロ秒単位で角度指定してサーボモータを回転させる。サーボモータに与えられるパルスは20ms周期で、1周期中の\+High時間を直接指定する。 
+
+
+\begin{DoxyParams}{引数}
+{\em us} & 出力したいパルス幅\mbox{[}us\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+ EJ\+\_\+\+Servo\+Motor.\+cpp の 40 行目に定義があります。
+
+
+
+\doxysubsection{フレンドと関連関数の詳解}
+\mbox{\Hypertarget{classEJ__ServoMotor_a8b4752749c761b7e59a25687b6ccb555}\label{classEJ__ServoMotor_a8b4752749c761b7e59a25687b6ccb555}} 
+\index{EJ\_ServoMotor@{EJ\_ServoMotor}!EJ\_ServoMotor\_Manager@{EJ\_ServoMotor\_Manager}}
+\index{EJ\_ServoMotor\_Manager@{EJ\_ServoMotor\_Manager}!EJ\_ServoMotor@{EJ\_ServoMotor}}
+\doxysubsubsection{\texorpdfstring{EJ\_ServoMotor\_Manager}{EJ\_ServoMotor\_Manager}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classEJ__ServoMotor__Manager}{EJ\+\_\+\+Servo\+Motor\+\_\+\+Manager}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+ EJ\+\_\+\+Servo\+Motor.\+h の 63 行目に定義があります。
+
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Project/include/\mbox{\hyperlink{EJ__ServoMotor_8h}{EJ\+\_\+\+Servo\+Motor.\+h}}\item 
+Project/src/\mbox{\hyperlink{EJ__ServoMotor_8cpp}{EJ\+\_\+\+Servo\+Motor.\+cpp}}\end{DoxyCompactItemize}

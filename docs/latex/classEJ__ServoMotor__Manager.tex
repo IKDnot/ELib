@@ -1,0 +1,202 @@
+\hypertarget{classEJ__ServoMotor__Manager}{}\doxysection{EJ\+\_\+\+Servo\+Motor\+\_\+\+Manager クラス}
+\label{classEJ__ServoMotor__Manager}\index{EJ\_ServoMotor\_Manager@{EJ\_ServoMotor\_Manager}}
+
+
+EJ\+\_\+\+Servo\+Motorクラスのインスタンスを生成、管理するクラス  
+
+
+
+
+{\ttfamily \#include $<$EJ\+\_\+\+Servo\+Motor.\+h$>$}
+
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEJ__ServoMotor__Manager_ab4031c44f87ee41df9defa57fd36c0af}{$\sim$\+EJ\+\_\+\+Servo\+Motor\+\_\+\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em EJ\+\_\+\+Servo\+Motor\+\_\+\+Managerクラスのデストラクタ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEJ__ServoMotor}{EJ\+\_\+\+Servo\+Motor}} $\ast$ \mbox{\hyperlink{classEJ__ServoMotor__Manager_ad25b55cbdd7f920cf2a3ff05783124c9}{create\+Servo}} (\mbox{\hyperlink{structServoDef}{Servo\+Def}} servo)
+\begin{DoxyCompactList}\small\item\em EJ\+\_\+\+Servo\+Motorクラスのインスタンスを生成する \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEJ__ServoMotor}{EJ\+\_\+\+Servo\+Motor}} $\ast$ \mbox{\hyperlink{classEJ__ServoMotor__Manager_a2d5f4c3f5b3aa1db318959a96f6e04b0}{create\+Servo}} (uint8\+\_\+t pin, uint8\+\_\+t id, int min=544, int max=2400)
+\begin{DoxyCompactList}\small\item\em EJ\+\_\+\+Servo\+Motorクラスのインスタンスを生成する \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEJ__ServoMotor}{EJ\+\_\+\+Servo\+Motor}} $\ast$ \mbox{\hyperlink{classEJ__ServoMotor__Manager_a8e2101f699164c0127070525169f1ff5}{get\+Servo}} (\mbox{\hyperlink{structServoDef}{Servo\+Def}} servo)
+\begin{DoxyCompactList}\small\item\em EJ\+\_\+\+Servo\+Motorクラスのインスタンスを取得する \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEJ__ServoMotor}{EJ\+\_\+\+Servo\+Motor}} $\ast$ \mbox{\hyperlink{classEJ__ServoMotor__Manager_af836827989fdf85a6513e50f577b25b9}{get\+Servo}} (uint8\+\_\+t id)
+\begin{DoxyCompactList}\small\item\em EJ\+\_\+\+Servo\+Motorクラスのインスタンスを取得する \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{静的公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classEJ__ServoMotor__Manager}{EJ\+\_\+\+Servo\+Motor\+\_\+\+Manager}} $\ast$ \mbox{\hyperlink{classEJ__ServoMotor__Manager_abd579dc7b1dd83ec69e2cad12358eba9}{get\+Instance}} (size\+\_\+t max\+Instance\+Size)
+\begin{DoxyCompactList}\small\item\em EJ\+\_\+\+Servo\+Motor\+\_\+\+Managerのインスタンスを生成、取得する \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classEJ__ServoMotor__Manager}{EJ\+\_\+\+Servo\+Motor\+\_\+\+Manager}} $\ast$ \mbox{\hyperlink{classEJ__ServoMotor__Manager_adedc4b9bfec1616d72376f3b3e94b257}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classEJ__ServoMotor__Manager}{EJ\+\_\+\+Servo\+Motor\+\_\+\+Manager}} のインスタンスを取得する \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{詳解}
+EJ\+\_\+\+Servo\+Motorクラスのインスタンスを生成、管理するクラス 
+
+本クラスはシングルトンで提供され、get\+Instanceメソッドにのみよってインスタンス生成される 
+
+ EJ\+\_\+\+Servo\+Motor.\+h の 101 行目に定義があります。
+
+
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{classEJ__ServoMotor__Manager_ab4031c44f87ee41df9defa57fd36c0af}\label{classEJ__ServoMotor__Manager_ab4031c44f87ee41df9defa57fd36c0af}} 
+\index{EJ\_ServoMotor\_Manager@{EJ\_ServoMotor\_Manager}!````~EJ\_ServoMotor\_Manager@{$\sim$EJ\_ServoMotor\_Manager}}
+\index{````~EJ\_ServoMotor\_Manager@{$\sim$EJ\_ServoMotor\_Manager}!EJ\_ServoMotor\_Manager@{EJ\_ServoMotor\_Manager}}
+\doxysubsubsection{\texorpdfstring{$\sim$EJ\_ServoMotor\_Manager()}{~EJ\_ServoMotor\_Manager()}}
+{\footnotesize\ttfamily EJ\+\_\+\+Servo\+Motor\+\_\+\+Manager\+::$\sim$\+EJ\+\_\+\+Servo\+Motor\+\_\+\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+EJ\+\_\+\+Servo\+Motor\+\_\+\+Managerクラスのデストラクタ 
+
+本クラスによって生成された\+EJ\+\_\+\+Servo\+Motorクラスのインスタンスをすべて解放する 
+
+ EJ\+\_\+\+Servo\+Motor.\+cpp の 109 行目に定義があります。
+
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{classEJ__ServoMotor__Manager_ad25b55cbdd7f920cf2a3ff05783124c9}\label{classEJ__ServoMotor__Manager_ad25b55cbdd7f920cf2a3ff05783124c9}} 
+\index{EJ\_ServoMotor\_Manager@{EJ\_ServoMotor\_Manager}!createServo@{createServo}}
+\index{createServo@{createServo}!EJ\_ServoMotor\_Manager@{EJ\_ServoMotor\_Manager}}
+\doxysubsubsection{\texorpdfstring{createServo()}{createServo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEJ__ServoMotor}{EJ\+\_\+\+Servo\+Motor}} $\ast$ EJ\+\_\+\+Servo\+Motor\+\_\+\+Manager\+::create\+Servo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structServoDef}{Servo\+Def}}}]{servo }\end{DoxyParamCaption})}
+
+
+
+EJ\+\_\+\+Servo\+Motorクラスのインスタンスを生成する 
+
+生成したインスタンスはget\+Servo関数で取得できるように同時に自身の\+\_\+instance\+List配列に記憶しておく 
+\begin{DoxyParams}{引数}
+{\em \mbox{\hyperlink{structServoDef}{Servo\+Def}}} & 参照 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+EJ\+\_\+\+Servo\+Motorクラスのインスタンスを指すポインタ 
+\end{DoxyReturn}
+
+
+ EJ\+\_\+\+Servo\+Motor.\+cpp の 121 行目に定義があります。
+
+\mbox{\Hypertarget{classEJ__ServoMotor__Manager_a2d5f4c3f5b3aa1db318959a96f6e04b0}\label{classEJ__ServoMotor__Manager_a2d5f4c3f5b3aa1db318959a96f6e04b0}} 
+\index{EJ\_ServoMotor\_Manager@{EJ\_ServoMotor\_Manager}!createServo@{createServo}}
+\index{createServo@{createServo}!EJ\_ServoMotor\_Manager@{EJ\_ServoMotor\_Manager}}
+\doxysubsubsection{\texorpdfstring{createServo()}{createServo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEJ__ServoMotor}{EJ\+\_\+\+Servo\+Motor}} $\ast$ EJ\+\_\+\+Servo\+Motor\+\_\+\+Manager\+::create\+Servo (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pin,  }\item[{uint8\+\_\+t}]{id,  }\item[{int}]{min = {\ttfamily 544},  }\item[{int}]{max = {\ttfamily 2400} }\end{DoxyParamCaption})}
+
+
+
+EJ\+\_\+\+Servo\+Motorクラスのインスタンスを生成する 
+
+生成したインスタンスはget\+Servo関数で取得できるように同時に自身の\+\_\+instance\+List配列に記憶しておく 
+\begin{DoxyParams}{引数}
+{\em pin} & サーボモータの接続ピン \\
+\hline
+{\em id} & サーボモータの識別番号 \\
+\hline
+{\em min} & サーボの角度が0度のときのパルス幅\mbox{[}us\mbox{]}。デフォルト = 544 \\
+\hline
+{\em max} & サーボの角度が180度のときのパルス幅\mbox{[}us\mbox{]}。デフォルト = 2400 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+EJ\+\_\+\+Servo\+Motorクラスのインスタンスを指すポインタ 
+\end{DoxyReturn}
+
+
+ EJ\+\_\+\+Servo\+Motor.\+cpp の 126 行目に定義があります。
+
+\mbox{\Hypertarget{classEJ__ServoMotor__Manager_adedc4b9bfec1616d72376f3b3e94b257}\label{classEJ__ServoMotor__Manager_adedc4b9bfec1616d72376f3b3e94b257}} 
+\index{EJ\_ServoMotor\_Manager@{EJ\_ServoMotor\_Manager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!EJ\_ServoMotor\_Manager@{EJ\_ServoMotor\_Manager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEJ__ServoMotor__Manager}{EJ\+\_\+\+Servo\+Motor\+\_\+\+Manager}} $\ast$ EJ\+\_\+\+Servo\+Motor\+\_\+\+Manager\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{classEJ__ServoMotor__Manager}{EJ\+\_\+\+Servo\+Motor\+\_\+\+Manager}} のインスタンスを取得する 
+
+\begin{DoxyAttention}{注意}
+＊一度も\+EJ\+\_\+\+Servo\+Motor\+\_\+\+Manager\+::get\+Instance(size\+\_\+t max\+Instance\+Size)をコールしていない場合は\+NULLポインタを返す 
+\end{DoxyAttention}
+\begin{DoxyReturn}{戻り値}
+EJ\+\_\+\+Servo\+Motor\+\_\+\+Managerのsingletonを指すポインタ 
+\end{DoxyReturn}
+
+
+ EJ\+\_\+\+Servo\+Motor.\+cpp の 95 行目に定義があります。
+
+\mbox{\Hypertarget{classEJ__ServoMotor__Manager_abd579dc7b1dd83ec69e2cad12358eba9}\label{classEJ__ServoMotor__Manager_abd579dc7b1dd83ec69e2cad12358eba9}} 
+\index{EJ\_ServoMotor\_Manager@{EJ\_ServoMotor\_Manager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!EJ\_ServoMotor\_Manager@{EJ\_ServoMotor\_Manager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEJ__ServoMotor__Manager}{EJ\+\_\+\+Servo\+Motor\+\_\+\+Manager}} $\ast$ EJ\+\_\+\+Servo\+Motor\+\_\+\+Manager\+::get\+Instance (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{max\+Instance\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+EJ\+\_\+\+Servo\+Motor\+\_\+\+Managerのインスタンスを生成、取得する 
+
+
+\begin{DoxyParams}{引数}
+{\em max\+Instance\+Size} & EJ\+\_\+\+Servo\+Motorの最大インスタンス数の定義 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+EJ\+\_\+\+Servo\+Motor\+\_\+\+Managerのsingletonを指すポインタ 
+\end{DoxyReturn}
+
+
+ EJ\+\_\+\+Servo\+Motor.\+cpp の 79 行目に定義があります。
+
+\mbox{\Hypertarget{classEJ__ServoMotor__Manager_a8e2101f699164c0127070525169f1ff5}\label{classEJ__ServoMotor__Manager_a8e2101f699164c0127070525169f1ff5}} 
+\index{EJ\_ServoMotor\_Manager@{EJ\_ServoMotor\_Manager}!getServo@{getServo}}
+\index{getServo@{getServo}!EJ\_ServoMotor\_Manager@{EJ\_ServoMotor\_Manager}}
+\doxysubsubsection{\texorpdfstring{getServo()}{getServo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEJ__ServoMotor}{EJ\+\_\+\+Servo\+Motor}} $\ast$ EJ\+\_\+\+Servo\+Motor\+\_\+\+Manager\+::get\+Servo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structServoDef}{Servo\+Def}}}]{servo }\end{DoxyParamCaption})}
+
+
+
+EJ\+\_\+\+Servo\+Motorクラスのインスタンスを取得する 
+
+create\+Servo関数で生成した\+EJ\+\_\+\+Servo\+Motorクラスのインスタンスを取得し返す。指定したidのインスタンスが生成されていない場合や取得に失敗した場合は\+NULLを返す。 
+\begin{DoxyParams}{引数}
+{\em \mbox{\hyperlink{structMotorDef}{Motor\+Def}}} & 取得したいサーボモータを指すサーボモータ定義構造体 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+EJ\+\_\+\+Servo\+Motorクラスのインスタンスを指すポインタ 
+\end{DoxyReturn}
+
+
+ EJ\+\_\+\+Servo\+Motor.\+cpp の 152 行目に定義があります。
+
+\mbox{\Hypertarget{classEJ__ServoMotor__Manager_af836827989fdf85a6513e50f577b25b9}\label{classEJ__ServoMotor__Manager_af836827989fdf85a6513e50f577b25b9}} 
+\index{EJ\_ServoMotor\_Manager@{EJ\_ServoMotor\_Manager}!getServo@{getServo}}
+\index{getServo@{getServo}!EJ\_ServoMotor\_Manager@{EJ\_ServoMotor\_Manager}}
+\doxysubsubsection{\texorpdfstring{getServo()}{getServo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEJ__ServoMotor}{EJ\+\_\+\+Servo\+Motor}} $\ast$ EJ\+\_\+\+Servo\+Motor\+\_\+\+Manager\+::get\+Servo (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{id }\end{DoxyParamCaption})}
+
+
+
+EJ\+\_\+\+Servo\+Motorクラスのインスタンスを取得する 
+
+create\+Servo関数で生成した\+EJ\+\_\+\+Servo\+Motorクラスのインスタンスを取得し返す。指定したidのインスタンスが生成されていない場合や取得に失敗した場合は\+NULLを返す。 
+\begin{DoxyParams}{引数}
+{\em id} & モーターの識別番号 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+EJ\+\_\+\+Servo\+Motorクラスのインスタンスを指すポインタ 
+\end{DoxyReturn}
+
+
+ EJ\+\_\+\+Servo\+Motor.\+cpp の 174 行目に定義があります。
+
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Project/include/\mbox{\hyperlink{EJ__ServoMotor_8h}{EJ\+\_\+\+Servo\+Motor.\+h}}\item 
+Project/src/\mbox{\hyperlink{EJ__ServoMotor_8cpp}{EJ\+\_\+\+Servo\+Motor.\+cpp}}\end{DoxyCompactItemize}
