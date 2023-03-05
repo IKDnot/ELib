@@ -1,21 +1,14 @@
 #include "EJ_DCMotor.h"
 #include "M5Core2.h"
 
-/*-------------------
-class EJ_DCMotor_Impl 
--------------------*/
+/*--------------
+class EJ_DCMotor
+--------------*/
 
 /* static menber */
 const char* EJ_DCMotor::_classname = "EJ_DCMotor";
 
 /* private method */
-void EJ_DCMotor::write(uint8_t bit1, uint8_t bit2)
-{
-    digitalWrite(_pin1, bit1);
-    digitalWrite(_pin2, bit2);
-}
-
-/* protected method */
 EJ_DCMotor::EJ_DCMotor(uint8_t pin1, uint8_t pin2)
 :   _pin1(pin1),
     _pin2(pin2)
@@ -24,6 +17,12 @@ EJ_DCMotor::EJ_DCMotor(uint8_t pin1, uint8_t pin2)
     pinMode(_pin2, OUTPUT);
     digitalWrite(_pin1, LOW);
     digitalWrite(_pin2, LOW);
+}
+
+void EJ_DCMotor::write(uint8_t bit1, uint8_t bit2)
+{
+    digitalWrite(_pin1, bit1);
+    digitalWrite(_pin2, bit2);
 }
 
 /* public method */
@@ -45,9 +44,9 @@ void EJ_DCMotor::stop()
     write(LOW, LOW);
 }
 
-/*---------------
-class EJ_DCMotor 
----------------*/
+/*----------------------
+class EJ_DCMotor_Manager 
+----------------------*/
 
 /* static member */
 EJ_DCMotor_Manager* EJ_DCMotor_Manager::_singleton = NULL;
@@ -103,6 +102,8 @@ EJ_DCMotor_Manager* EJ_DCMotor_Manager::getInstance()
 
     return _singleton;
 }
+
+/* public method */
 
 EJ_DCMotor_Manager::~EJ_DCMotor_Manager()
 {
