@@ -1,0 +1,200 @@
+\hypertarget{classEJ__DCMotor__Manager}{}\doxysection{EJ\+\_\+\+DCMotor\+\_\+\+Manager クラス}
+\label{classEJ__DCMotor__Manager}\index{EJ\_DCMotor\_Manager@{EJ\_DCMotor\_Manager}}
+
+
+EJ\+\_\+\+DCMotorクラスのインスタンスを生成、管理するクラス  
+
+
+
+
+{\ttfamily \#include $<$EJ\+\_\+\+DCMotor.\+h$>$}
+
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEJ__DCMotor__Manager_ad67723b950e7ad5b410ddfb6e6129482}{$\sim$\+EJ\+\_\+\+DCMotor\+\_\+\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em EJ\+\_\+\+DCMotor\+\_\+\+Managerクラスのデストラクタ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEJ__DCMotor}{EJ\+\_\+\+DCMotor}} $\ast$ \mbox{\hyperlink{classEJ__DCMotor__Manager_a0347df3c51144cf13e702ca025740413}{create\+Motor}} (\mbox{\hyperlink{structMotorDef}{Motor\+Def}} \mbox{\hyperlink{main_8cpp_a644fcbd84e8709ecffe4f8ceb8db4dab}{motor}})
+\begin{DoxyCompactList}\small\item\em EJ\+\_\+\+DCMotorクラスのインスタンスを生成する \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEJ__DCMotor}{EJ\+\_\+\+DCMotor}} $\ast$ \mbox{\hyperlink{classEJ__DCMotor__Manager_a48593ffddd8cf4e300ea8260acc048a5}{create\+Motor}} (uint8\+\_\+t pin1, uint8\+\_\+t pin2, uint8\+\_\+t id)
+\begin{DoxyCompactList}\small\item\em EJ\+\_\+\+DCMotorクラスのインスタンスを生成する \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEJ__DCMotor}{EJ\+\_\+\+DCMotor}} $\ast$ \mbox{\hyperlink{classEJ__DCMotor__Manager_afc721dde48d0e9f0d692ef3d3da85e50}{get\+Motor}} (\mbox{\hyperlink{structMotorDef}{Motor\+Def}} \mbox{\hyperlink{main_8cpp_a644fcbd84e8709ecffe4f8ceb8db4dab}{motor}})
+\begin{DoxyCompactList}\small\item\em EJ\+\_\+\+DCMotorクラスのインスタンスを取得する \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEJ__DCMotor}{EJ\+\_\+\+DCMotor}} $\ast$ \mbox{\hyperlink{classEJ__DCMotor__Manager_a9e1829cdf78f9b689ca6109568c6f423}{get\+Motor}} (uint8\+\_\+t id)
+\begin{DoxyCompactList}\small\item\em EJ\+\_\+\+DCMotorクラスのインスタンスを取得する \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{静的公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classEJ__DCMotor__Manager}{EJ\+\_\+\+DCMotor\+\_\+\+Manager}} $\ast$ \mbox{\hyperlink{classEJ__DCMotor__Manager_ae2cc9335ca2052871b03e795bf14e2d3}{get\+Instance}} (size\+\_\+t max\+Instance\+Size)
+\begin{DoxyCompactList}\small\item\em EJ\+\_\+\+DCMotor\+\_\+\+Managerのインスタンスを生成、取得する \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classEJ__DCMotor__Manager}{EJ\+\_\+\+DCMotor\+\_\+\+Manager}} $\ast$ \mbox{\hyperlink{classEJ__DCMotor__Manager_aacab85581b2f63fb166937565c1b1ed9}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classEJ__DCMotor__Manager}{EJ\+\_\+\+DCMotor\+\_\+\+Manager}} のインスタンスを取得する \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{詳解}
+EJ\+\_\+\+DCMotorクラスのインスタンスを生成、管理するクラス 
+
+本クラスはシングルトンで提供され、get\+Instanceメソッドにのみよってインスタンス生成される 
+
+ EJ\+\_\+\+DCMotor.\+h の 102 行目に定義があります。
+
+
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{classEJ__DCMotor__Manager_ad67723b950e7ad5b410ddfb6e6129482}\label{classEJ__DCMotor__Manager_ad67723b950e7ad5b410ddfb6e6129482}} 
+\index{EJ\_DCMotor\_Manager@{EJ\_DCMotor\_Manager}!````~EJ\_DCMotor\_Manager@{$\sim$EJ\_DCMotor\_Manager}}
+\index{````~EJ\_DCMotor\_Manager@{$\sim$EJ\_DCMotor\_Manager}!EJ\_DCMotor\_Manager@{EJ\_DCMotor\_Manager}}
+\doxysubsubsection{\texorpdfstring{$\sim$EJ\_DCMotor\_Manager()}{~EJ\_DCMotor\_Manager()}}
+{\footnotesize\ttfamily EJ\+\_\+\+DCMotor\+\_\+\+Manager\+::$\sim$\+EJ\+\_\+\+DCMotor\+\_\+\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+EJ\+\_\+\+DCMotor\+\_\+\+Managerクラスのデストラクタ 
+
+本クラスによって生成された\+EJ\+\_\+\+DCMotorクラスのインスタンスをすべて解放する 
+
+ EJ\+\_\+\+DCMotor.\+cpp の 107 行目に定義があります。
+
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{classEJ__DCMotor__Manager_a0347df3c51144cf13e702ca025740413}\label{classEJ__DCMotor__Manager_a0347df3c51144cf13e702ca025740413}} 
+\index{EJ\_DCMotor\_Manager@{EJ\_DCMotor\_Manager}!createMotor@{createMotor}}
+\index{createMotor@{createMotor}!EJ\_DCMotor\_Manager@{EJ\_DCMotor\_Manager}}
+\doxysubsubsection{\texorpdfstring{createMotor()}{createMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEJ__DCMotor}{EJ\+\_\+\+DCMotor}} $\ast$ EJ\+\_\+\+DCMotor\+\_\+\+Manager\+::create\+Motor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMotorDef}{Motor\+Def}}}]{motor }\end{DoxyParamCaption})}
+
+
+
+EJ\+\_\+\+DCMotorクラスのインスタンスを生成する 
+
+生成したインスタンスはget\+Motor関数で取得できるように同時に自身の\+\_\+instance\+List配列に記憶しておく 
+\begin{DoxyParams}{引数}
+{\em \mbox{\hyperlink{structMotorDef}{Motor\+Def}}} & 参照 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+EJ\+\_\+\+DCMotorクラスのインスタンスを指すポインタ 
+\end{DoxyReturn}
+
+
+ EJ\+\_\+\+DCMotor.\+cpp の 119 行目に定義があります。
+
+\mbox{\Hypertarget{classEJ__DCMotor__Manager_a48593ffddd8cf4e300ea8260acc048a5}\label{classEJ__DCMotor__Manager_a48593ffddd8cf4e300ea8260acc048a5}} 
+\index{EJ\_DCMotor\_Manager@{EJ\_DCMotor\_Manager}!createMotor@{createMotor}}
+\index{createMotor@{createMotor}!EJ\_DCMotor\_Manager@{EJ\_DCMotor\_Manager}}
+\doxysubsubsection{\texorpdfstring{createMotor()}{createMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEJ__DCMotor}{EJ\+\_\+\+DCMotor}} $\ast$ EJ\+\_\+\+DCMotor\+\_\+\+Manager\+::create\+Motor (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pin1,  }\item[{uint8\+\_\+t}]{pin2,  }\item[{uint8\+\_\+t}]{id }\end{DoxyParamCaption})}
+
+
+
+EJ\+\_\+\+DCMotorクラスのインスタンスを生成する 
+
+生成したインスタンスはget\+Motor関数で取得できるように同時に自身の\+\_\+instance\+List配列に記憶しておく 
+\begin{DoxyParams}{引数}
+{\em pin1} & モータの接続ピン1 \\
+\hline
+{\em pin2} & モータの接続ピン2 \\
+\hline
+{\em id} & モーターの識別番号 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+EJ\+\_\+\+DCMotorクラスのインスタンスを指すポインタ 
+\end{DoxyReturn}
+
+
+ EJ\+\_\+\+DCMotor.\+cpp の 124 行目に定義があります。
+
+\mbox{\Hypertarget{classEJ__DCMotor__Manager_aacab85581b2f63fb166937565c1b1ed9}\label{classEJ__DCMotor__Manager_aacab85581b2f63fb166937565c1b1ed9}} 
+\index{EJ\_DCMotor\_Manager@{EJ\_DCMotor\_Manager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!EJ\_DCMotor\_Manager@{EJ\_DCMotor\_Manager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEJ__DCMotor__Manager}{EJ\+\_\+\+DCMotor\+\_\+\+Manager}} $\ast$ EJ\+\_\+\+DCMotor\+\_\+\+Manager\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{classEJ__DCMotor__Manager}{EJ\+\_\+\+DCMotor\+\_\+\+Manager}} のインスタンスを取得する 
+
+\begin{DoxyAttention}{注意}
+＊一度も\+EJ\+\_\+\+DCMotor\+\_\+\+Manager\+::get\+Instance(size\+\_\+t max\+Instance\+Size)をコールしていない場合は\+NULLポインタを返す 
+\end{DoxyAttention}
+\begin{DoxyReturn}{戻り値}
+EJ\+\_\+\+DCMotor\+\_\+\+Managerのsingletonを指すポインタ 
+\end{DoxyReturn}
+
+
+ EJ\+\_\+\+DCMotor.\+cpp の 93 行目に定義があります。
+
+\mbox{\Hypertarget{classEJ__DCMotor__Manager_ae2cc9335ca2052871b03e795bf14e2d3}\label{classEJ__DCMotor__Manager_ae2cc9335ca2052871b03e795bf14e2d3}} 
+\index{EJ\_DCMotor\_Manager@{EJ\_DCMotor\_Manager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!EJ\_DCMotor\_Manager@{EJ\_DCMotor\_Manager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEJ__DCMotor__Manager}{EJ\+\_\+\+DCMotor\+\_\+\+Manager}} $\ast$ EJ\+\_\+\+DCMotor\+\_\+\+Manager\+::get\+Instance (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{max\+Instance\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+EJ\+\_\+\+DCMotor\+\_\+\+Managerのインスタンスを生成、取得する 
+
+
+\begin{DoxyParams}{引数}
+{\em max\+Instance\+Size} & EJ\+\_\+\+DCMotorの最大インスタンス数の定義 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+EJ\+\_\+\+DCMotor\+\_\+\+Managerのsingletonを指すポインタ 
+\end{DoxyReturn}
+
+
+ EJ\+\_\+\+DCMotor.\+cpp の 77 行目に定義があります。
+
+\mbox{\Hypertarget{classEJ__DCMotor__Manager_afc721dde48d0e9f0d692ef3d3da85e50}\label{classEJ__DCMotor__Manager_afc721dde48d0e9f0d692ef3d3da85e50}} 
+\index{EJ\_DCMotor\_Manager@{EJ\_DCMotor\_Manager}!getMotor@{getMotor}}
+\index{getMotor@{getMotor}!EJ\_DCMotor\_Manager@{EJ\_DCMotor\_Manager}}
+\doxysubsubsection{\texorpdfstring{getMotor()}{getMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEJ__DCMotor}{EJ\+\_\+\+DCMotor}} $\ast$ EJ\+\_\+\+DCMotor\+\_\+\+Manager\+::get\+Motor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMotorDef}{Motor\+Def}}}]{motor }\end{DoxyParamCaption})}
+
+
+
+EJ\+\_\+\+DCMotorクラスのインスタンスを取得する 
+
+create\+Motor関数で生成した\+EJ\+\_\+\+DCMotorクラスのインスタンスを取得し返す。指定したidのインスタンスが生成されていない場合や取得に失敗した場合は\+NULLを返す。 
+\begin{DoxyParams}{引数}
+{\em \mbox{\hyperlink{structMotorDef}{Motor\+Def}}} & 取得したい\+DCモータを指す\+DCモータ定義構造体 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+EJ\+\_\+\+DCMotorクラスのインスタンスを指すポインタ 
+\end{DoxyReturn}
+
+
+ EJ\+\_\+\+DCMotor.\+cpp の 150 行目に定義があります。
+
+\mbox{\Hypertarget{classEJ__DCMotor__Manager_a9e1829cdf78f9b689ca6109568c6f423}\label{classEJ__DCMotor__Manager_a9e1829cdf78f9b689ca6109568c6f423}} 
+\index{EJ\_DCMotor\_Manager@{EJ\_DCMotor\_Manager}!getMotor@{getMotor}}
+\index{getMotor@{getMotor}!EJ\_DCMotor\_Manager@{EJ\_DCMotor\_Manager}}
+\doxysubsubsection{\texorpdfstring{getMotor()}{getMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEJ__DCMotor}{EJ\+\_\+\+DCMotor}} $\ast$ EJ\+\_\+\+DCMotor\+\_\+\+Manager\+::get\+Motor (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{id }\end{DoxyParamCaption})}
+
+
+
+EJ\+\_\+\+DCMotorクラスのインスタンスを取得する 
+
+create\+Motor関数で生成した\+EJ\+\_\+\+DCMotorクラスのインスタンスを取得し返す。指定したidのインスタンスが生成されていない場合や取得に失敗した場合は\+NULLを返す。 
+\begin{DoxyParams}{引数}
+{\em id} & モーターの識別番号 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+EJ\+\_\+\+DCMotorクラスのインスタンスを指すポインタ 
+\end{DoxyReturn}
+
+
+ EJ\+\_\+\+DCMotor.\+cpp の 172 行目に定義があります。
+
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Project/include/\mbox{\hyperlink{EJ__DCMotor_8h}{EJ\+\_\+\+DCMotor.\+h}}\item 
+Project/src/\mbox{\hyperlink{EJ__DCMotor_8cpp}{EJ\+\_\+\+DCMotor.\+cpp}}\end{DoxyCompactItemize}

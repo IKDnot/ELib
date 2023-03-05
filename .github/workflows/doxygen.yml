@@ -11,21 +11,45 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    permissions:
+      actions: write
+      checks: write
+      contents: write
+      deployments: write
+      issues: write
+      packages: write
+      pull-requests: write
+      repository-projects: write
+      security-events: write
+      statuses: write
+    
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
-    - name: Install Doxygen
-      run: sudo apt-get install doxygen
+      - name: Install Doxygen
+        run: sudo apt-get install doxygen
 
-    - name: Generate Doxygen documentation
-      run: doxygen Doxyfile
+      - name: Generate Doxygen documentation
+        run: |
+          doxygen Doxyfile
+          cp -rf docs/html/* docs
+          rm -rf docs/html
+        
 
-    - name: Deploy doxygen
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-          ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: docs # The folder the action should deploy.
-          TARGET_FOLDER: main
+      - name: Add docs
+        run: |
+          git config --global user.email "ikeda.naoto.ku@gmail.com"
+          git config --global user.name "IKDnot"
+          git add docs
+
+      - name: Commit changes
+        run: |
+          git commit -m "auto: commit by GitHub Actions (doxygen)"
+      
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          directory: .
+          branch: main
