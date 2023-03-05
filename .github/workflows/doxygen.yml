@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
   build:
@@ -41,6 +38,7 @@ jobs:
         run: |
           git config --global user.email "ikeda.naoto.ku@gmail.com"
           git config --global user.name "IKDnot"
+          git fetch
           git add docs || echo "Nothing to commit"
 
       - name: Commit changes
