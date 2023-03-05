@@ -2,7 +2,7 @@
 #include <M5Core2.h>
 #include "EJ_DCMotor.h"
 #include "EJ_ServoMotor.h"
-#include "EJ_PinAssign.h"
+#include "PinAssign.h"
 
 const char* _classname = "main";
 
