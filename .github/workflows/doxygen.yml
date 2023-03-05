@@ -41,11 +41,11 @@ jobs:
         run: |
           git config --global user.email "ikeda.naoto.ku@gmail.com"
           git config --global user.name "IKDnot"
-          git add docs
+          git add docs || echo "Nothing to commit"
 
       - name: Commit changes
         run: |
-          git commit -m "auto: commit by GitHub Actions (doxygen)"
+          git commit -m "auto: commit by GitHub Actions (doxygen)" || echo "Nothing to commit"
       
       - name: Push changes
         uses: ad-m/github-push-action@master

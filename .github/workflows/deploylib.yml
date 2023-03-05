@@ -1,0 +1,51 @@
+name: deployLib
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      checks: write
+      contents: write
+      deployments: write
+      issues: write
+      packages: write
+      pull-requests: write
+      repository-projects: write
+      security-events: write
+      statuses: write
+
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v2
+        with:
+          ref: main
+
+      - name: Copy files to lib branch
+        run: |
+          mkdir -p tmp/lib/src
+          mkdir -p tmp/lib/include
+          cp Project/src/EJ_*.cpp tmp/lib/src/
+          cp Project/include/EJ_*.h tmp/lib/include/
+          git config --global user.email "ikeda.naoto.ku@gmail.com"
+          git config --global user.name "IKDnot"
+          git fetch
+          git branch -a
+          git checkout lib
+          rm -rf include
+          rm -rf src
+          cp -r tmp/lib/* .
+      
+      - name: Push changes
+        run: |
+          git add src include || echo "Nothing to commit"
+          git commit -m "auto: :rocket: Update lib branch from main@${{ github.sha }}" || echo "Nothing to commit"
+          git push https://${{ secrets.GITHUB_TOKEN }}@github.com/IKDnot/Elib.git HEAD:lib
