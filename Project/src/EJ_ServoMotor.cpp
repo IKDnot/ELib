@@ -47,9 +47,9 @@ int EJ_ServoMotor::read()
     return Servo::read();
 }
 
-/*---------------
+/*-----------------
 class EJ_ServoMotor
----------------*/
+-----------------*/
 
 /* static member */
 EJ_ServoMotor_Manager* EJ_ServoMotor_Manager::_singleton = NULL;
@@ -106,6 +106,7 @@ EJ_ServoMotor_Manager* EJ_ServoMotor_Manager::getInstance()
     return _singleton;
 }
 
+/* public method */
 EJ_ServoMotor_Manager::~EJ_ServoMotor_Manager()
 {
     if (_instanceList != NULL) {
