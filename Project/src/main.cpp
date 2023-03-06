@@ -1,7 +1,6 @@
 #include <Arduino.h>
 #include <M5Core2.h>
-#include "EJ_DCMotor.h"
-#include "EJ_ServoMotor.h"
+#include <Elib.h>
 #include "PinAssign.h"
 
 const char* _classname = "main";
