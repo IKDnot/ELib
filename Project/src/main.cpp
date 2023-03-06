@@ -17,7 +17,6 @@ EJ_DCMotor* motor = NULL;
 EJ_DCMotor* motorAlias = NULL;
 EJ_DCMotor* invalidMotor = NULL;
 
-EJ_ServoMotor_Manager* servoManager = NULL;
 EJ_ServoMotor* servo = NULL;
 EJ_ServoMotor* servoAlias = NULL;
 EJ_ServoMotor* invalidServo = NULL;
@@ -36,17 +35,12 @@ void setup() {
   invalidMotor = EJ_DCMotor_Manager::createMotor(1,3,5); // Error 出力テスト用
 
   /* Servoモータテスト */
-  servoManager = EJ_ServoMotor_Manager::getInstance(MAX_SERVO_SIZE);
-  if (servoManager == NULL) {
-    /*
-    ERRORLOG
-        内容：メモリ確保に失敗した
-    */
+  if (!EJ_ServoMotor_Manager::configure(MAX_SERVO_SIZE)) {
     ERRORLOG();
-    delay(2000);
+    M5.shutdown(5);
   }
 
-  servo = servoManager->createServo(SERVO1);
+  servo = EJ_ServoMotor_Manager::createServo(SERVO1);
   if (servo == NULL) {
     /*
     ERRORLOG
@@ -56,7 +50,7 @@ void setup() {
     delay(2000);
   }
 
-  servoAlias = servoManager->getServo(SERVO1.id);
+  servoAlias = EJ_ServoMotor_Manager::getServo(SERVO1.id);
   if (servoAlias == NULL) {
     /*
     ERRORLOG
@@ -66,7 +60,7 @@ void setup() {
     delay(2000);
   }
 
-  invalidServo = servoManager->createServo(1, 50); // Error 出力テスト用
+  invalidServo = EJ_ServoMotor_Manager::createServo(1, 50); // Error 出力テスト用
   if (invalidServo == NULL) {
   /*
   ERRORLOG
