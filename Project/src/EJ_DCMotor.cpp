@@ -76,6 +76,7 @@ EJ_DCMotor_Manager::EJ_DCMotor_Manager(size_t maxInstanceSize)
     }
 }
 
+/* static private method */
 EJ_DCMotor_Manager* EJ_DCMotor_Manager::getInstance()
 {
     if (_singleton == NULL) {
@@ -88,6 +89,19 @@ EJ_DCMotor_Manager* EJ_DCMotor_Manager::getInstance()
     }
 
     return _singleton;
+}
+
+/* public method */
+EJ_DCMotor_Manager::~EJ_DCMotor_Manager()
+{
+    if (_instanceList != NULL) {
+        for (size_t i = 0; i < _maxInstanceSize; i++) {
+            if (_instanceList[i] != NULL) {
+                delete _instanceList[i];
+                _instanceList[i] = NULL;
+            }
+        }
+    }
 }
 
 /* static public method */
@@ -106,22 +120,6 @@ bool EJ_DCMotor_Manager::configure(size_t maxInstanceSize)
     }
     return true;
 }
-
-/* public method */
-
-EJ_DCMotor_Manager::~EJ_DCMotor_Manager()
-{
-    if (_instanceList != NULL) {
-        for (size_t i = 0; i < _maxInstanceSize; i++) {
-            if (_instanceList[i] != NULL) {
-                delete _instanceList[i];
-                _instanceList[i] = NULL;
-            }
-        }
-    }
-}
-
-/* static public method */
 
 EJ_DCMotor* EJ_DCMotor_Manager::createMotor(MotorDef motor)
 {
