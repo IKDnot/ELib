@@ -46,7 +46,7 @@ typedef struct
 
 /**
  * @brief サーボモーターを制御するクラス
- * @attention*注意:本クラスのインスタンスはEJ_ServoMotor_Managerクラス以外からは生成できない
+ * @attention*本クラスのインスタンスはEJ_ServoMotor_Managerクラス以外からは生成できない
  * @details [ESP32Servo.h](https://github.com/jkb-git/ESP32Servo/blob/master/src/ESP32_Servo.h) で定義されるServoクラスを基底とした派生クラス
  */
 class EJ_ServoMotor : public Servo
@@ -96,7 +96,7 @@ private:
 
 /**
  * @brief EJ_ServoMotorクラスのインスタンスを生成、管理するクラス
- * @details 本クラスはシングルトンで提供され、getInstanceメソッドにのみよってインスタンス生成される
+ * @details 本クラスはシングルトンで提供され、configure()メソッドにのみよってインスタンスが1つだけ生成される
  */
 class EJ_ServoMotor_Manager
 {
@@ -107,17 +107,10 @@ private:
      */
     EJ_ServoMotor_Manager(size_t maxInstanceSize);
 
-public:
-    /**
-     * @brief EJ_ServoMotor_Managerのインスタンスを生成、取得する
-     * @param maxInstanceSize EJ_ServoMotorの最大インスタンス数の定義
-     * @return EJ_ServoMotor_Managerのsingletonを指すポインタ
-     */
-    static EJ_ServoMotor_Manager* getInstance(size_t maxInstanceSize);
-
+private:
     /**
      * @brief EJ_ServoMotor_Manager のインスタンスを取得する
-     * @attention ＊一度もEJ_ServoMotor_Manager::getInstance(size_t maxInstanceSize)をコールしていない場合はNULLポインタを返す
+     * @attention *configure()がコールされていない場合はNULLポインタを返す
      * @return EJ_ServoMotor_Managerのsingletonを指すポインタ
      */
     static EJ_ServoMotor_Manager* getInstance();
@@ -131,12 +124,19 @@ public:
 
 public:
     /**
+     * @brief EJ_ServoMotor_Managerのインスタンスを生成する
+     * @param maxInstanceSize EJ_ServoMotorの最大インスタンス数の定義
+     * @return true: 生成成功 / false: 生成失敗
+     */
+    static bool configure(size_t maxInstanceSize);
+
+    /**
      * @brief EJ_ServoMotorクラスのインスタンスを生成する
      * @details 生成したインスタンスはgetServo関数で取得できるように同時に自身の_instanceList配列に記憶しておく
      * @param ServoDef 参照
      * @return EJ_ServoMotorクラスのインスタンスを指すポインタ
      */
-    EJ_ServoMotor *createServo(ServoDef servo);
+    static EJ_ServoMotor *createServo(ServoDef servo);
 
     /**
      * @brief EJ_ServoMotorクラスのインスタンスを生成する
@@ -147,7 +147,7 @@ public:
      * @param max サーボの角度が180度のときのパルス幅[us]。デフォルト = 2400
      * @return EJ_ServoMotorクラスのインスタンスを指すポインタ
      */
-    EJ_ServoMotor *createServo(uint8_t pin, uint8_t id, int min = 544, int max = 2400);
+    static EJ_ServoMotor *createServo(uint8_t pin, uint8_t id, int min = 544, int max = 2400);
 
     /**
      * @brief EJ_ServoMotorクラスのインスタンスを取得する
@@ -155,7 +155,7 @@ public:
      * @param MotorDef 取得したいサーボモータを指すサーボモータ定義構造体
      * @return EJ_ServoMotorクラスのインスタンスを指すポインタ
      */
-    EJ_ServoMotor *getServo(ServoDef servo);
+    static EJ_ServoMotor *getServo(ServoDef servo);
 
     /**
      * @brief EJ_ServoMotorクラスのインスタンスを取得する
@@ -163,13 +163,12 @@ public:
      * @param id モーターの識別番号
      * @return EJ_ServoMotorクラスのインスタンスを指すポインタ
      */
-    EJ_ServoMotor *getServo(uint8_t id);
+    static EJ_ServoMotor *getServo(uint8_t id);
 
 private:
     static const char* _classname;
     static EJ_ServoMotor_Manager *_singleton;
     const size_t _maxInstanceSize;
-    size_t _numOfInstanceSize;
     EJ_ServoMotor **_instanceList;
 };
 
