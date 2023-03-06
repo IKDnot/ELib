@@ -1,5 +1,10 @@
 #include "EJ_ServoMotor.h"
 #include "M5Core2.h"
+#ifdef M5_DEBUG
+#define ERRORLOG() M5.Lcd.printf("[ERROR] Class:%s, Line:%d\n", _classname, __LINE__)
+#else
+#define ERRORLOG() ((void)0)
+#endif
 
 /*-------------------
 class EJ_ServoMotor
@@ -31,7 +36,7 @@ void EJ_ServoMotor::write(int angle)
         ERRORLOG 
             内容: 無効な角度が指定された
         */
-        M5.Lcd.printf("[ERROR] Class:%s, Line:%d\n", _classname, __LINE__);
+        ERRORLOG();
         return;
     }
     Servo::write(angle);
@@ -58,7 +63,6 @@ const char* EJ_ServoMotor_Manager::_classname = "EJ_ServoMotor_Manager";
 /* private method */
 EJ_ServoMotor_Manager::EJ_ServoMotor_Manager(size_t maxInstanceSize)
 :   _maxInstanceSize(maxInstanceSize),
-    _numOfInstanceSize(0),
     _instanceList(NULL)
 {
     _instanceList = new EJ_ServoMotor*[_maxInstanceSize];
@@ -67,7 +71,7 @@ EJ_ServoMotor_Manager::EJ_ServoMotor_Manager(size_t maxInstanceSize)
         ERRORLOG 
             内容: メモリ確保に失敗した
         */
-        M5.Lcd.printf("[ERROR] Class:%s, Line:%d\n", _classname, __LINE__);
+        ERRORLOG();
         return;
     }
     for (size_t i = 0; i < _maxInstanceSize; i++) {
@@ -75,23 +79,7 @@ EJ_ServoMotor_Manager::EJ_ServoMotor_Manager(size_t maxInstanceSize)
     }
 }
 
-/* static public method */
-EJ_ServoMotor_Manager* EJ_ServoMotor_Manager::getInstance(size_t maxInstanceSize)
-{
-    if (_singleton == NULL) {
-        _singleton = new EJ_ServoMotor_Manager(maxInstanceSize);
-        if (_singleton == NULL) {
-            /*
-            ERROLOG
-                内容：メモリ確保に失敗した 
-            */
-            M5.Lcd.printf("[ERROR] Class:%s, Line:%d\n", _classname, __LINE__);
-            return NULL;
-        }
-    }
-    return _singleton;
-}
-
+/* static private method */
 EJ_ServoMotor_Manager* EJ_ServoMotor_Manager::getInstance()
 {
     if (_singleton == NULL) {
@@ -99,7 +87,7 @@ EJ_ServoMotor_Manager* EJ_ServoMotor_Manager::getInstance()
         ERROLOG
             内容：シングルトンがまだ生成されていない
         */
-        M5.Lcd.printf("[ERROR] Class:%s, Line:%d\n", _classname, __LINE__);
+        ERRORLOG();
         return NULL;
     }
 
@@ -119,46 +107,72 @@ EJ_ServoMotor_Manager::~EJ_ServoMotor_Manager()
     }
 }
 
+/* static public method */
+bool EJ_ServoMotor_Manager::configure(size_t maxInstanceSize)
+{
+    if (_singleton == NULL) {
+        _singleton = new EJ_ServoMotor_Manager(maxInstanceSize);
+        if (_singleton == NULL) {
+            /*
+            ERROLOG
+                内容：メモリ確保に失敗した 
+            */
+            ERRORLOG();
+            return false;
+        }
+    }
+    return true;
+}
+
 EJ_ServoMotor* EJ_ServoMotor_Manager::createServo(ServoDef servo)
 {
-    return createServo(servo.pin, servo.id);
+    return EJ_ServoMotor_Manager::createServo(servo.pin, servo.id);
 }
 
 EJ_ServoMotor* EJ_ServoMotor_Manager::createServo(uint8_t pin, uint8_t id, int min, int max)
 {
-    if (id > _maxInstanceSize) {
+    EJ_ServoMotor_Manager *manager = EJ_ServoMotor_Manager::getInstance();
+    if (manager == NULL) {
+        /*
+        ERRORLOG
+            内容：マネージャクラスのインスタンス取得に失敗した
+        */
+        ERRORLOG();
+        return NULL;
+    }
+    if (id > manager->_maxInstanceSize) {
         /*
         ERRORLOG
             内容：最大インスタンス数を超えるidが指定された
         */
-        M5.Lcd.printf("[ERROR] Class:%s, Line:%d\n", _classname, __LINE__);
+        ERRORLOG();
         return NULL;
     }
-    if (_instanceList[id] == NULL) {
+    if (manager->_instanceList[id] == NULL) {
         EJ_ServoMotor *instance = new EJ_ServoMotor(pin, min, max);
         if (instance == NULL) {
             /*
             ERRORLOG
                 内容：メモリ確保に失敗した
             */
-            M5.Lcd.printf("[ERROR] Class:%s, Line:%d\n", _classname, __LINE__);
+            ERRORLOG();
             return NULL;
         }
-        _instanceList[id] = instance;
+        manager->_instanceList[id] = instance;
     }
 
-    return _instanceList[id];
+    return manager->_instanceList[id];
 }
 
 EJ_ServoMotor* EJ_ServoMotor_Manager::getServo(ServoDef servo)
 {
-    EJ_ServoMotor* instance = getServo(servo.id);
+    EJ_ServoMotor* instance = EJ_ServoMotor_Manager::getServo(servo.id);
     if (instance == NULL) {
         /*
         ERROLOG
             内容：インスタンス取得に失敗した
         */
-        M5.Lcd.printf("[ERROR] Class:%s, Line:%d\n", _classname, __LINE__);
+        ERRORLOG();
         return NULL;
     }
     if (instance->_pin != servo.pin) {
@@ -166,7 +180,7 @@ EJ_ServoMotor* EJ_ServoMotor_Manager::getServo(ServoDef servo)
         ERROLOG
             内容：指定されたidが指すインスタンスと、確保済みの同じidのインスタンスが一致しない
         */
-        M5.Lcd.printf("[ERROR] Class:%s, Line:%d\n", _classname, __LINE__);
+        ERRORLOG();
         return NULL;
     }
     return instance;
@@ -174,21 +188,30 @@ EJ_ServoMotor* EJ_ServoMotor_Manager::getServo(ServoDef servo)
 
 EJ_ServoMotor* EJ_ServoMotor_Manager::getServo(uint8_t id)
 {
-    if (id >= _maxInstanceSize) {
+    EJ_ServoMotor_Manager *manager = EJ_ServoMotor_Manager::getInstance();
+    if (manager == NULL) {
+        /*
+        ERRORLOG
+            内容：マネージャクラスのインスタンス取得に失敗した
+        */
+        ERRORLOG();
+        return NULL;
+    }
+    if (id >= manager->_maxInstanceSize) {
         /*
         ERRORLOG
             内容：最大インスタンス数を超えるidが指定された
         */
-        M5.Lcd.printf("[ERROR] Class:%s, Line:%d\n", _classname, __LINE__);
+        ERRORLOG();
         return NULL;
     } 
-    if (_instanceList[id] == NULL) {
+    if (manager->_instanceList[id] == NULL) {
         /*
         ERRORLOG
             内容：指定されたidのインスタンスが存在しない
         */
-        M5.Lcd.printf("[ERROR] Class:%s, Line:%d\n", _classname, __LINE__);
+        ERRORLOG();
         return NULL;
     }
-    return _instanceList[id];
+    return manager->_instanceList[id];
 }
