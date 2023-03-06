@@ -10,5 +10,6 @@ var dir_3137d5a23389289517bd5e0d06338240 =
       [ "EJ_ServoMotor", "classEJ__ServoMotor.html", "classEJ__ServoMotor" ],
       [ "EJ_ServoMotor_Manager", "classEJ__ServoMotor__Manager.html", "classEJ__ServoMotor__Manager" ]
     ] ],
+    [ "Elib.h", "Elib_8h.html", null ],
     [ "PinAssign.h", "PinAssign_8h.html", "PinAssign_8h" ]
 ];
