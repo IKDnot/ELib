@@ -2,7 +2,7 @@
  * @file           Elib.h
  * @brief          Elibが提供するクラスの包含includeファイル
  * @author         IKDnot
- * @date           2023/03/06
+ * @date           2023/03/07
  * 
  * License
  * 
