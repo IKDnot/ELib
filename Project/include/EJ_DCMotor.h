@@ -107,14 +107,6 @@ private:
      */
     EJ_DCMotor_Manager(size_t maxInstanceSize);
 
-public:
-    /**
-     * @brief EJ_DCMotor_Managerのインスタンスを生成、取得する
-     * @param maxInstanceSize EJ_DCMotorの最大インスタンス数の定義
-     * @return EJ_DCMotor_Managerのsingletonを指すポインタ
-     */
-    static EJ_DCMotor_Manager* getInstance(size_t maxInstanceSize);
-
     /**
      * @brief EJ_DCMotor_Manager のインスタンスを取得する
      * @attention ＊一度もEJ_DCMotor_Manager::getInstance(size_t maxInstanceSize)をコールしていない場合はNULLポインタを返す
@@ -124,19 +116,19 @@ public:
 
 public:
     /**
-     * @brief EJ_DCMotor_Managerクラスのデストラクタ
-     * @details 本クラスによって生成されたEJ_DCMotorクラスのインスタンスをすべて解放する
+     * @brief EJ_DCMotor_Managerのインスタンスを生成する
+     * @param maxInstanceSize EJ_DCMotorの最大インスタンス数の定義
+     * @return true: 生成成功 / false: 生成失敗
      */
-    ~EJ_DCMotor_Manager();
+    static bool configure(size_t maxInstanceSize);
 
-public:
     /**
      * @brief EJ_DCMotorクラスのインスタンスを生成する
      * @details 生成したインスタンスはgetMotor関数で取得できるように同時に自身の_instanceList配列に記憶しておく
      * @param MotorDef 参照
      * @return EJ_DCMotorクラスのインスタンスを指すポインタ
      */
-    EJ_DCMotor *createMotor(MotorDef motor);
+    static EJ_DCMotor *createMotor(MotorDef motor);
 
     /**
      * @brief EJ_DCMotorクラスのインスタンスを生成する
@@ -146,7 +138,7 @@ public:
      * @param id モーターの識別番号
      * @return EJ_DCMotorクラスのインスタンスを指すポインタ
      */
-    EJ_DCMotor *createMotor(uint8_t pin1, uint8_t pin2, uint8_t id);
+    static EJ_DCMotor *createMotor(uint8_t pin1, uint8_t pin2, uint8_t id);
 
     /**
      * @brief EJ_DCMotorクラスのインスタンスを取得する
@@ -154,7 +146,7 @@ public:
      * @param MotorDef 取得したいDCモータを指すDCモータ定義構造体
      * @return EJ_DCMotorクラスのインスタンスを指すポインタ
      */
-    EJ_DCMotor *getMotor(MotorDef motor);
+    static EJ_DCMotor *getMotor(MotorDef motor);
 
     /**
      * @brief EJ_DCMotorクラスのインスタンスを取得する
@@ -162,13 +154,19 @@ public:
      * @param id モーターの識別番号
      * @return EJ_DCMotorクラスのインスタンスを指すポインタ
      */
-    EJ_DCMotor *getMotor(uint8_t id);
+    static EJ_DCMotor *getMotor(uint8_t id);
+
+public:
+    /**
+     * @brief EJ_DCMotor_Managerクラスのデストラクタ
+     * @details 本クラスによって生成されたEJ_DCMotorクラスのインスタンスをすべて解放する
+     */
+    ~EJ_DCMotor_Manager();
 
 private:
     static const char* _classname;
     static EJ_DCMotor_Manager *_singleton;
     const size_t _maxInstanceSize;
-    size_t _numOfInstanceSize;
     EJ_DCMotor **_instanceList;
 };
 

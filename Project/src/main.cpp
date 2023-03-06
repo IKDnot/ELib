@@ -1,14 +1,18 @@
 #include <Arduino.h>
 #include <M5Core2.h>
-#include <Elib.h>
+#include "Elib.h"
 #include "PinAssign.h"
+#ifdef M5_DEBUG
+#define ERRORLOG() M5.Lcd.printf("[ERROR] Class:%s, Line:%d\n", _classname, __LINE__)
+#else
+#define ERRORLOG() ((void)0)
+#endif
 
 const char* _classname = "main";
 
 const size_t MAX_MOTOR_NUM = 4;
 const size_t MAX_SERVO_SIZE = 1;
 
-EJ_DCMotor_Manager* motorManager = NULL;
 EJ_DCMotor* motor = NULL;
 EJ_DCMotor* motorAlias = NULL;
 EJ_DCMotor* invalidMotor = NULL;
@@ -22,10 +26,14 @@ void setup() {
   M5.begin();
   
   /* DCモータテスト */
-  motorManager = EJ_DCMotor_Manager::getInstance(MAX_MOTOR_NUM);
-  motor = motorManager->createMotor(MOTOR1);
-  motorAlias = motorManager->getMotor(MOTOR1.id);
-  invalidMotor = motorManager->createMotor(1,3,5); // Error 出力テスト用
+  if (!EJ_DCMotor_Manager::configure(MAX_MOTOR_NUM)) {
+    ERRORLOG();
+    M5.shutdown(5);
+  }
+
+  motor = EJ_DCMotor_Manager::createMotor(MOTOR1);
+  motorAlias = EJ_DCMotor_Manager::getMotor(MOTOR1.id);
+  invalidMotor = EJ_DCMotor_Manager::createMotor(1,3,5); // Error 出力テスト用
 
   /* Servoモータテスト */
   servoManager = EJ_ServoMotor_Manager::getInstance(MAX_SERVO_SIZE);
@@ -34,7 +42,7 @@ void setup() {
     ERRORLOG
         内容：メモリ確保に失敗した
     */
-    M5.Lcd.printf("[ERROR] Class:%s, Line:%d\n", _classname, __LINE__);
+    ERRORLOG();
     delay(2000);
   }
 
@@ -44,7 +52,7 @@ void setup() {
     ERRORLOG
         内容：メモリ確保に失敗した
     */
-    M5.Lcd.printf("[ERROR] Class:%s, Line:%d\n", _classname, __LINE__);
+    ERRORLOG();
     delay(2000);
   }
 
@@ -54,7 +62,7 @@ void setup() {
     ERRORLOG
         内容：メモリ確保に失敗した
     */
-    M5.Lcd.printf("[ERROR] Class:%s, Line:%d\n", _classname, __LINE__);
+    ERRORLOG();
     delay(2000);
   }
 
@@ -64,7 +72,7 @@ void setup() {
   ERRORLOG
       内容：メモリ確保に失敗した
   */
-  M5.Lcd.printf("[ERROR] Class:%s, Line:%d\n", _classname, __LINE__);
+  ERRORLOG();
   delay(2000);
   }
 }
