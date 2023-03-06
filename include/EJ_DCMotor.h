@@ -96,7 +96,7 @@ private:
 
 /**
  * @brief EJ_DCMotorクラスのインスタンスを生成、管理するクラス
- * @details 本クラスはシングルトンで提供され、getInstanceメソッドにのみよってインスタンス生成される
+ * @details 本クラスはシングルトンで提供され、configure()メソッドにのみよってインスタンスが1つだけ生成される
  */
 class EJ_DCMotor_Manager
 {
@@ -107,12 +107,20 @@ private:
      */
     EJ_DCMotor_Manager(size_t maxInstanceSize);
 
+private:
     /**
      * @brief EJ_DCMotor_Manager のインスタンスを取得する
-     * @attention ＊一度もEJ_DCMotor_Manager::getInstance(size_t maxInstanceSize)をコールしていない場合はNULLポインタを返す
+     * @attention *configure()がコールされていない場合はNULLポインタを返す
      * @return EJ_DCMotor_Managerのsingletonを指すポインタ
      */
     static EJ_DCMotor_Manager* getInstance();
+
+public:
+    /**
+     * @brief EJ_DCMotor_Managerクラスのデストラクタ
+     * @details 本クラスによって生成されたEJ_DCMotorクラスのインスタンスをすべて解放する
+     */
+    ~EJ_DCMotor_Manager();
 
 public:
     /**
@@ -155,13 +163,6 @@ public:
      * @return EJ_DCMotorクラスのインスタンスを指すポインタ
      */
     static EJ_DCMotor *getMotor(uint8_t id);
-
-public:
-    /**
-     * @brief EJ_DCMotor_Managerクラスのデストラクタ
-     * @details 本クラスによって生成されたEJ_DCMotorクラスのインスタンスをすべて解放する
-     */
-    ~EJ_DCMotor_Manager();
 
 private:
     static const char* _classname;
