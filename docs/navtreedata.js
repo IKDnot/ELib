@@ -46,7 +46,8 @@ var NAVTREE =
       [ "ファイルメンバ", "globals.html", [
         [ "全て", "globals.html", null ],
         [ "関数", "globals_func.html", null ],
-        [ "変数", "globals_vars.html", null ]
+        [ "変数", "globals_vars.html", null ],
+        [ "マクロ定義", "globals_defs.html", null ]
       ] ]
     ] ]
   ] ]

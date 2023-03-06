@@ -6,7 +6,8 @@ var indexSectionsWithContent =
   3: "cfglrsw~",
   4: "_imps",
   5: "e",
-  6: "e"
+  6: "e",
+  7: "e"
 };
 
 var indexSectionNames =
@@ -17,7 +18,8 @@ var indexSectionNames =
   3: "functions",
   4: "variables",
   5: "related",
-  6: "pages"
+  6: "defines",
+  7: "pages"
 };
 
 var indexSectionLabels =
@@ -28,6 +30,7 @@ var indexSectionLabels =
   3: "関数",
   4: "変数",
   5: "フレンド",
-  6: "ページ"
+  6: "マクロ定義",
+  7: "ページ"
 };
 
