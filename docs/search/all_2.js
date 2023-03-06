@@ -10,5 +10,5 @@ var searchData=
   ['ej_5fservomotor_5fmanager_11',['EJ_ServoMotor_Manager',['../classEJ__ServoMotor__Manager.html',1,'EJ_ServoMotor_Manager'],['../classEJ__ServoMotor.html#a8b4752749c761b7e59a25687b6ccb555',1,'EJ_ServoMotor::EJ_ServoMotor_Manager()']]],
   ['elib_12',['ELib',['../md_README.html',1,'']]],
   ['elib_2eh_13',['Elib.h',['../Elib_8h.html',1,'']]],
-  ['errorlog_14',['ERRORLOG',['../EJ__DCMotor_8cpp.html#a538192715634a7c739e8b6c60f90152c',1,'ERRORLOG():&#160;EJ_DCMotor.cpp'],['../main_8cpp.html#a538192715634a7c739e8b6c60f90152c',1,'ERRORLOG():&#160;main.cpp']]]
+  ['errorlog_14',['ERRORLOG',['../EJ__DCMotor_8cpp.html#a538192715634a7c739e8b6c60f90152c',1,'ERRORLOG():&#160;EJ_DCMotor.cpp'],['../EJ__ServoMotor_8cpp.html#a538192715634a7c739e8b6c60f90152c',1,'ERRORLOG():&#160;EJ_ServoMotor.cpp'],['../main_8cpp.html#a538192715634a7c739e8b6c60f90152c',1,'ERRORLOG():&#160;main.cpp']]]
 ];

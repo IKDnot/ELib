@@ -11,6 +11,5 @@ var main_8cpp =
     [ "motor", "main_8cpp.html#a644fcbd84e8709ecffe4f8ceb8db4dab", null ],
     [ "motorAlias", "main_8cpp.html#a8dc3f522415638cc2f4b9a5ae4333a8c", null ],
     [ "servo", "main_8cpp.html#a76ffe5860735d6110228cef9dd1831ac", null ],
-    [ "servoAlias", "main_8cpp.html#a82aa2cf01ebac4fe0c5ca1060af6c7ea", null ],
-    [ "servoManager", "main_8cpp.html#a5b41b642f17fa8557d9aa203d3c3b168", null ]
+    [ "servoAlias", "main_8cpp.html#a82aa2cf01ebac4fe0c5ca1060af6c7ea", null ]
 ];
