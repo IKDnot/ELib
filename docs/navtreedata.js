@@ -28,7 +28,8 @@ var NAVTREE =
     [ "ELib", "md_README.html", [
       [ "仕様", "md_README.html#autotoc_md1", null ],
       [ "Platform.io下での環境構築", "md_README.html#autotoc_md2", null ],
-      [ "基本的な使い方", "md_README.html#autotoc_md3", null ]
+      [ "基本的な使い方", "md_README.html#autotoc_md3", null ],
+      [ "DEBUG MODE", "md_README.html#autotoc_md4", null ]
     ] ],
     [ "クラス", "annotated.html", [
       [ "クラス一覧", "annotated.html", "annotated_dup" ],

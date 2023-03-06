@@ -2,6 +2,7 @@
 \begin{DoxyItemize}
 \item ESP32、\+M5\+Stack向け自作汎用ライブラリ置き場
 \item センサ、アクチュエータを制御する EJ\+\_\+\+XXX クラスと EJ\+\_\+\+XXX クラスを管理する EJ\+\_\+\+XXX\+\_\+\+Manager クラスを提供
+\item EJ\+\_\+\+XXX\+\_\+\+Managerクラスによって実世界のオブジェクトとソフトウェア内のインスタンスをstrictに紐づけ、管理可能
 \end{DoxyItemize}\hypertarget{md_README_autotoc_md1}{}\doxysection{仕様}\label{md_README_autotoc_md1}
 
 \begin{DoxyItemize}
@@ -38,7 +39,7 @@
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{preprocessor}{\#include <\mbox{\hyperlink{EJ__DCMotor_8h}{EJ\_DCMotor.h}}>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <\mbox{\hyperlink{Elib_8h}{Elib.h}}>}}
 
 \end{DoxyCode}
 \hypertarget{md_README_autotoc_md3}{}\doxysection{基本的な使い方}\label{md_README_autotoc_md3}
@@ -49,23 +50,25 @@
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{preprocessor}{\#include <\mbox{\hyperlink{EJ__DCMotor_8h}{EJ\_DCMotor.h}}>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <\mbox{\hyperlink{Elib_8h}{Elib.h}}>}}
 
 \end{DoxyCode}
 
 \begin{DoxyEnumerate}
-\item マネージャクラスのインスタンスを取得する
+\item マネージャクラスのインスタンスを生成する(初期化)
 
-\`{}\`{}\`{}c const size\+\_\+t MAX\+\_\+\+MOTOR\+\_\+\+NUM = 4; EJ\+\_\+\+DCMotor\+\_\+\+Manager$\ast$ motor\+Manager = NULL; motor\+Manager = EJ\+\_\+\+DCMotor\+\_\+\+Manager\+::get\+Instance(\+MAX\+\_\+\+MOTOR\+\_\+\+NUM); \`{}\`{}\`{}
+\`{}\`{}\`{}c const size\+\_\+t MAX\+\_\+\+MOTOR\+\_\+\+NUM = 4; EJ\+\_\+\+DCMotor\+\_\+\+Manager\+::configure(\+MAX\+\_\+\+MOTOR\+\_\+\+NUM); \`{}\`{}\`{}
 \end{DoxyEnumerate}
 \begin{DoxyEnumerate}
-\item 制御クラスのインスタンスをマネージャクラス経由で取得する
+\item 制御クラスのインスタンスをマネージャクラス経由で生成する
 \end{DoxyEnumerate}
 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{classEJ__DCMotor}{EJ\_DCMotor}}* \mbox{\hyperlink{main_8cpp_a644fcbd84e8709ecffe4f8ceb8db4dab}{motor}} = NULL;}
-\DoxyCodeLine{\mbox{\hyperlink{main_8cpp_a644fcbd84e8709ecffe4f8ceb8db4dab}{motor}} = motorManager-\/>createMotor(13, 14, 0); \textcolor{comment}{/* ピン1, ピン2, インスタンス識別id */}}
+\DoxyCodeLine{\mbox{\hyperlink{main_8cpp_a644fcbd84e8709ecffe4f8ceb8db4dab}{motor}} = \mbox{\hyperlink{classEJ__DCMotor__Manager_a0347df3c51144cf13e702ca025740413}{EJ\_DCMotor\_Manager::createMotor}}(13, 14, 0); \textcolor{comment}{/* ピン1, ピン2, インスタンス識別id */}}
+\DoxyCodeLine{\mbox{\hyperlink{main_8cpp_a8dc3f522415638cc2f4b9a5ae4333a8c}{motorAlias}} = \mbox{\hyperlink{classEJ__DCMotor__Manager_afc721dde48d0e9f0d692ef3d3da85e50}{EJ\_DCMotor\_Manager::getMotor}}(0);}
+\DoxyCodeLine{\textcolor{comment}{/* motorとmotorAliasは同一のポインタを返します */}}
 
 \end{DoxyCode}
 
@@ -74,5 +77,21 @@
 \begin{DoxyEnumerate}
 \item メソッドを呼び出す
 
-\`{}\`{}\`{}c motor-\/$>$forward(); /$\ast$ モーターを正転させる $\ast$/ delay(1000); motor-\/$>$stop(); /$\ast$ モーターを停止させる $\ast$/ \`{}\`{}\`{} 
-\end{DoxyEnumerate}
+\`{}\`{}\`{}c motor-\/$>$forward(); /$\ast$ モーターを正転させる $\ast$/ delay(1000); motor\+Alias-\/$>$stop(); /$\ast$ モーターを停止させる $\ast$/ \`{}\`{}\`{}
+\end{DoxyEnumerate}\hypertarget{md_README_autotoc_md4}{}\doxysection{DEBUG MODE}\label{md_README_autotoc_md4}
+platformio.\+ini のbuild\+\_\+flagに\+M5\+\_\+\+DEBUGを定義することで M5系列の開発ボードでエラーログを出力可能です。
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{[env:m5stack-\/core2]}
+\DoxyCodeLine{platform = espressif32}
+\DoxyCodeLine{board = m5stack-\/core2}
+\DoxyCodeLine{framework = arduino}
+\DoxyCodeLine{lib\_deps = }
+\DoxyCodeLine{    m5stack/M5Core2@\string^0.1.5}
+\DoxyCodeLine{    madhephaestus/ESP32Servo@\string^0.12.1}
+\DoxyCodeLine{build\_flags = ; ←これを追記する}
+\DoxyCodeLine{  -\/D M5\_DEBUG ; ←これを追記する}
+
+\end{DoxyCode}
+ 

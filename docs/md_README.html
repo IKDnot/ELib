@@ -88,6 +88,7 @@ $(document).ready(function(){initNavTree('md_README.html',''); initResizable(); 
 <div class="textblock"><ul>
 <li>ESP32、M5Stack向け自作汎用ライブラリ置き場</li>
 <li>センサ、アクチュエータを制御する EJ_XXX クラスと EJ_XXX クラスを管理する EJ_XXX_Manager クラスを提供</li>
+<li>EJ_XXX_Managerクラスによって実世界のオブジェクトとソフトウェア内のインスタンスをstrictに紐づけ、管理可能</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md1"></a>
 仕様</h1>
@@ -115,32 +116,49 @@ Platform.io下での環境構築</h1>
 </div><!-- fragment --><ol type="1">
 <li>使いたいファイルでファイルをインクルードする</li>
 </ol>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="EJ__DCMotor_8h.html">EJ_DCMotor.h</a>&gt;</span></div>
-<div class="ttc" id="aEJ__DCMotor_8h_html"><div class="ttname"><a href="EJ__DCMotor_8h.html">EJ_DCMotor.h</a></div><div class="ttdoc">DCモーターを制御するクラスEJ_DCMotorクラスと、EJ_DCMotorクラスを管理するEJ_DCMotor_Managerクラスの定義</div></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="Elib_8h.html">Elib.h</a>&gt;</span></div>
+<div class="ttc" id="aElib_8h_html"><div class="ttname"><a href="Elib_8h.html">Elib.h</a></div></div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md3"></a>
 基本的な使い方</h1>
 <ol type="1">
 <li>ファイルをインクルードする</li>
 </ol>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="EJ__DCMotor_8h.html">EJ_DCMotor.h</a>&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="Elib_8h.html">Elib.h</a>&gt;</span></div>
 </div><!-- fragment --><ol type="1">
-<li><p class="startli">マネージャクラスのインスタンスを取得する</p>
-<p class="startli">```c const size_t MAX_MOTOR_NUM = 4; EJ_DCMotor_Manager* motorManager = NULL; motorManager = EJ_DCMotor_Manager::getInstance(MAX_MOTOR_NUM); ```</p>
+<li><p class="startli">マネージャクラスのインスタンスを生成する(初期化)</p>
+<p class="startli">```c const size_t MAX_MOTOR_NUM = 4; EJ_DCMotor_Manager::configure(MAX_MOTOR_NUM); ```</p>
 </li>
 </ol>
 <ol type="1">
-<li>制御クラスのインスタンスをマネージャクラス経由で取得する</li>
+<li>制御クラスのインスタンスをマネージャクラス経由で生成する</li>
 </ol>
 <div class="fragment"><div class="line"><a class="code" href="classEJ__DCMotor.html">EJ_DCMotor</a>* <a class="code" href="main_8cpp.html#a644fcbd84e8709ecffe4f8ceb8db4dab">motor</a> = NULL;</div>
-<div class="line"><a class="code" href="main_8cpp.html#a644fcbd84e8709ecffe4f8ceb8db4dab">motor</a> = motorManager-&gt;createMotor(13, 14, 0); <span class="comment">/* ピン1, ピン2, インスタンス識別id */</span></div>
+<div class="line"><a class="code" href="main_8cpp.html#a644fcbd84e8709ecffe4f8ceb8db4dab">motor</a> = <a class="code" href="classEJ__DCMotor__Manager.html#a0347df3c51144cf13e702ca025740413">EJ_DCMotor_Manager::createMotor</a>(13, 14, 0); <span class="comment">/* ピン1, ピン2, インスタンス識別id */</span></div>
+<div class="line"><a class="code" href="main_8cpp.html#a8dc3f522415638cc2f4b9a5ae4333a8c">motorAlias</a> = <a class="code" href="classEJ__DCMotor__Manager.html#afc721dde48d0e9f0d692ef3d3da85e50">EJ_DCMotor_Manager::getMotor</a>(0);</div>
+<div class="line"><span class="comment">/* motorとmotorAliasは同一のポインタを返します */</span></div>
+<div class="ttc" id="aclassEJ__DCMotor__Manager_html_a0347df3c51144cf13e702ca025740413"><div class="ttname"><a href="classEJ__DCMotor__Manager.html#a0347df3c51144cf13e702ca025740413">EJ_DCMotor_Manager::createMotor</a></div><div class="ttdeci">static EJ_DCMotor * createMotor(MotorDef motor)</div><div class="ttdoc">EJ_DCMotorクラスのインスタンスを生成する</div><div class="ttdef"><b>Definition:</b> <a href="EJ__DCMotor_8cpp_source.html#l00124">EJ_DCMotor.cpp:124</a></div></div>
+<div class="ttc" id="aclassEJ__DCMotor__Manager_html_afc721dde48d0e9f0d692ef3d3da85e50"><div class="ttname"><a href="classEJ__DCMotor__Manager.html#afc721dde48d0e9f0d692ef3d3da85e50">EJ_DCMotor_Manager::getMotor</a></div><div class="ttdeci">static EJ_DCMotor * getMotor(MotorDef motor)</div><div class="ttdoc">EJ_DCMotorクラスのインスタンスを取得する</div><div class="ttdef"><b>Definition:</b> <a href="EJ__DCMotor_8cpp_source.html#l00164">EJ_DCMotor.cpp:164</a></div></div>
 <div class="ttc" id="aclassEJ__DCMotor_html"><div class="ttname"><a href="classEJ__DCMotor.html">EJ_DCMotor</a></div><div class="ttdoc">DCモーターを制御するクラス</div><div class="ttdef"><b>Definition:</b> <a href="EJ__DCMotor_8h_source.html#l00049">EJ_DCMotor.h:50</a></div></div>
 <div class="ttc" id="amain_8cpp_html_a644fcbd84e8709ecffe4f8ceb8db4dab"><div class="ttname"><a href="main_8cpp.html#a644fcbd84e8709ecffe4f8ceb8db4dab">motor</a></div><div class="ttdeci">EJ_DCMotor * motor</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00016">main.cpp:16</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a8dc3f522415638cc2f4b9a5ae4333a8c"><div class="ttname"><a href="main_8cpp.html#a8dc3f522415638cc2f4b9a5ae4333a8c">motorAlias</a></div><div class="ttdeci">EJ_DCMotor * motorAlias</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00017">main.cpp:17</a></div></div>
 </div><!-- fragment --><ol type="1">
 <li><p class="startli">メソッドを呼び出す</p>
-<p class="startli">```c motor-&gt;forward(); /* モーターを正転させる */ delay(1000); motor-&gt;stop(); /* モーターを停止させる */ ``` </p>
+<p class="startli">```c motor-&gt;forward(); /* モーターを正転させる */ delay(1000); motorAlias-&gt;stop(); /* モーターを停止させる */ ```</p>
 </li>
 </ol>
-</div></div><!-- contents -->
+<h1><a class="anchor" id="autotoc_md4"></a>
+DEBUG MODE</h1>
+<p>platformio.ini のbuild_flagにM5_DEBUGを定義することで M5系列の開発ボードでエラーログを出力可能です。</p>
+<div class="fragment"><div class="line">[env:m5stack-core2]</div>
+<div class="line">platform = espressif32</div>
+<div class="line">board = m5stack-core2</div>
+<div class="line">framework = arduino</div>
+<div class="line">lib_deps = </div>
+<div class="line">    m5stack/M5Core2@^0.1.5</div>
+<div class="line">    madhephaestus/ESP32Servo@^0.12.1</div>
+<div class="line">build_flags = ; ←これを追記する</div>
+<div class="line">  -D M5_DEBUG ; ←これを追記する</div>
+</div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
