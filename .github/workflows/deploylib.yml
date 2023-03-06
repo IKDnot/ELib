@@ -32,6 +32,7 @@ jobs:
           mkdir -p tmp/lib/include
           cp Project/src/EJ_*.cpp tmp/lib/src/
           cp Project/include/EJ_*.h tmp/lib/include/
+          cp Project/include/Elib.h tmp/lib/include/
           git config --global user.email "ikeda.naoto.ku@gmail.com"
           git config --global user.name "IKDnot"
           git fetch
