@@ -12,6 +12,7 @@ const char* _classname = "main";
 
 const size_t MAX_MOTOR_NUM = 4;
 const size_t MAX_SERVO_SIZE = 1;
+const size_t MAX_TOFUNIT_SIZE = 3;
 
 EJ_DCMotor* motor = NULL;
 EJ_DCMotor* motorAlias = NULL;
@@ -21,20 +22,46 @@ EJ_ServoMotor* servo = NULL;
 EJ_ServoMotor* servoAlias = NULL;
 EJ_ServoMotor* invalidServo = NULL;
 
-void setup() {
-  M5.begin();
-  
-  /* DCモータテスト */
+EJ_ToFUnit* tof = NULL;
+
+void setupMotor() {
   if (!EJ_DCMotor_Manager::configure(MAX_MOTOR_NUM)) {
     ERRORLOG();
     M5.shutdown(5);
   }
 
   motor = EJ_DCMotor_Manager::createMotor(MOTOR1);
-  motorAlias = EJ_DCMotor_Manager::getMotor(MOTOR1.id);
-  invalidMotor = EJ_DCMotor_Manager::createMotor(1,3,5); // Error 出力テスト用
+  if (motor == NULL) {
+    /*
+    ERRORLOG
+        内容：メモリ確保に失敗した
+    */
+    ERRORLOG();
+    M5.shutdown(5);
+  }
 
-  /* Servoモータテスト */
+  motorAlias = EJ_DCMotor_Manager::getMotor(MOTOR1.id);
+  if (motorAlias == NULL) {
+    /*
+    ERRORLOG
+        内容：メモリ確保に失敗した
+    */
+    ERRORLOG();
+    M5.shutdown(5);
+  }
+  
+  invalidMotor = EJ_DCMotor_Manager::createMotor(1,3,5); // Error 出力テスト用
+  if (invalidMotor == NULL) {
+    /*
+    ERRORLOG
+        内容：メモリ確保に失敗した
+    */
+    ERRORLOG();
+    delay(2000);
+  }
+}
+
+void setupServo() {
   if (!EJ_ServoMotor_Manager::configure(MAX_SERVO_SIZE)) {
     ERRORLOG();
     M5.shutdown(5);
@@ -47,7 +74,7 @@ void setup() {
         内容：メモリ確保に失敗した
     */
     ERRORLOG();
-    delay(2000);
+    M5.shutdown(5);
   }
 
   servoAlias = EJ_ServoMotor_Manager::getServo(SERVO1.id);
@@ -57,51 +84,47 @@ void setup() {
         内容：メモリ確保に失敗した
     */
     ERRORLOG();
-    delay(2000);
+    M5.shutdown(5);
   }
 
   invalidServo = EJ_ServoMotor_Manager::createServo(1, 50); // Error 出力テスト用
   if (invalidServo == NULL) {
-  /*
-  ERRORLOG
-      内容：メモリ確保に失敗した
-  */
-  ERRORLOG();
-  delay(2000);
+    /*
+    ERRORLOG
+        内容：メモリ確保に失敗した
+    */
+    ERRORLOG();
+    delay(2000);
   }
 }
 
-void loop() {
-  static int count = 0;
-  M5.Lcd.println(count);
-
-  motor->forward();
-  M5.Lcd.println("forward");
-  
-  delay(1000);
-  
-  motor->reverse();
-  M5.Lcd.println("reverse");
-
-  delay(1000);
-  
-  motorAlias->stop();
-  M5.Lcd.println("stop");
-
-  delay(1000);
-
-  /* servoとservoAliasが同じインスタンスを指していればOK*/
-  for (int i=1;i<19;i++) {
-      if (i%2 == 0){
-        servo->write(i*10);
-        M5.Lcd.printf("servo->write(%d)\n",i*10);
-      } else {
-        servoAlias->write(i*10);
-        M5.Lcd.printf("servoAlias->write(%d)\n",i*10);
-      }
-      delay(1000);
+void setupToFUnit() {
+  if (!EJ_ToFUnit_Manager::configure(MAX_TOFUNIT_SIZE)) {
+    ERRORLOG();
+    M5.shutdown(5);
   }
-  
+
+  tof = EJ_ToFUnit_Manager::createToFUnit(0);
+  if (tof == NULL) {
+    /*
+    ERRORLOG
+        内容：メモリ確保に失敗した
+    */
+    ERRORLOG();
+    M5.shutdown(5);
+  }
+
+  M5.Lcd.printf("ADDRESS:%#x\n", tof->getAddress());
+}
+
+void setup() {
+  M5.begin();
+  Wire.begin(32, 33);
+  setupToFUnit();
+}
+
+void loop() {
+  uint16_t millis = tof->readRangeContinuousMillimeters();
+  M5.Lcd.printf("tof:%dmm\n", millis);
   delay(1000);
-  count++;
 }
