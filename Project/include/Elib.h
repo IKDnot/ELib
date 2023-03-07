@@ -30,4 +30,5 @@
 #define ELIB
 #include "EJ_DCMotor.h"
 #include "EJ_ServoMotor.h"
+#include "EJ_ToFUnit.h"
 #endif // ELIB
