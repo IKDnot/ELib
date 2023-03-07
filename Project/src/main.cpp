@@ -124,7 +124,7 @@ void setup() {
 }
 
 void loop() {
-  uint16_t millis = tof->readRangeContinuousMillimeters();
-  M5.Lcd.printf("tof:%dmm\n", millis);
+  uint16_t millis = tof->read();
+  M5.Lcd.printf("%dmm\n", millis);
   delay(1000);
 }

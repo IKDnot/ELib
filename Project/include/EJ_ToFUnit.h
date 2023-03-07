@@ -53,6 +53,12 @@ public:
      */
     ~EJ_ToFUnit();
 
+public:
+    /**
+     * @brief 距離を取得する (単位: mm)
+     */
+    virtual uint16_t read();
+
 private:
     static const char* _classname;
     uint8_t _address;

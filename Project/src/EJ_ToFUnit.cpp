@@ -35,6 +35,11 @@ EJ_ToFUnit::~EJ_ToFUnit()
     VL53L0X::stopContinuous();
 }
 
+uint16_t EJ_ToFUnit::read()
+{
+    return VL53L0X::readRangeContinuousMillimeters();
+}
+
 /*--------------
 class EJ_ToFUnit
 --------------*/
