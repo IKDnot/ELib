@@ -1,0 +1,126 @@
+\hypertarget{classEJ__ToFUnit__Manager}{}\doxysection{EJ\+\_\+\+To\+FUnit\+\_\+\+Manager クラス}
+\label{classEJ__ToFUnit__Manager}\index{EJ\_ToFUnit\_Manager@{EJ\_ToFUnit\_Manager}}
+
+
+EJ\+\_\+\+To\+FUnitクラスのインスタンスを生成、管理するクラス  
+
+
+
+
+{\ttfamily \#include $<$EJ\+\_\+\+To\+FUnit.\+h$>$}
+
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEJ__ToFUnit__Manager_a8d1c7d41da4410ec2b195d61ca34b5e8}{$\sim$\+EJ\+\_\+\+To\+FUnit\+\_\+\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em EJ\+\_\+\+To\+FUnit\+\_\+\+Managerクラスのデストラクタ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{静的公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classEJ__ToFUnit__Manager_a4a1e26e1ce72109ae6d136c9e90c69ba}{configure}} (size\+\_\+t max\+Instance\+Size)
+\begin{DoxyCompactList}\small\item\em EJ\+\_\+\+To\+FUnit\+\_\+\+Managerのインスタンスを生成する \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classEJ__ToFUnit}{EJ\+\_\+\+To\+FUnit}} $\ast$ \mbox{\hyperlink{classEJ__ToFUnit__Manager_a145ea7784ef1ffce7307b4d3f8029c5e}{create\+To\+FUnit}} (uint8\+\_\+t id)
+\begin{DoxyCompactList}\small\item\em EJ\+\_\+\+To\+FUnitクラスのインスタンスを生成する \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classEJ__ToFUnit}{EJ\+\_\+\+To\+FUnit}} $\ast$ \mbox{\hyperlink{classEJ__ToFUnit__Manager_a16b49a53458b620c862229fc873f3a1f}{get\+To\+FUnit}} (uint8\+\_\+t id)
+\begin{DoxyCompactList}\small\item\em EJ\+\_\+\+To\+FUnitクラスのインスタンスを取得する \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{詳解}
+EJ\+\_\+\+To\+FUnitクラスのインスタンスを生成、管理するクラス 
+
+本クラスはシングルトンで提供され、configure()メソッドにのみよってインスタンスが1つだけ生成される 
+
+ EJ\+\_\+\+To\+FUnit.\+h の 72 行目に定義があります。
+
+
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{classEJ__ToFUnit__Manager_a8d1c7d41da4410ec2b195d61ca34b5e8}\label{classEJ__ToFUnit__Manager_a8d1c7d41da4410ec2b195d61ca34b5e8}} 
+\index{EJ\_ToFUnit\_Manager@{EJ\_ToFUnit\_Manager}!````~EJ\_ToFUnit\_Manager@{$\sim$EJ\_ToFUnit\_Manager}}
+\index{````~EJ\_ToFUnit\_Manager@{$\sim$EJ\_ToFUnit\_Manager}!EJ\_ToFUnit\_Manager@{EJ\_ToFUnit\_Manager}}
+\doxysubsubsection{\texorpdfstring{$\sim$EJ\_ToFUnit\_Manager()}{~EJ\_ToFUnit\_Manager()}}
+{\footnotesize\ttfamily EJ\+\_\+\+To\+FUnit\+\_\+\+Manager\+::$\sim$\+EJ\+\_\+\+To\+FUnit\+\_\+\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+EJ\+\_\+\+To\+FUnit\+\_\+\+Managerクラスのデストラクタ 
+
+本クラスによって生成された\+EJ\+\_\+\+To\+FUnitクラスのインスタンスをすべて解放する 
+
+ EJ\+\_\+\+To\+FUnit.\+cpp の 87 行目に定義があります。
+
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{classEJ__ToFUnit__Manager_a4a1e26e1ce72109ae6d136c9e90c69ba}\label{classEJ__ToFUnit__Manager_a4a1e26e1ce72109ae6d136c9e90c69ba}} 
+\index{EJ\_ToFUnit\_Manager@{EJ\_ToFUnit\_Manager}!configure@{configure}}
+\index{configure@{configure}!EJ\_ToFUnit\_Manager@{EJ\_ToFUnit\_Manager}}
+\doxysubsubsection{\texorpdfstring{configure()}{configure()}}
+{\footnotesize\ttfamily bool EJ\+\_\+\+To\+FUnit\+\_\+\+Manager\+::configure (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{max\+Instance\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+EJ\+\_\+\+To\+FUnit\+\_\+\+Managerのインスタンスを生成する 
+
+
+\begin{DoxyParams}{引数}
+{\em max\+Instance\+Size} & EJ\+\_\+\+To\+FUnitの最大インスタンス数の定義 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+true\+: 生成成功 / false\+: 生成失敗 
+\end{DoxyReturn}
+
+
+ EJ\+\_\+\+To\+FUnit.\+cpp の 100 行目に定義があります。
+
+\mbox{\Hypertarget{classEJ__ToFUnit__Manager_a145ea7784ef1ffce7307b4d3f8029c5e}\label{classEJ__ToFUnit__Manager_a145ea7784ef1ffce7307b4d3f8029c5e}} 
+\index{EJ\_ToFUnit\_Manager@{EJ\_ToFUnit\_Manager}!createToFUnit@{createToFUnit}}
+\index{createToFUnit@{createToFUnit}!EJ\_ToFUnit\_Manager@{EJ\_ToFUnit\_Manager}}
+\doxysubsubsection{\texorpdfstring{createToFUnit()}{createToFUnit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEJ__ToFUnit}{EJ\+\_\+\+To\+FUnit}} $\ast$ EJ\+\_\+\+To\+FUnit\+\_\+\+Manager\+::create\+To\+FUnit (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+EJ\+\_\+\+To\+FUnitクラスのインスタンスを生成する 
+
+生成したインスタンスはget\+To\+FUnit関数で取得できるように同時に自身の\+\_\+instance\+List配列に記憶しておく 
+\begin{DoxyParams}{引数}
+{\em id} & To\+Fセンサユニットの識別番号 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+EJ\+\_\+\+To\+FUnitクラスのインスタンスを指すポインタ 
+\end{DoxyReturn}
+
+
+ EJ\+\_\+\+To\+FUnit.\+cpp の 116 行目に定義があります。
+
+\mbox{\Hypertarget{classEJ__ToFUnit__Manager_a16b49a53458b620c862229fc873f3a1f}\label{classEJ__ToFUnit__Manager_a16b49a53458b620c862229fc873f3a1f}} 
+\index{EJ\_ToFUnit\_Manager@{EJ\_ToFUnit\_Manager}!getToFUnit@{getToFUnit}}
+\index{getToFUnit@{getToFUnit}!EJ\_ToFUnit\_Manager@{EJ\_ToFUnit\_Manager}}
+\doxysubsubsection{\texorpdfstring{getToFUnit()}{getToFUnit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEJ__ToFUnit}{EJ\+\_\+\+To\+FUnit}} $\ast$ EJ\+\_\+\+To\+FUnit\+\_\+\+Manager\+::get\+To\+FUnit (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+EJ\+\_\+\+To\+FUnitクラスのインスタンスを取得する 
+
+create\+To\+FUnit関数で生成した\+EJ\+\_\+\+To\+FUnitクラスのインスタンスを取得し返す。指定したidのインスタンスが生成されていない場合や取得に失敗した場合は\+NULLを返す。 
+\begin{DoxyParams}{引数}
+{\em id} & To\+Fセンサユニットの識別番号 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+EJ\+\_\+\+To\+FUnitクラスのインスタンスを指すポインタ 
+\end{DoxyReturn}
+
+
+ EJ\+\_\+\+To\+FUnit.\+cpp の 151 行目に定義があります。
+
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Project/include/\mbox{\hyperlink{EJ__ToFUnit_8h}{EJ\+\_\+\+To\+FUnit.\+h}}\item 
+Project/src/\mbox{\hyperlink{EJ__ToFUnit_8cpp}{EJ\+\_\+\+To\+FUnit.\+cpp}}\end{DoxyCompactItemize}
