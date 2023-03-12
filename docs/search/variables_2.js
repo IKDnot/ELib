@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['max_5fmotor_5fnum_107',['MAX_MOTOR_NUM',['../main_8cpp.html#ad1e11b2cc68be48fc8c2bea633a735e8',1,'main.cpp']]],
-  ['max_5fservo_5fsize_108',['MAX_SERVO_SIZE',['../main_8cpp.html#a1af8a3877f99984d9b2e7a6b9f99cb1a',1,'main.cpp']]],
-  ['max_5ftofunit_5fsize_109',['MAX_TOFUNIT_SIZE',['../main_8cpp.html#ac4fda20509568c00e2f7e1ea18ed051f',1,'main.cpp']]],
-  ['motor_110',['motor',['../main_8cpp.html#a644fcbd84e8709ecffe4f8ceb8db4dab',1,'main.cpp']]],
-  ['motor1_111',['MOTOR1',['../PinAssign_8h.html#a3239a1f705d30506d6c37331fc91ac09',1,'PinAssign.h']]],
-  ['motoralias_112',['motorAlias',['../main_8cpp.html#a8dc3f522415638cc2f4b9a5ae4333a8c',1,'main.cpp']]]
+  ['id_129',['id',['../structMotorDef.html#a0d6122fcb9c882ec0d6f9be5f1e6240f',1,'MotorDef::id()'],['../structServoDef.html#a84b15a8a2f16c2d3eb276300a171b3c5',1,'ServoDef::id()']]],
+  ['invalidmotor_130',['invalidMotor',['../main_8cpp.html#a81d12b793f7fa32cd6d04f49d8dcaaaf',1,'main.cpp']]],
+  ['invalidservo_131',['invalidServo',['../main_8cpp.html#a0474c6c10f79c5f7e38d71f357e5c9d6',1,'main.cpp']]]
 ];

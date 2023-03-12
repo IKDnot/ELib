@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['pin_113',['pin',['../structServoDef.html#ae450f6594fef38e6945ec860b500fcdf',1,'ServoDef']]],
-  ['pin1_114',['pin1',['../structMotorDef.html#aef6a2e6a35c8af7a1f40d20f897f6557',1,'MotorDef']]],
-  ['pin2_115',['pin2',['../structMotorDef.html#a3c8a8496eabbce67500c55ac87314c71',1,'MotorDef']]]
+  ['line_5fheight_132',['LINE_HEIGHT',['../main_8cpp.html#a57869e062a535262bd6061d017f6a355',1,'main.cpp']]]
 ];

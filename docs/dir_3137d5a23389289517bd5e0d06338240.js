@@ -5,6 +5,10 @@ var dir_3137d5a23389289517bd5e0d06338240 =
       [ "EJ_DCMotor", "classEJ__DCMotor.html", "classEJ__DCMotor" ],
       [ "EJ_DCMotor_Manager", "classEJ__DCMotor__Manager.html", "classEJ__DCMotor__Manager" ]
     ] ],
+    [ "EJ_I2CHub.h", "EJ__I2CHub_8h.html", [
+      [ "EJ_I2CHub", "classEJ__I2CHub.html", "classEJ__I2CHub" ],
+      [ "EJ_I2CHub_Manager", "classEJ__I2CHub__Manager.html", "classEJ__I2CHub__Manager" ]
+    ] ],
     [ "EJ_ServoMotor.h", "EJ__ServoMotor_8h.html", [
       [ "ServoDef", "structServoDef.html", "structServoDef" ],
       [ "EJ_ServoMotor", "classEJ__ServoMotor.html", "classEJ__ServoMotor" ],

@@ -16,6 +16,8 @@ void \mbox{\hyperlink{main_8cpp_a7876749fb7e23571c7248d80ae0332ef}{setup\+Motor}
 \item 
 void \mbox{\hyperlink{main_8cpp_a01a2cf0eea853a579e9474d0c6d350d8}{setup\+Servo}} ()
 \item 
+void \mbox{\hyperlink{main_8cpp_a6c8cc91ae3f592c07e20a9b0966b5f3d}{setup\+I2\+CHub\+Unit}} ()
+\item 
 void \mbox{\hyperlink{main_8cpp_a32b29b8c13d75a4dc29af25f58b85f4f}{setup\+To\+FUnit}} ()
 \item 
 void \mbox{\hyperlink{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{setup}} ()
@@ -31,7 +33,17 @@ const size\+\_\+t \mbox{\hyperlink{main_8cpp_ad1e11b2cc68be48fc8c2bea633a735e8}{
 \item 
 const size\+\_\+t \mbox{\hyperlink{main_8cpp_a1af8a3877f99984d9b2e7a6b9f99cb1a}{MAX\+\_\+\+SERVO\+\_\+\+SIZE}} = 1
 \item 
-const size\+\_\+t \mbox{\hyperlink{main_8cpp_ac4fda20509568c00e2f7e1ea18ed051f}{MAX\+\_\+\+TOFUNIT\+\_\+\+SIZE}} = 3
+const size\+\_\+t \mbox{\hyperlink{main_8cpp_ac4fda20509568c00e2f7e1ea18ed051f}{MAX\+\_\+\+TOFUNIT\+\_\+\+SIZE}} = 4
+\item 
+const size\+\_\+t \mbox{\hyperlink{main_8cpp_af71a7323b6df7aad70f81d12597e6305}{MAX\+\_\+\+I2\+CHUBUNIT\+\_\+\+SIZE}} = 1
+\item 
+const int \mbox{\hyperlink{main_8cpp_ada30337d2863f86a77c31f8b613f6af7}{M5\+\_\+\+SHUTDOWN\+\_\+\+DELAY}} = 5000
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a60bd75e3e4fe4d20e6cf526e65a83cb6}{SCREEN\+\_\+X}} = 0
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a38913f1040cc7bd0f1ab8b6d7ae2f7e6}{SCREEN\+\_\+Y}} = 20
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a57869e062a535262bd6061d017f6a355}{LINE\+\_\+\+HEIGHT}} = 40
 \item 
 \mbox{\hyperlink{classEJ__DCMotor}{EJ\+\_\+\+DCMotor}} $\ast$ \mbox{\hyperlink{main_8cpp_a644fcbd84e8709ecffe4f8ceb8db4dab}{motor}} = NULL
 \item 
@@ -45,7 +57,9 @@ const size\+\_\+t \mbox{\hyperlink{main_8cpp_ac4fda20509568c00e2f7e1ea18ed051f}{
 \item 
 \mbox{\hyperlink{classEJ__ServoMotor}{EJ\+\_\+\+Servo\+Motor}} $\ast$ \mbox{\hyperlink{main_8cpp_a0474c6c10f79c5f7e38d71f357e5c9d6}{invalid\+Servo}} = NULL
 \item 
-\mbox{\hyperlink{classEJ__ToFUnit}{EJ\+\_\+\+To\+FUnit}} $\ast$ \mbox{\hyperlink{main_8cpp_a7d0d13306313e78ff274465bee1a9e38}{tof}} = NULL
+\mbox{\hyperlink{classEJ__ToFUnit}{EJ\+\_\+\+To\+FUnit}} $\ast$ \mbox{\hyperlink{main_8cpp_a522dc6bd963dc80e6f75687c70a7c706}{tof}} \mbox{[}\mbox{\hyperlink{main_8cpp_ac4fda20509568c00e2f7e1ea18ed051f}{MAX\+\_\+\+TOFUNIT\+\_\+\+SIZE}}\mbox{]} = \{NULL\}
+\item 
+\mbox{\hyperlink{classEJ__I2CHub}{EJ\+\_\+\+I2\+CHub}} $\ast$ \mbox{\hyperlink{main_8cpp_a209ffc41f804846e50bb0d800aa69090}{hub}} = NULL
 \end{DoxyCompactItemize}
 
 
@@ -71,7 +85,7 @@ const size\+\_\+t \mbox{\hyperlink{main_8cpp_ac4fda20509568c00e2f7e1ea18ed051f}{
 
 
 
- main.\+cpp の 126 行目に定義があります。
+ main.\+cpp の 170 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}\label{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}} 
 \index{main.cpp@{main.cpp}!setup@{setup}}
@@ -81,7 +95,17 @@ const size\+\_\+t \mbox{\hyperlink{main_8cpp_ac4fda20509568c00e2f7e1ea18ed051f}{
 
 
 
- main.\+cpp の 120 行目に定義があります。
+ main.\+cpp の 160 行目に定義があります。
+
+\mbox{\Hypertarget{main_8cpp_a6c8cc91ae3f592c07e20a9b0966b5f3d}\label{main_8cpp_a6c8cc91ae3f592c07e20a9b0966b5f3d}} 
+\index{main.cpp@{main.cpp}!setupI2CHubUnit@{setupI2CHubUnit}}
+\index{setupI2CHubUnit@{setupI2CHubUnit}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{setupI2CHubUnit()}{setupI2CHubUnit()}}
+{\footnotesize\ttfamily void setup\+I2\+CHub\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+ main.\+cpp の 116 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_a7876749fb7e23571c7248d80ae0332ef}\label{main_8cpp_a7876749fb7e23571c7248d80ae0332ef}} 
 \index{main.cpp@{main.cpp}!setupMotor@{setupMotor}}
@@ -91,7 +115,7 @@ const size\+\_\+t \mbox{\hyperlink{main_8cpp_ac4fda20509568c00e2f7e1ea18ed051f}{
 
 
 
- main.\+cpp の 27 行目に定義があります。
+ main.\+cpp の 36 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_a01a2cf0eea853a579e9474d0c6d350d8}\label{main_8cpp_a01a2cf0eea853a579e9474d0c6d350d8}} 
 \index{main.cpp@{main.cpp}!setupServo@{setupServo}}
@@ -101,7 +125,7 @@ const size\+\_\+t \mbox{\hyperlink{main_8cpp_ac4fda20509568c00e2f7e1ea18ed051f}{
 
 
 
- main.\+cpp の 64 行目に定義があります。
+ main.\+cpp の 76 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_a32b29b8c13d75a4dc29af25f58b85f4f}\label{main_8cpp_a32b29b8c13d75a4dc29af25f58b85f4f}} 
 \index{main.cpp@{main.cpp}!setupToFUnit@{setupToFUnit}}
@@ -111,7 +135,7 @@ const size\+\_\+t \mbox{\hyperlink{main_8cpp_ac4fda20509568c00e2f7e1ea18ed051f}{
 
 
 
- main.\+cpp の 101 行目に定義があります。
+ main.\+cpp の 136 行目に定義があります。
 
 
 
@@ -126,6 +150,16 @@ const size\+\_\+t \mbox{\hyperlink{main_8cpp_ac4fda20509568c00e2f7e1ea18ed051f}{
 
  main.\+cpp の 11 行目に定義があります。
 
+\mbox{\Hypertarget{main_8cpp_a209ffc41f804846e50bb0d800aa69090}\label{main_8cpp_a209ffc41f804846e50bb0d800aa69090}} 
+\index{main.cpp@{main.cpp}!hub@{hub}}
+\index{hub@{hub}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{hub}{hub}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEJ__I2CHub}{EJ\+\_\+\+I2\+CHub}}$\ast$ hub = NULL}
+
+
+
+ main.\+cpp の 34 行目に定義があります。
+
 \mbox{\Hypertarget{main_8cpp_a81d12b793f7fa32cd6d04f49d8dcaaaf}\label{main_8cpp_a81d12b793f7fa32cd6d04f49d8dcaaaf}} 
 \index{main.cpp@{main.cpp}!invalidMotor@{invalidMotor}}
 \index{invalidMotor@{invalidMotor}!main.cpp@{main.cpp}}
@@ -134,7 +168,7 @@ const size\+\_\+t \mbox{\hyperlink{main_8cpp_ac4fda20509568c00e2f7e1ea18ed051f}{
 
 
 
- main.\+cpp の 19 行目に定義があります。
+ main.\+cpp の 27 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_a0474c6c10f79c5f7e38d71f357e5c9d6}\label{main_8cpp_a0474c6c10f79c5f7e38d71f357e5c9d6}} 
 \index{main.cpp@{main.cpp}!invalidServo@{invalidServo}}
@@ -144,7 +178,37 @@ const size\+\_\+t \mbox{\hyperlink{main_8cpp_ac4fda20509568c00e2f7e1ea18ed051f}{
 
 
 
- main.\+cpp の 23 行目に定義があります。
+ main.\+cpp の 30 行目に定義があります。
+
+\mbox{\Hypertarget{main_8cpp_a57869e062a535262bd6061d017f6a355}\label{main_8cpp_a57869e062a535262bd6061d017f6a355}} 
+\index{main.cpp@{main.cpp}!LINE\_HEIGHT@{LINE\_HEIGHT}}
+\index{LINE\_HEIGHT@{LINE\_HEIGHT}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{LINE\_HEIGHT}{LINE\_HEIGHT}}
+{\footnotesize\ttfamily const uint8\+\_\+t LINE\+\_\+\+HEIGHT = 40}
+
+
+
+ main.\+cpp の 22 行目に定義があります。
+
+\mbox{\Hypertarget{main_8cpp_ada30337d2863f86a77c31f8b613f6af7}\label{main_8cpp_ada30337d2863f86a77c31f8b613f6af7}} 
+\index{main.cpp@{main.cpp}!M5\_SHUTDOWN\_DELAY@{M5\_SHUTDOWN\_DELAY}}
+\index{M5\_SHUTDOWN\_DELAY@{M5\_SHUTDOWN\_DELAY}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{M5\_SHUTDOWN\_DELAY}{M5\_SHUTDOWN\_DELAY}}
+{\footnotesize\ttfamily const int M5\+\_\+\+SHUTDOWN\+\_\+\+DELAY = 5000}
+
+
+
+ main.\+cpp の 18 行目に定義があります。
+
+\mbox{\Hypertarget{main_8cpp_af71a7323b6df7aad70f81d12597e6305}\label{main_8cpp_af71a7323b6df7aad70f81d12597e6305}} 
+\index{main.cpp@{main.cpp}!MAX\_I2CHUBUNIT\_SIZE@{MAX\_I2CHUBUNIT\_SIZE}}
+\index{MAX\_I2CHUBUNIT\_SIZE@{MAX\_I2CHUBUNIT\_SIZE}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_I2CHUBUNIT\_SIZE}{MAX\_I2CHUBUNIT\_SIZE}}
+{\footnotesize\ttfamily const size\+\_\+t MAX\+\_\+\+I2\+CHUBUNIT\+\_\+\+SIZE = 1}
+
+
+
+ main.\+cpp の 16 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_ad1e11b2cc68be48fc8c2bea633a735e8}\label{main_8cpp_ad1e11b2cc68be48fc8c2bea633a735e8}} 
 \index{main.cpp@{main.cpp}!MAX\_MOTOR\_NUM@{MAX\_MOTOR\_NUM}}
@@ -170,7 +234,7 @@ const size\+\_\+t \mbox{\hyperlink{main_8cpp_ac4fda20509568c00e2f7e1ea18ed051f}{
 \index{main.cpp@{main.cpp}!MAX\_TOFUNIT\_SIZE@{MAX\_TOFUNIT\_SIZE}}
 \index{MAX\_TOFUNIT\_SIZE@{MAX\_TOFUNIT\_SIZE}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{MAX\_TOFUNIT\_SIZE}{MAX\_TOFUNIT\_SIZE}}
-{\footnotesize\ttfamily const size\+\_\+t MAX\+\_\+\+TOFUNIT\+\_\+\+SIZE = 3}
+{\footnotesize\ttfamily const size\+\_\+t MAX\+\_\+\+TOFUNIT\+\_\+\+SIZE = 4}
 
 
 
@@ -184,7 +248,7 @@ const size\+\_\+t \mbox{\hyperlink{main_8cpp_ac4fda20509568c00e2f7e1ea18ed051f}{
 
 
 
- main.\+cpp の 17 行目に定義があります。
+ main.\+cpp の 25 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_a8dc3f522415638cc2f4b9a5ae4333a8c}\label{main_8cpp_a8dc3f522415638cc2f4b9a5ae4333a8c}} 
 \index{main.cpp@{main.cpp}!motorAlias@{motorAlias}}
@@ -194,7 +258,27 @@ const size\+\_\+t \mbox{\hyperlink{main_8cpp_ac4fda20509568c00e2f7e1ea18ed051f}{
 
 
 
- main.\+cpp の 18 行目に定義があります。
+ main.\+cpp の 26 行目に定義があります。
+
+\mbox{\Hypertarget{main_8cpp_a60bd75e3e4fe4d20e6cf526e65a83cb6}\label{main_8cpp_a60bd75e3e4fe4d20e6cf526e65a83cb6}} 
+\index{main.cpp@{main.cpp}!SCREEN\_X@{SCREEN\_X}}
+\index{SCREEN\_X@{SCREEN\_X}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{SCREEN\_X}{SCREEN\_X}}
+{\footnotesize\ttfamily const uint8\+\_\+t SCREEN\+\_\+X = 0}
+
+
+
+ main.\+cpp の 20 行目に定義があります。
+
+\mbox{\Hypertarget{main_8cpp_a38913f1040cc7bd0f1ab8b6d7ae2f7e6}\label{main_8cpp_a38913f1040cc7bd0f1ab8b6d7ae2f7e6}} 
+\index{main.cpp@{main.cpp}!SCREEN\_Y@{SCREEN\_Y}}
+\index{SCREEN\_Y@{SCREEN\_Y}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{SCREEN\_Y}{SCREEN\_Y}}
+{\footnotesize\ttfamily const uint8\+\_\+t SCREEN\+\_\+Y = 20}
+
+
+
+ main.\+cpp の 21 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_a76ffe5860735d6110228cef9dd1831ac}\label{main_8cpp_a76ffe5860735d6110228cef9dd1831ac}} 
 \index{main.cpp@{main.cpp}!servo@{servo}}
@@ -204,7 +288,7 @@ const size\+\_\+t \mbox{\hyperlink{main_8cpp_ac4fda20509568c00e2f7e1ea18ed051f}{
 
 
 
- main.\+cpp の 21 行目に定義があります。
+ main.\+cpp の 28 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_a82aa2cf01ebac4fe0c5ca1060af6c7ea}\label{main_8cpp_a82aa2cf01ebac4fe0c5ca1060af6c7ea}} 
 \index{main.cpp@{main.cpp}!servoAlias@{servoAlias}}
@@ -214,15 +298,15 @@ const size\+\_\+t \mbox{\hyperlink{main_8cpp_ac4fda20509568c00e2f7e1ea18ed051f}{
 
 
 
- main.\+cpp の 22 行目に定義があります。
+ main.\+cpp の 29 行目に定義があります。
 
-\mbox{\Hypertarget{main_8cpp_a7d0d13306313e78ff274465bee1a9e38}\label{main_8cpp_a7d0d13306313e78ff274465bee1a9e38}} 
+\mbox{\Hypertarget{main_8cpp_a522dc6bd963dc80e6f75687c70a7c706}\label{main_8cpp_a522dc6bd963dc80e6f75687c70a7c706}} 
 \index{main.cpp@{main.cpp}!tof@{tof}}
 \index{tof@{tof}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{tof}{tof}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classEJ__ToFUnit}{EJ\+\_\+\+To\+FUnit}}$\ast$ tof = NULL}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEJ__ToFUnit}{EJ\+\_\+\+To\+FUnit}}$\ast$ tof\mbox{[}\mbox{\hyperlink{main_8cpp_ac4fda20509568c00e2f7e1ea18ed051f}{MAX\+\_\+\+TOFUNIT\+\_\+\+SIZE}}\mbox{]} = \{NULL\}}
 
 
 
- main.\+cpp の 25 行目に定義があります。
+ main.\+cpp の 33 行目に定義があります。
 

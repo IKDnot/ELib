@@ -1,0 +1,128 @@
+\hypertarget{classEJ__I2CHub__Manager}{}\doxysection{EJ\+\_\+\+I2\+CHub\+\_\+\+Manager クラス}
+\label{classEJ__I2CHub__Manager}\index{EJ\_I2CHub\_Manager@{EJ\_I2CHub\_Manager}}
+
+
+EJ\+\_\+\+I2\+CHubクラスのインスタンスを生成、管理するクラス  
+
+
+
+
+{\ttfamily \#include $<$EJ\+\_\+\+I2\+CHub.\+h$>$}
+
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEJ__I2CHub__Manager_a06b94098bef13d6ae7e44d4d849a7b50}{$\sim$\+EJ\+\_\+\+I2\+CHub\+\_\+\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em EJ\+\_\+\+I2\+CHub\+\_\+\+Managerクラスのデストラクタ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{静的公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classEJ__I2CHub__Manager_a5c0a394d0710805ea91260ab7cf635d8}{configure}} (size\+\_\+t max\+Instance\+Size)
+\begin{DoxyCompactList}\small\item\em EJ\+\_\+\+I2\+CHub\+\_\+\+Managerのインスタンスを生成する \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classEJ__I2CHub}{EJ\+\_\+\+I2\+CHub}} $\ast$ \mbox{\hyperlink{classEJ__I2CHub__Manager_aea95ab83c46c437c1737fdaa605f02a2}{create\+I2\+CHub}} (uint8\+\_\+t id, uint8\+\_\+t address=0x70)
+\begin{DoxyCompactList}\small\item\em EJ\+\_\+\+I2\+CHubクラスのインスタンスを生成する \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classEJ__I2CHub}{EJ\+\_\+\+I2\+CHub}} $\ast$ \mbox{\hyperlink{classEJ__I2CHub__Manager_ad806eb09a96e63db298c4f62d1e879b7}{get\+I2\+CHub}} (uint8\+\_\+t id)
+\begin{DoxyCompactList}\small\item\em EJ\+\_\+\+I2\+CHubクラスのインスタンスを取得する \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{詳解}
+EJ\+\_\+\+I2\+CHubクラスのインスタンスを生成、管理するクラス 
+
+本クラスはシングルトンで提供され、configure()メソッドにのみよってインスタンスが1つだけ生成される 
+
+ EJ\+\_\+\+I2\+CHub.\+h の 65 行目に定義があります。
+
+
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{classEJ__I2CHub__Manager_a06b94098bef13d6ae7e44d4d849a7b50}\label{classEJ__I2CHub__Manager_a06b94098bef13d6ae7e44d4d849a7b50}} 
+\index{EJ\_I2CHub\_Manager@{EJ\_I2CHub\_Manager}!````~EJ\_I2CHub\_Manager@{$\sim$EJ\_I2CHub\_Manager}}
+\index{````~EJ\_I2CHub\_Manager@{$\sim$EJ\_I2CHub\_Manager}!EJ\_I2CHub\_Manager@{EJ\_I2CHub\_Manager}}
+\doxysubsubsection{\texorpdfstring{$\sim$EJ\_I2CHub\_Manager()}{~EJ\_I2CHub\_Manager()}}
+{\footnotesize\ttfamily EJ\+\_\+\+I2\+CHub\+\_\+\+Manager\+::$\sim$\+EJ\+\_\+\+I2\+CHub\+\_\+\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+EJ\+\_\+\+I2\+CHub\+\_\+\+Managerクラスのデストラクタ 
+
+本クラスによって生成された\+EJ\+\_\+\+I2\+CHubクラスのインスタンスをすべて解放する 
+
+ EJ\+\_\+\+I2\+CHub.\+cpp の 69 行目に定義があります。
+
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{classEJ__I2CHub__Manager_a5c0a394d0710805ea91260ab7cf635d8}\label{classEJ__I2CHub__Manager_a5c0a394d0710805ea91260ab7cf635d8}} 
+\index{EJ\_I2CHub\_Manager@{EJ\_I2CHub\_Manager}!configure@{configure}}
+\index{configure@{configure}!EJ\_I2CHub\_Manager@{EJ\_I2CHub\_Manager}}
+\doxysubsubsection{\texorpdfstring{configure()}{configure()}}
+{\footnotesize\ttfamily bool EJ\+\_\+\+I2\+CHub\+\_\+\+Manager\+::configure (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{max\+Instance\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+EJ\+\_\+\+I2\+CHub\+\_\+\+Managerのインスタンスを生成する 
+
+
+\begin{DoxyParams}{引数}
+{\em max\+Instance\+Size} & EJ\+\_\+\+I2\+CHubの最大インスタンス数の定義 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+true\+: 生成成功 / false\+: 生成失敗 
+\end{DoxyReturn}
+
+
+ EJ\+\_\+\+I2\+CHub.\+cpp の 82 行目に定義があります。
+
+\mbox{\Hypertarget{classEJ__I2CHub__Manager_aea95ab83c46c437c1737fdaa605f02a2}\label{classEJ__I2CHub__Manager_aea95ab83c46c437c1737fdaa605f02a2}} 
+\index{EJ\_I2CHub\_Manager@{EJ\_I2CHub\_Manager}!createI2CHub@{createI2CHub}}
+\index{createI2CHub@{createI2CHub}!EJ\_I2CHub\_Manager@{EJ\_I2CHub\_Manager}}
+\doxysubsubsection{\texorpdfstring{createI2CHub()}{createI2CHub()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEJ__I2CHub}{EJ\+\_\+\+I2\+CHub}} $\ast$ EJ\+\_\+\+I2\+CHub\+\_\+\+Manager\+::create\+I2\+CHub (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{id,  }\item[{uint8\+\_\+t}]{address = {\ttfamily 0x70} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+EJ\+\_\+\+I2\+CHubクラスのインスタンスを生成する 
+
+生成したインスタンスはget\+I2\+CHub関数で取得できるように同時に自身の\+\_\+instance\+List配列に記憶しておく 
+\begin{DoxyParams}{引数}
+{\em id} & Pa\+Hubユニットの識別番号 \\
+\hline
+{\em address} & Pa\+Hubユニット自身の\+I2\+Cアドレス (default\+: 0x70) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+EJ\+\_\+\+I2\+CHubクラスのインスタンスを指すポインタ 
+\end{DoxyReturn}
+
+
+ EJ\+\_\+\+I2\+CHub.\+cpp の 98 行目に定義があります。
+
+\mbox{\Hypertarget{classEJ__I2CHub__Manager_ad806eb09a96e63db298c4f62d1e879b7}\label{classEJ__I2CHub__Manager_ad806eb09a96e63db298c4f62d1e879b7}} 
+\index{EJ\_I2CHub\_Manager@{EJ\_I2CHub\_Manager}!getI2CHub@{getI2CHub}}
+\index{getI2CHub@{getI2CHub}!EJ\_I2CHub\_Manager@{EJ\_I2CHub\_Manager}}
+\doxysubsubsection{\texorpdfstring{getI2CHub()}{getI2CHub()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEJ__I2CHub}{EJ\+\_\+\+I2\+CHub}} $\ast$ EJ\+\_\+\+I2\+CHub\+\_\+\+Manager\+::get\+I2\+CHub (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+EJ\+\_\+\+I2\+CHubクラスのインスタンスを取得する 
+
+create\+I2\+CHub関数で生成した\+EJ\+\_\+\+I2\+CHubクラスのインスタンスを取得し返す。指定したidのインスタンスが生成されていない場合や取得に失敗した場合は\+NULLを返す。 
+\begin{DoxyParams}{引数}
+{\em id} & Pa\+Hubユニットの識別番号 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+EJ\+\_\+\+I2\+CHubクラスのインスタンスを指すポインタ 
+\end{DoxyReturn}
+
+
+ EJ\+\_\+\+I2\+CHub.\+cpp の 133 行目に定義があります。
+
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Project/include/\mbox{\hyperlink{EJ__I2CHub_8h}{EJ\+\_\+\+I2\+CHub.\+h}}\item 
+Project/src/\mbox{\hyperlink{EJ__I2CHub_8cpp}{EJ\+\_\+\+I2\+CHub.\+cpp}}\end{DoxyCompactItemize}
