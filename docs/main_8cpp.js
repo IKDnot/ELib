@@ -9,6 +9,7 @@ var main_8cpp =
     [ "setupToFUnit", "main_8cpp.html#a32b29b8c13d75a4dc29af25f58b85f4f", null ],
     [ "_classname", "main_8cpp.html#a72ab620ed835eeabfa9834b008e67314", null ],
     [ "hub", "main_8cpp.html#a209ffc41f804846e50bb0d800aa69090", null ],
+    [ "imu", "main_8cpp.html#ad17fd2f384226b1f6ecb3650922cc97a", null ],
     [ "invalidMotor", "main_8cpp.html#a81d12b793f7fa32cd6d04f49d8dcaaaf", null ],
     [ "invalidServo", "main_8cpp.html#a0474c6c10f79c5f7e38d71f357e5c9d6", null ],
     [ "LINE_HEIGHT", "main_8cpp.html#a57869e062a535262bd6061d017f6a355", null ],

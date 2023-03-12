@@ -2,6 +2,7 @@
 \label{main_8cpp}\index{Project/src/main.cpp@{Project/src/main.cpp}}
 {\ttfamily \#include $<$Arduino.\+h$>$}\newline
 {\ttfamily \#include $<$M5\+Core2.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}Elib.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Pin\+Assign.\+h\char`\"{}}\newline
 \doxysubsection*{マクロ定義}
@@ -43,7 +44,7 @@ const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a60bd75e3e4fe4d20e6cf526e65a83cb6}
 \item 
 const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a38913f1040cc7bd0f1ab8b6d7ae2f7e6}{SCREEN\+\_\+Y}} = 20
 \item 
-const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a57869e062a535262bd6061d017f6a355}{LINE\+\_\+\+HEIGHT}} = 40
+const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a57869e062a535262bd6061d017f6a355}{LINE\+\_\+\+HEIGHT}} = 20
 \item 
 \mbox{\hyperlink{classEJ__DCMotor}{EJ\+\_\+\+DCMotor}} $\ast$ \mbox{\hyperlink{main_8cpp_a644fcbd84e8709ecffe4f8ceb8db4dab}{motor}} = NULL
 \item 
@@ -60,6 +61,8 @@ const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a57869e062a535262bd6061d017f6a355}
 \mbox{\hyperlink{classEJ__ToFUnit}{EJ\+\_\+\+To\+FUnit}} $\ast$ \mbox{\hyperlink{main_8cpp_a522dc6bd963dc80e6f75687c70a7c706}{tof}} \mbox{[}\mbox{\hyperlink{main_8cpp_ac4fda20509568c00e2f7e1ea18ed051f}{MAX\+\_\+\+TOFUNIT\+\_\+\+SIZE}}\mbox{]} = \{NULL\}
 \item 
 \mbox{\hyperlink{classEJ__I2CHub}{EJ\+\_\+\+I2\+CHub}} $\ast$ \mbox{\hyperlink{main_8cpp_a209ffc41f804846e50bb0d800aa69090}{hub}} = NULL
+\item 
+MPU6886 \mbox{\hyperlink{main_8cpp_ad17fd2f384226b1f6ecb3650922cc97a}{imu}}
 \end{DoxyCompactItemize}
 
 
@@ -72,7 +75,7 @@ const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a57869e062a535262bd6061d017f6a355}
 
 
 
- main.\+cpp の 8 行目に定義があります。
+ main.\+cpp の 9 行目に定義があります。
 
 
 
@@ -85,7 +88,7 @@ const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a57869e062a535262bd6061d017f6a355}
 
 
 
- main.\+cpp の 170 行目に定義があります。
+ main.\+cpp の 177 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}\label{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}} 
 \index{main.cpp@{main.cpp}!setup@{setup}}
@@ -95,7 +98,7 @@ const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a57869e062a535262bd6061d017f6a355}
 
 
 
- main.\+cpp の 160 行目に定義があります。
+ main.\+cpp の 154 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_a6c8cc91ae3f592c07e20a9b0966b5f3d}\label{main_8cpp_a6c8cc91ae3f592c07e20a9b0966b5f3d}} 
 \index{main.cpp@{main.cpp}!setupI2CHubUnit@{setupI2CHubUnit}}
@@ -105,7 +108,7 @@ const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a57869e062a535262bd6061d017f6a355}
 
 
 
- main.\+cpp の 116 行目に定義があります。
+ main.\+cpp の 110 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_a7876749fb7e23571c7248d80ae0332ef}\label{main_8cpp_a7876749fb7e23571c7248d80ae0332ef}} 
 \index{main.cpp@{main.cpp}!setupMotor@{setupMotor}}
@@ -115,7 +118,7 @@ const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a57869e062a535262bd6061d017f6a355}
 
 
 
- main.\+cpp の 36 行目に定義があります。
+ main.\+cpp の 39 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_a01a2cf0eea853a579e9474d0c6d350d8}\label{main_8cpp_a01a2cf0eea853a579e9474d0c6d350d8}} 
 \index{main.cpp@{main.cpp}!setupServo@{setupServo}}
@@ -125,7 +128,7 @@ const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a57869e062a535262bd6061d017f6a355}
 
 
 
- main.\+cpp の 76 行目に定義があります。
+ main.\+cpp の 79 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_a32b29b8c13d75a4dc29af25f58b85f4f}\label{main_8cpp_a32b29b8c13d75a4dc29af25f58b85f4f}} 
 \index{main.cpp@{main.cpp}!setupToFUnit@{setupToFUnit}}
@@ -135,7 +138,7 @@ const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a57869e062a535262bd6061d017f6a355}
 
 
 
- main.\+cpp の 136 行目に定義があります。
+ main.\+cpp の 130 行目に定義があります。
 
 
 
@@ -148,7 +151,7 @@ const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a57869e062a535262bd6061d017f6a355}
 
 
 
- main.\+cpp の 11 行目に定義があります。
+ main.\+cpp の 12 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_a209ffc41f804846e50bb0d800aa69090}\label{main_8cpp_a209ffc41f804846e50bb0d800aa69090}} 
 \index{main.cpp@{main.cpp}!hub@{hub}}
@@ -158,7 +161,17 @@ const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a57869e062a535262bd6061d017f6a355}
 
 
 
- main.\+cpp の 34 行目に定義があります。
+ main.\+cpp の 35 行目に定義があります。
+
+\mbox{\Hypertarget{main_8cpp_ad17fd2f384226b1f6ecb3650922cc97a}\label{main_8cpp_ad17fd2f384226b1f6ecb3650922cc97a}} 
+\index{main.cpp@{main.cpp}!imu@{imu}}
+\index{imu@{imu}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{imu}{imu}}
+{\footnotesize\ttfamily MPU6886 imu}
+
+
+
+ main.\+cpp の 37 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_a81d12b793f7fa32cd6d04f49d8dcaaaf}\label{main_8cpp_a81d12b793f7fa32cd6d04f49d8dcaaaf}} 
 \index{main.cpp@{main.cpp}!invalidMotor@{invalidMotor}}
@@ -168,7 +181,7 @@ const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a57869e062a535262bd6061d017f6a355}
 
 
 
- main.\+cpp の 27 行目に定義があります。
+ main.\+cpp の 28 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_a0474c6c10f79c5f7e38d71f357e5c9d6}\label{main_8cpp_a0474c6c10f79c5f7e38d71f357e5c9d6}} 
 \index{main.cpp@{main.cpp}!invalidServo@{invalidServo}}
@@ -178,17 +191,17 @@ const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a57869e062a535262bd6061d017f6a355}
 
 
 
- main.\+cpp の 30 行目に定義があります。
+ main.\+cpp の 31 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_a57869e062a535262bd6061d017f6a355}\label{main_8cpp_a57869e062a535262bd6061d017f6a355}} 
 \index{main.cpp@{main.cpp}!LINE\_HEIGHT@{LINE\_HEIGHT}}
 \index{LINE\_HEIGHT@{LINE\_HEIGHT}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{LINE\_HEIGHT}{LINE\_HEIGHT}}
-{\footnotesize\ttfamily const uint8\+\_\+t LINE\+\_\+\+HEIGHT = 40}
+{\footnotesize\ttfamily const uint8\+\_\+t LINE\+\_\+\+HEIGHT = 20}
 
 
 
- main.\+cpp の 22 行目に定義があります。
+ main.\+cpp の 23 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_ada30337d2863f86a77c31f8b613f6af7}\label{main_8cpp_ada30337d2863f86a77c31f8b613f6af7}} 
 \index{main.cpp@{main.cpp}!M5\_SHUTDOWN\_DELAY@{M5\_SHUTDOWN\_DELAY}}
@@ -198,7 +211,7 @@ const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a57869e062a535262bd6061d017f6a355}
 
 
 
- main.\+cpp の 18 行目に定義があります。
+ main.\+cpp の 19 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_af71a7323b6df7aad70f81d12597e6305}\label{main_8cpp_af71a7323b6df7aad70f81d12597e6305}} 
 \index{main.cpp@{main.cpp}!MAX\_I2CHUBUNIT\_SIZE@{MAX\_I2CHUBUNIT\_SIZE}}
@@ -208,7 +221,7 @@ const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a57869e062a535262bd6061d017f6a355}
 
 
 
- main.\+cpp の 16 行目に定義があります。
+ main.\+cpp の 17 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_ad1e11b2cc68be48fc8c2bea633a735e8}\label{main_8cpp_ad1e11b2cc68be48fc8c2bea633a735e8}} 
 \index{main.cpp@{main.cpp}!MAX\_MOTOR\_NUM@{MAX\_MOTOR\_NUM}}
@@ -218,7 +231,7 @@ const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a57869e062a535262bd6061d017f6a355}
 
 
 
- main.\+cpp の 13 行目に定義があります。
+ main.\+cpp の 14 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_a1af8a3877f99984d9b2e7a6b9f99cb1a}\label{main_8cpp_a1af8a3877f99984d9b2e7a6b9f99cb1a}} 
 \index{main.cpp@{main.cpp}!MAX\_SERVO\_SIZE@{MAX\_SERVO\_SIZE}}
@@ -228,7 +241,7 @@ const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a57869e062a535262bd6061d017f6a355}
 
 
 
- main.\+cpp の 14 行目に定義があります。
+ main.\+cpp の 15 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_ac4fda20509568c00e2f7e1ea18ed051f}\label{main_8cpp_ac4fda20509568c00e2f7e1ea18ed051f}} 
 \index{main.cpp@{main.cpp}!MAX\_TOFUNIT\_SIZE@{MAX\_TOFUNIT\_SIZE}}
@@ -238,7 +251,7 @@ const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a57869e062a535262bd6061d017f6a355}
 
 
 
- main.\+cpp の 15 行目に定義があります。
+ main.\+cpp の 16 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_a644fcbd84e8709ecffe4f8ceb8db4dab}\label{main_8cpp_a644fcbd84e8709ecffe4f8ceb8db4dab}} 
 \index{main.cpp@{main.cpp}!motor@{motor}}
@@ -248,7 +261,7 @@ const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a57869e062a535262bd6061d017f6a355}
 
 
 
- main.\+cpp の 25 行目に定義があります。
+ main.\+cpp の 26 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_a8dc3f522415638cc2f4b9a5ae4333a8c}\label{main_8cpp_a8dc3f522415638cc2f4b9a5ae4333a8c}} 
 \index{main.cpp@{main.cpp}!motorAlias@{motorAlias}}
@@ -258,7 +271,7 @@ const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a57869e062a535262bd6061d017f6a355}
 
 
 
- main.\+cpp の 26 行目に定義があります。
+ main.\+cpp の 27 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_a60bd75e3e4fe4d20e6cf526e65a83cb6}\label{main_8cpp_a60bd75e3e4fe4d20e6cf526e65a83cb6}} 
 \index{main.cpp@{main.cpp}!SCREEN\_X@{SCREEN\_X}}
@@ -268,7 +281,7 @@ const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a57869e062a535262bd6061d017f6a355}
 
 
 
- main.\+cpp の 20 行目に定義があります。
+ main.\+cpp の 21 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_a38913f1040cc7bd0f1ab8b6d7ae2f7e6}\label{main_8cpp_a38913f1040cc7bd0f1ab8b6d7ae2f7e6}} 
 \index{main.cpp@{main.cpp}!SCREEN\_Y@{SCREEN\_Y}}
@@ -278,7 +291,7 @@ const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a57869e062a535262bd6061d017f6a355}
 
 
 
- main.\+cpp の 21 行目に定義があります。
+ main.\+cpp の 22 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_a76ffe5860735d6110228cef9dd1831ac}\label{main_8cpp_a76ffe5860735d6110228cef9dd1831ac}} 
 \index{main.cpp@{main.cpp}!servo@{servo}}
@@ -288,7 +301,7 @@ const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a57869e062a535262bd6061d017f6a355}
 
 
 
- main.\+cpp の 28 行目に定義があります。
+ main.\+cpp の 29 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_a82aa2cf01ebac4fe0c5ca1060af6c7ea}\label{main_8cpp_a82aa2cf01ebac4fe0c5ca1060af6c7ea}} 
 \index{main.cpp@{main.cpp}!servoAlias@{servoAlias}}
@@ -298,7 +311,7 @@ const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a57869e062a535262bd6061d017f6a355}
 
 
 
- main.\+cpp の 29 行目に定義があります。
+ main.\+cpp の 30 行目に定義があります。
 
 \mbox{\Hypertarget{main_8cpp_a522dc6bd963dc80e6f75687c70a7c706}\label{main_8cpp_a522dc6bd963dc80e6f75687c70a7c706}} 
 \index{main.cpp@{main.cpp}!tof@{tof}}
@@ -308,5 +321,5 @@ const uint8\+\_\+t \mbox{\hyperlink{main_8cpp_a57869e062a535262bd6061d017f6a355}
 
 
 
- main.\+cpp の 33 行目に定義があります。
+ main.\+cpp の 34 行目に定義があります。
 
