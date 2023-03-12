@@ -12,22 +12,32 @@ const char* _classname = "main";
 
 const size_t MAX_MOTOR_NUM = 4;
 const size_t MAX_SERVO_SIZE = 1;
-const size_t MAX_TOFUNIT_SIZE = 3;
+const size_t MAX_TOFUNIT_SIZE = 4;
+const size_t MAX_I2CHUBUNIT_SIZE = 1;
 
+const int M5_SHUTDOWN_DELAY = 5000; // ms
+
+const uint8_t SCREEN_X = 0;
+const uint8_t SCREEN_Y = 20;
+const uint8_t LINE_HEIGHT = 40;
+
+/* GPIO */
 EJ_DCMotor* motor = NULL;
 EJ_DCMotor* motorAlias = NULL;
 EJ_DCMotor* invalidMotor = NULL;
-
 EJ_ServoMotor* servo = NULL;
 EJ_ServoMotor* servoAlias = NULL;
 EJ_ServoMotor* invalidServo = NULL;
 
-EJ_ToFUnit* tof = NULL;
+/* I2C Unit */
+EJ_ToFUnit* tof[MAX_TOFUNIT_SIZE] = {NULL};
+EJ_I2CHub* hub = NULL;
 
 void setupMotor() {
   if (!EJ_DCMotor_Manager::configure(MAX_MOTOR_NUM)) {
     ERRORLOG();
-    M5.shutdown(5);
+    delay(M5_SHUTDOWN_DELAY);
+    M5.shutdown();
   }
 
   motor = EJ_DCMotor_Manager::createMotor(MOTOR1);
@@ -37,7 +47,8 @@ void setupMotor() {
         内容：メモリ確保に失敗した
     */
     ERRORLOG();
-    M5.shutdown(5);
+    delay(M5_SHUTDOWN_DELAY);
+    M5.shutdown();
   }
 
   motorAlias = EJ_DCMotor_Manager::getMotor(MOTOR1.id);
@@ -47,7 +58,8 @@ void setupMotor() {
         内容：メモリ確保に失敗した
     */
     ERRORLOG();
-    M5.shutdown(5);
+    delay(M5_SHUTDOWN_DELAY);
+    M5.shutdown();
   }
   
   invalidMotor = EJ_DCMotor_Manager::createMotor(1,3,5); // Error 出力テスト用
@@ -64,7 +76,8 @@ void setupMotor() {
 void setupServo() {
   if (!EJ_ServoMotor_Manager::configure(MAX_SERVO_SIZE)) {
     ERRORLOG();
-    M5.shutdown(5);
+    delay(M5_SHUTDOWN_DELAY);
+    M5.shutdown();
   }
 
   servo = EJ_ServoMotor_Manager::createServo(SERVO1);
@@ -74,7 +87,8 @@ void setupServo() {
         内容：メモリ確保に失敗した
     */
     ERRORLOG();
-    M5.shutdown(5);
+    delay(M5_SHUTDOWN_DELAY);
+    M5.shutdown();
   }
 
   servoAlias = EJ_ServoMotor_Manager::getServo(SERVO1.id);
@@ -84,7 +98,8 @@ void setupServo() {
         内容：メモリ確保に失敗した
     */
     ERRORLOG();
-    M5.shutdown(5);
+    delay(M5_SHUTDOWN_DELAY);
+    M5.shutdown();
   }
 
   invalidServo = EJ_ServoMotor_Manager::createServo(1, 50); // Error 出力テスト用
@@ -98,33 +113,71 @@ void setupServo() {
   }
 }
 
-void setupToFUnit() {
-  if (!EJ_ToFUnit_Manager::configure(MAX_TOFUNIT_SIZE)) {
+void setupI2CHubUnit()
+{
+  if (!EJ_I2CHub_Manager::configure(MAX_I2CHUBUNIT_SIZE)) {
     ERRORLOG();
-    M5.shutdown(5);
+    delay(M5_SHUTDOWN_DELAY);
+    M5.shutdown();
   }
 
-  tof = EJ_ToFUnit_Manager::createToFUnit(0);
-  if (tof == NULL) {
+  hub = EJ_I2CHub_Manager::createI2CHub(0);
+  if (hub == NULL) {
     /*
     ERRORLOG
         内容：メモリ確保に失敗した
     */
     ERRORLOG();
-    M5.shutdown(5);
+    delay(M5_SHUTDOWN_DELAY);
+    M5.shutdown();
+  }
+}
+
+void setupToFUnit() {
+  if (!EJ_ToFUnit_Manager::configure(MAX_TOFUNIT_SIZE)) {
+    ERRORLOG();
+    delay(M5_SHUTDOWN_DELAY);
+    M5.shutdown();
   }
 
-  M5.Lcd.printf("ADDRESS:%#x\n", tof->getAddress());
+  for (uint8_t id=0; id<MAX_TOFUNIT_SIZE; id++) {
+    uint8_t returnCode = hub->selectChannel(id);
+    if (returnCode != 0x00) M5.shutdown(2); /* setup時点で切り替え失敗する時は再起動しか手がない?  */
+    tof[id] = EJ_ToFUnit_Manager::createToFUnit(id);
+    if (tof[id] == NULL) {
+      /*
+      ERRORLOG
+          内容：メモリ確保に失敗した
+      */
+      ERRORLOG();
+      M5.Lcd.println(id);
+      delay(M5_SHUTDOWN_DELAY);
+      M5.shutdown();
+    }
+  }
 }
 
 void setup() {
   M5.begin();
   Wire.begin(32, 33);
+  M5.Lcd.clear();
+  M5.Lcd.setCursor(SCREEN_X, SCREEN_Y);
+  M5.Lcd.setTextSize(4);
+  setupI2CHubUnit();
   setupToFUnit();
 }
 
 void loop() {
-  uint16_t millis = tof->read();
-  M5.Lcd.printf("%dmm\n", millis);
-  delay(1000);
+  static uint16_t distance[MAX_TOFUNIT_SIZE] = {0};
+
+  for (uint8_t id=0; id<MAX_TOFUNIT_SIZE; id++) {
+    hub->selectChannel(id);
+    distance[id] = tof[id]->read();
+  }
+
+  for (uint8_t id=0; id<MAX_TOFUNIT_SIZE; id++) {
+    M5.Lcd.setCursor(SCREEN_X, SCREEN_Y + LINE_HEIGHT * id);
+    M5.Lcd.printf("CH%d: %dmm    ", id, distance[id]);
+  }
+  delay(10);
 }

@@ -105,9 +105,10 @@ public:
      * @brief EJ_ToFUnitクラスのインスタンスを生成する
      * @details 生成したインスタンスはgetToFUnit関数で取得できるように同時に自身の_instanceList配列に記憶しておく
      * @param id ToFセンサユニットの識別番号
+     * @param address ToFセンサユニットのI2Cアドレス (default: 0x29)
      * @return EJ_ToFUnitクラスのインスタンスを指すポインタ
      */
-    static EJ_ToFUnit *createToFUnit(uint8_t id);
+    static EJ_ToFUnit *createToFUnit(uint8_t id, uint8_t address = 0x29);
 
     /**
      * @brief EJ_ToFUnitクラスのインスタンスを取得する
@@ -120,7 +121,6 @@ public:
 private:
     static const char* _classname;
     static EJ_ToFUnit_Manager *_singleton;
-    const uint8_t _defaultAddress; // 0x29
     const size_t _maxInstanceSize;
     EJ_ToFUnit **_instanceList;
 };
