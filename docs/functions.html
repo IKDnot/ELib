@@ -86,9 +86,13 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <h3><a id="index_c"></a>- c -</h3><ul>
 <li>configure()
 : <a class="el" href="classEJ__DCMotor__Manager.html#a28f5ccfac3fe9952177144f87985fa69">EJ_DCMotor_Manager</a>
+, <a class="el" href="classEJ__EncoderMotor__Manager.html#ad100a4459348cefce725b337df5feffa">EJ_EncoderMotor_Manager</a>
 , <a class="el" href="classEJ__I2CHub__Manager.html#a5c0a394d0710805ea91260ab7cf635d8">EJ_I2CHub_Manager</a>
 , <a class="el" href="classEJ__ServoMotor__Manager.html#a153eee17a79f4bbf3534212d74c554d5">EJ_ServoMotor_Manager</a>
 , <a class="el" href="classEJ__ToFUnit__Manager.html#a4a1e26e1ce72109ae6d136c9e90c69ba">EJ_ToFUnit_Manager</a>
+</li>
+<li>createEncoderMotor()
+: <a class="el" href="classEJ__EncoderMotor__Manager.html#a524274c5566dbef1dafc20df2462e9df">EJ_EncoderMotor_Manager</a>
 </li>
 <li>createI2CHub()
 : <a class="el" href="classEJ__I2CHub__Manager.html#aea95ab83c46c437c1737fdaa605f02a2">EJ_I2CHub_Manager</a>
@@ -106,8 +110,14 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 
 <h3><a id="index_e"></a>- e -</h3><ul>
+<li>EJ_DCMotor()
+: <a class="el" href="classEJ__DCMotor.html#a4d1e01bd9a226a2bf44d82ab3d24996a">EJ_DCMotor</a>
+</li>
 <li>EJ_DCMotor_Manager
 : <a class="el" href="classEJ__DCMotor.html#afee50868d091bbaccb8411086b93d48a">EJ_DCMotor</a>
+</li>
+<li>EJ_EncoderMotor_Manager
+: <a class="el" href="classEJ__EncoderMotor.html#ab443914fcdaafc718d6c5fed437b4edc">EJ_EncoderMotor</a>
 </li>
 <li>EJ_I2CHub_Manager
 : <a class="el" href="classEJ__I2CHub.html#a15dcd50d6806768dfb6310289a83a64c">EJ_I2CHub</a>
@@ -117,6 +127,12 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </li>
 <li>EJ_ToFUnit_Manager
 : <a class="el" href="classEJ__ToFUnit.html#a22d3bad791d29b676d92a2820156a12d">EJ_ToFUnit</a>
+</li>
+<li>enc1
+: <a class="el" href="structEncoderMotorDef.html#a28812fb9bc5a28dae88b918c9ed07014">EncoderMotorDef</a>
+</li>
+<li>enc2
+: <a class="el" href="structEncoderMotorDef.html#afa81b82d8e5e282632bdacef54b70101">EncoderMotorDef</a>
 </li>
 </ul>
 
@@ -129,6 +145,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 
 <h3><a id="index_g"></a>- g -</h3><ul>
+<li>getEncoderMotor()
+: <a class="el" href="classEJ__EncoderMotor__Manager.html#a07d0a76ed8ad4d18a814ca6d1255d893">EJ_EncoderMotor_Manager</a>
+</li>
 <li>getI2CHub()
 : <a class="el" href="classEJ__I2CHub__Manager.html#ad806eb09a96e63db298c4f62d1e879b7">EJ_I2CHub_Manager</a>
 </li>
@@ -146,8 +165,22 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 <h3><a id="index_i"></a>- i -</h3><ul>
 <li>id
-: <a class="el" href="structMotorDef.html#a0d6122fcb9c882ec0d6f9be5f1e6240f">MotorDef</a>
+: <a class="el" href="structEncoderMotorDef.html#a61aa416a8e55b97ee4e729a6b8869efc">EncoderMotorDef</a>
+, <a class="el" href="structMotorDef.html#a0d6122fcb9c882ec0d6f9be5f1e6240f">MotorDef</a>
 , <a class="el" href="structServoDef.html#a84b15a8a2f16c2d3eb276300a171b3c5">ServoDef</a>
+</li>
+<li>isTargetReached()
+: <a class="el" href="classEJ__EncoderMotor.html#ad8966b964e5541de165955b7cc3c918c">EJ_EncoderMotor</a>
+</li>
+</ul>
+
+
+<h3><a id="index_m"></a>- m -</h3><ul>
+<li>move()
+: <a class="el" href="classEJ__EncoderMotor.html#a834fd81327b4586b3f55f07c9b5006cd">EJ_EncoderMotor</a>
+</li>
+<li>moveTo()
+: <a class="el" href="classEJ__EncoderMotor.html#a08a311b027203ea71708711704bb95b4">EJ_EncoderMotor</a>
 </li>
 </ul>
 
@@ -157,10 +190,12 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 : <a class="el" href="structServoDef.html#ae450f6594fef38e6945ec860b500fcdf">ServoDef</a>
 </li>
 <li>pin1
-: <a class="el" href="structMotorDef.html#aef6a2e6a35c8af7a1f40d20f897f6557">MotorDef</a>
+: <a class="el" href="structEncoderMotorDef.html#aa843dc3080cd170f678903515bff59ae">EncoderMotorDef</a>
+, <a class="el" href="structMotorDef.html#aef6a2e6a35c8af7a1f40d20f897f6557">MotorDef</a>
 </li>
 <li>pin2
-: <a class="el" href="structMotorDef.html#a3c8a8496eabbce67500c55ac87314c71">MotorDef</a>
+: <a class="el" href="structEncoderMotorDef.html#abd0d6da2c60c18f1c2a892e35c631e37">EncoderMotorDef</a>
+, <a class="el" href="structMotorDef.html#a3c8a8496eabbce67500c55ac87314c71">MotorDef</a>
 </li>
 </ul>
 
@@ -177,6 +212,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 
 <h3><a id="index_s"></a>- s -</h3><ul>
+<li>setTarget()
+: <a class="el" href="classEJ__EncoderMotor.html#a41d1ea2dde6e2fa405b094a8dfa3e036">EJ_EncoderMotor</a>
+</li>
 <li>stop()
 : <a class="el" href="classEJ__DCMotor.html#a219456d25f8f6061bde0d2124ad57e5d">EJ_DCMotor</a>
 </li>
@@ -199,6 +237,12 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </li>
 <li>~EJ_DCMotor_Manager()
 : <a class="el" href="classEJ__DCMotor__Manager.html#ad67723b950e7ad5b410ddfb6e6129482">EJ_DCMotor_Manager</a>
+</li>
+<li>~EJ_EncoderMotor()
+: <a class="el" href="classEJ__EncoderMotor.html#a041b73fcc952a37bdcea255a1db2f022">EJ_EncoderMotor</a>
+</li>
+<li>~EJ_EncoderMotor_Manager()
+: <a class="el" href="classEJ__EncoderMotor__Manager.html#a95fa84cd6cbebc9df4c8e34cb7953ead">EJ_EncoderMotor_Manager</a>
 </li>
 <li>~EJ_I2CHub()
 : <a class="el" href="classEJ__I2CHub.html#a3f3aa30fb2ebdbc14c13a1a902910e42">EJ_I2CHub</a>

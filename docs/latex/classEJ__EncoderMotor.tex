@@ -1,0 +1,158 @@
+\hypertarget{classEJ__EncoderMotor}{}\doxysection{EJ\+\_\+\+Encoder\+Motor クラス}
+\label{classEJ__EncoderMotor}\index{EJ\_EncoderMotor@{EJ\_EncoderMotor}}
+
+
+エンコーダ付きモーターを制御するクラス  
+
+
+
+
+{\ttfamily \#include $<$EJ\+\_\+\+Encoder\+Motor.\+h$>$}
+
+EJ\+\_\+\+Encoder\+Motor の継承関係図\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classEJ__EncoderMotor}
+\end{center}
+\end{figure}
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEJ__EncoderMotor_a041b73fcc952a37bdcea255a1db2f022}{$\sim$\+EJ\+\_\+\+Encoder\+Motor}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classEJ__EncoderMotor}{EJ\+\_\+\+Encoder\+Motor}} クラスのデストラクタ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEJ__EncoderMotor_a834fd81327b4586b3f55f07c9b5006cd}{move}} (long relative\+Position)
+\begin{DoxyCompactList}\small\item\em 現在位置から相対移動 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEJ__EncoderMotor_a08a311b027203ea71708711704bb95b4}{move\+To}} (long absolute\+Position)
+\begin{DoxyCompactList}\small\item\em 絶対位置まで絶対移動 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEJ__EncoderMotor_a41d1ea2dde6e2fa405b094a8dfa3e036}{set\+Target}} (long target\+Position)
+\begin{DoxyCompactList}\small\item\em 目標位置を設定する \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classEJ__EncoderMotor_ad8966b964e5541de165955b7cc3c918c}{is\+Target\+Reached}} ()
+\begin{DoxyCompactList}\small\item\em 目標位置に到達したかどうか判定する \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{フレンド}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classEJ__EncoderMotor_ab443914fcdaafc718d6c5fed437b4edc}{EJ\+\_\+\+Encoder\+Motor\+\_\+\+Manager}}
+\end{DoxyCompactItemize}
+\doxysubsection*{その他の継承メンバ}
+
+
+\doxysubsection{詳解}
+エンコーダ付きモーターを制御するクラス 
+
+$\ast$注意\+:本クラスのインスタンスは\+EJ\+\_\+\+Encoder\+Motor\+\_\+\+Managerクラス以外からは生成できない 
+
+ EJ\+\_\+\+Encoder\+Motor.\+h の 53 行目に定義があります。
+
+
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{classEJ__EncoderMotor_a041b73fcc952a37bdcea255a1db2f022}\label{classEJ__EncoderMotor_a041b73fcc952a37bdcea255a1db2f022}} 
+\index{EJ\_EncoderMotor@{EJ\_EncoderMotor}!````~EJ\_EncoderMotor@{$\sim$EJ\_EncoderMotor}}
+\index{````~EJ\_EncoderMotor@{$\sim$EJ\_EncoderMotor}!EJ\_EncoderMotor@{EJ\_EncoderMotor}}
+\doxysubsubsection{\texorpdfstring{$\sim$EJ\_EncoderMotor()}{~EJ\_EncoderMotor()}}
+{\footnotesize\ttfamily EJ\+\_\+\+Encoder\+Motor\+::$\sim$\+EJ\+\_\+\+Encoder\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classEJ__EncoderMotor}{EJ\+\_\+\+Encoder\+Motor}} クラスのデストラクタ 
+
+
+
+ EJ\+\_\+\+Encoder\+Motor.\+cpp の 27 行目に定義があります。
+
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{classEJ__EncoderMotor_ad8966b964e5541de165955b7cc3c918c}\label{classEJ__EncoderMotor_ad8966b964e5541de165955b7cc3c918c}} 
+\index{EJ\_EncoderMotor@{EJ\_EncoderMotor}!isTargetReached@{isTargetReached}}
+\index{isTargetReached@{isTargetReached}!EJ\_EncoderMotor@{EJ\_EncoderMotor}}
+\doxysubsubsection{\texorpdfstring{isTargetReached()}{isTargetReached()}}
+{\footnotesize\ttfamily bool EJ\+\_\+\+Encoder\+Motor\+::is\+Target\+Reached (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+目標位置に到達したかどうか判定する 
+
+\begin{DoxyReturn}{戻り値}
+true\+: 目標位置に到達 / false\+: 目標位置に未達 
+\end{DoxyReturn}
+
+
+ EJ\+\_\+\+Encoder\+Motor.\+cpp の 51 行目に定義があります。
+
+\mbox{\Hypertarget{classEJ__EncoderMotor_a834fd81327b4586b3f55f07c9b5006cd}\label{classEJ__EncoderMotor_a834fd81327b4586b3f55f07c9b5006cd}} 
+\index{EJ\_EncoderMotor@{EJ\_EncoderMotor}!move@{move}}
+\index{move@{move}!EJ\_EncoderMotor@{EJ\_EncoderMotor}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void EJ\+\_\+\+Encoder\+Motor\+::move (\begin{DoxyParamCaption}\item[{long}]{relative\+Position }\end{DoxyParamCaption})}
+
+
+
+現在位置から相対移動 
+
+
+\begin{DoxyParams}{引数}
+{\em relative\+Position} & 現在位置からの相対位置 \\
+\hline
+\end{DoxyParams}
+
+
+ EJ\+\_\+\+Encoder\+Motor.\+cpp の 30 行目に定義があります。
+
+\mbox{\Hypertarget{classEJ__EncoderMotor_a08a311b027203ea71708711704bb95b4}\label{classEJ__EncoderMotor_a08a311b027203ea71708711704bb95b4}} 
+\index{EJ\_EncoderMotor@{EJ\_EncoderMotor}!moveTo@{moveTo}}
+\index{moveTo@{moveTo}!EJ\_EncoderMotor@{EJ\_EncoderMotor}}
+\doxysubsubsection{\texorpdfstring{moveTo()}{moveTo()}}
+{\footnotesize\ttfamily void EJ\+\_\+\+Encoder\+Motor\+::move\+To (\begin{DoxyParamCaption}\item[{long}]{absolute\+Position }\end{DoxyParamCaption})}
+
+
+
+絶対位置まで絶対移動 
+
+
+\begin{DoxyParams}{引数}
+{\em absolute\+Position} & 目標位置 \\
+\hline
+\end{DoxyParams}
+
+
+ EJ\+\_\+\+Encoder\+Motor.\+cpp の 43 行目に定義があります。
+
+\mbox{\Hypertarget{classEJ__EncoderMotor_a41d1ea2dde6e2fa405b094a8dfa3e036}\label{classEJ__EncoderMotor_a41d1ea2dde6e2fa405b094a8dfa3e036}} 
+\index{EJ\_EncoderMotor@{EJ\_EncoderMotor}!setTarget@{setTarget}}
+\index{setTarget@{setTarget}!EJ\_EncoderMotor@{EJ\_EncoderMotor}}
+\doxysubsubsection{\texorpdfstring{setTarget()}{setTarget()}}
+{\footnotesize\ttfamily void EJ\+\_\+\+Encoder\+Motor\+::set\+Target (\begin{DoxyParamCaption}\item[{long}]{target\+Position }\end{DoxyParamCaption})}
+
+
+
+目標位置を設定する 
+
+
+\begin{DoxyParams}{引数}
+{\em target\+Position} & 目標位置 \\
+\hline
+\end{DoxyParams}
+
+
+ EJ\+\_\+\+Encoder\+Motor.\+cpp の 47 行目に定義があります。
+
+
+
+\doxysubsection{フレンドと関連関数の詳解}
+\mbox{\Hypertarget{classEJ__EncoderMotor_ab443914fcdaafc718d6c5fed437b4edc}\label{classEJ__EncoderMotor_ab443914fcdaafc718d6c5fed437b4edc}} 
+\index{EJ\_EncoderMotor@{EJ\_EncoderMotor}!EJ\_EncoderMotor\_Manager@{EJ\_EncoderMotor\_Manager}}
+\index{EJ\_EncoderMotor\_Manager@{EJ\_EncoderMotor\_Manager}!EJ\_EncoderMotor@{EJ\_EncoderMotor}}
+\doxysubsubsection{\texorpdfstring{EJ\_EncoderMotor\_Manager}{EJ\_EncoderMotor\_Manager}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classEJ__EncoderMotor__Manager}{EJ\+\_\+\+Encoder\+Motor\+\_\+\+Manager}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+ EJ\+\_\+\+Encoder\+Motor.\+h の 65 行目に定義があります。
+
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Project/include/\mbox{\hyperlink{EJ__EncoderMotor_8h}{EJ\+\_\+\+Encoder\+Motor.\+h}}\item 
+Project/src/\mbox{\hyperlink{EJ__EncoderMotor_8cpp}{EJ\+\_\+\+Encoder\+Motor.\+cpp}}\end{DoxyCompactItemize}

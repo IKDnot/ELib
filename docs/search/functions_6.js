@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['write_118',['write',['../classEJ__ServoMotor.html#ab23d9ee0cd1b40e2fb592c32db9f3849',1,'EJ_ServoMotor']]],
-  ['writemicroseconds_119',['writeMicroseconds',['../classEJ__ServoMotor.html#ac0522386851faafefe2f1916be4ae888',1,'EJ_ServoMotor']]]
+  ['move_134',['move',['../classEJ__EncoderMotor.html#a834fd81327b4586b3f55f07c9b5006cd',1,'EJ_EncoderMotor']]],
+  ['moveto_135',['moveTo',['../classEJ__EncoderMotor.html#a08a311b027203ea71708711704bb95b4',1,'EJ_EncoderMotor']]]
 ];
