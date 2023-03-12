@@ -20,6 +20,7 @@ EJ_ServoMotor::EJ_ServoMotor(uint8_t pin, int min, int max)
     _max_(max),
     Servo()
 {
+    pinMode(_pin, OUTPUT);
     Servo::attach(_pin, _min_, _max_);
 }
 
