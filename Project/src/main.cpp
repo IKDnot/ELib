@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include <M5Core2.h>
+#include <math.h>
 #include "Elib.h"
 #include "PinAssign.h"
 #ifdef M5_DEBUG
@@ -19,7 +20,7 @@ const int M5_SHUTDOWN_DELAY = 5000; // ms
 
 const uint8_t SCREEN_X = 0;
 const uint8_t SCREEN_Y = 20;
-const uint8_t LINE_HEIGHT = 40;
+const uint8_t LINE_HEIGHT = 20;
 
 /* GPIO */
 EJ_DCMotor* motor = NULL;
@@ -32,6 +33,8 @@ EJ_ServoMotor* invalidServo = NULL;
 /* I2C Unit */
 EJ_ToFUnit* tof[MAX_TOFUNIT_SIZE] = {NULL};
 EJ_I2CHub* hub = NULL;
+
+MPU6886 imu;
 
 void setupMotor() {
   if (!EJ_DCMotor_Manager::configure(MAX_MOTOR_NUM)) {
@@ -102,15 +105,6 @@ void setupServo() {
     M5.shutdown();
   }
 
-  invalidServo = EJ_ServoMotor_Manager::createServo(1, 50); // Error 出力テスト用
-  if (invalidServo == NULL) {
-    /*
-    ERRORLOG
-        内容：メモリ確保に失敗した
-    */
-    ERRORLOG();
-    delay(2000);
-  }
 }
 
 void setupI2CHubUnit()
@@ -158,26 +152,51 @@ void setupToFUnit() {
 }
 
 void setup() {
-  M5.begin();
-  Wire.begin(32, 33);
-  M5.Lcd.clear();
-  M5.Lcd.setCursor(SCREEN_X, SCREEN_Y);
-  M5.Lcd.setTextSize(4);
-  setupI2CHubUnit();
-  setupToFUnit();
+  { /* 共通初期化 */
+    M5.begin();
+    M5.Lcd.clear();
+    M5.Lcd.setCursor(SCREEN_X, SCREEN_Y);
+    M5.Lcd.setTextSize(2);
+  }
+
+  { /* ToF初期化 */
+    Wire.begin(32, 33);
+    setupI2CHubUnit();
+    setupToFUnit();
+  }
+
+  { /* サーボ初期化 */
+    setupServo();
+  }
+
+  {
+    imu.Init();
+  }
 }
 
 void loop() {
-  static uint16_t distance[MAX_TOFUNIT_SIZE] = {0};
-
-  for (uint8_t id=0; id<MAX_TOFUNIT_SIZE; id++) {
-    hub->selectChannel(id);
-    distance[id] = tof[id]->read();
+  { /* ToF テスト*/
+    static uint16_t distance[MAX_TOFUNIT_SIZE] = {0};
+    for (uint8_t id=0; id<MAX_TOFUNIT_SIZE; id++) {
+      hub->selectChannel(id);
+      distance[id] = tof[id]->read();
+    }
+    for (uint8_t id=0; id<MAX_TOFUNIT_SIZE; id++) {
+      M5.Lcd.setCursor(SCREEN_X, SCREEN_Y + LINE_HEIGHT * id);
+      M5.Lcd.printf("CH%d: %dmm    ", id, distance[id]);
+    }
+    delay(10);
   }
 
-  for (uint8_t id=0; id<MAX_TOFUNIT_SIZE; id++) {
-    M5.Lcd.setCursor(SCREEN_X, SCREEN_Y + LINE_HEIGHT * id);
-    M5.Lcd.printf("CH%d: %dmm    ", id, distance[id]);
+  float pitch, roll, yaw;
+  { /* IMU テスト*/
+    imu.getAhrsData(&pitch, &roll, &yaw);
+    M5.Lcd.setCursor(SCREEN_X, SCREEN_Y + LINE_HEIGHT * 4);
+    M5.Lcd.printf("Pitch: %f\nRoll: %f\nYaw: %f", pitch, roll, yaw);
   }
-  delay(10);
+
+  { /* サーボテスト */
+    int angle = abs(int(pitch));
+    servo->write(angle);
+  }
 }
