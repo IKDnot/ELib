@@ -32,4 +32,5 @@
 #include "EJ_ServoMotor.h"
 #include "EJ_ToFUnit.h"
 #include "EJ_I2CHub.h"
+#include "EJ_EncoderMotor.h"
 #endif // ELIB
