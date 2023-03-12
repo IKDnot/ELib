@@ -48,7 +48,7 @@ typedef struct
  */
 class EJ_DCMotor
 {
-private:
+protected:
     /**
      * @brief EJ_DCMotorクラスのコンストラクタ
      * @param pin1 モーターの接続ピン1
