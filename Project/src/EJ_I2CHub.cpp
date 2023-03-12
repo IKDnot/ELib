@@ -1,4 +1,4 @@
-#include "EJ_ToFUnit.h"
+#include "EJ_I2CHub.h"
 #include "M5Core2.h"
 #ifdef M5_DEBUG
 #define ERRORLOG() M5.Lcd.printf("[ERROR] Class:%s, Line:%d\n", _classname, __LINE__)
@@ -7,53 +7,36 @@
 #endif
 
 /*--------------
-class EJ_ToFUnit
+class EJ_I2CHub
 --------------*/
 
 /* static menber */
-const char* EJ_ToFUnit::_classname = "EJ_ToFUnit";
+const char* EJ_I2CHub::_classname = "EJ_I2CHub";
 
 /* private method */
-EJ_ToFUnit::EJ_ToFUnit(uint8_t address)
+EJ_I2CHub::EJ_I2CHub(uint8_t address)
 :   _address(address),
-    _error(true),
-    VL53L0X()
-{
-    if (!VL53L0X::init()) {
-        ERRORLOG();
-        return;
-    }
-    VL53L0X::setAddress(_address);
-    VL53L0X::setTimeout(500);
-    VL53L0X::startContinuous(0);
-    _error = false;
-}
+    ClosedCube::Wired::TCA9548A(_address)
+{}
 
 /* public method */
-EJ_ToFUnit::~EJ_ToFUnit()
-{
-    VL53L0X::stopContinuous();
-}
+EJ_I2CHub::~EJ_I2CHub()
+{}
 
-uint16_t EJ_ToFUnit::read()
-{
-    return VL53L0X::readRangeContinuousMillimeters();
-}
-
-/*--------------
-class EJ_ToFUnit
---------------*/
+/*---------------------
+class EJ_I2CHub_Manager
+---------------------*/
 
 /* static member */
-EJ_ToFUnit_Manager* EJ_ToFUnit_Manager::_singleton = NULL;
-const char* EJ_ToFUnit_Manager::_classname = "EJ_ToFUnit_Manager";
+EJ_I2CHub_Manager* EJ_I2CHub_Manager::_singleton = NULL;
+const char* EJ_I2CHub_Manager::_classname = "EJ_I2CHub_Manager";
 
 /* private method */
-EJ_ToFUnit_Manager::EJ_ToFUnit_Manager(size_t maxInstanceSize)
+EJ_I2CHub_Manager::EJ_I2CHub_Manager(size_t maxInstanceSize)
 :   _maxInstanceSize(maxInstanceSize),
     _instanceList(NULL)
 {
-    _instanceList = new EJ_ToFUnit*[_maxInstanceSize];
+    _instanceList = new EJ_I2CHub*[_maxInstanceSize];
     if (_instanceList == NULL) {
         /* 
         ERRORLOG 
@@ -68,7 +51,7 @@ EJ_ToFUnit_Manager::EJ_ToFUnit_Manager(size_t maxInstanceSize)
 }
 
 /* static private method */
-EJ_ToFUnit_Manager* EJ_ToFUnit_Manager::getInstance()
+EJ_I2CHub_Manager* EJ_I2CHub_Manager::getInstance()
 {
     if (_singleton == NULL) {
         /*
@@ -83,7 +66,7 @@ EJ_ToFUnit_Manager* EJ_ToFUnit_Manager::getInstance()
 }
 
 /* public method */
-EJ_ToFUnit_Manager::~EJ_ToFUnit_Manager()
+EJ_I2CHub_Manager::~EJ_I2CHub_Manager()
 {
     if (_instanceList != NULL) {
         for (size_t i = 0; i < _maxInstanceSize; i++) {
@@ -96,10 +79,10 @@ EJ_ToFUnit_Manager::~EJ_ToFUnit_Manager()
 }
 
 /* static public method */
-bool EJ_ToFUnit_Manager::configure(size_t maxInstanceSize)
+bool EJ_I2CHub_Manager::configure(size_t maxInstanceSize)
 {
     if (_singleton == NULL) {
-        _singleton = new EJ_ToFUnit_Manager(maxInstanceSize);
+        _singleton = new EJ_I2CHub_Manager(maxInstanceSize);
         if (_singleton == NULL) {
             /*
             ERROLOG
@@ -112,9 +95,9 @@ bool EJ_ToFUnit_Manager::configure(size_t maxInstanceSize)
     return true;
 }
 
-EJ_ToFUnit* EJ_ToFUnit_Manager::createToFUnit(uint8_t id, uint8_t address)
+EJ_I2CHub* EJ_I2CHub_Manager::createI2CHub(uint8_t id, uint8_t address)
 {
-    EJ_ToFUnit_Manager *manager = EJ_ToFUnit_Manager::getInstance();
+    EJ_I2CHub_Manager *manager = EJ_I2CHub_Manager::getInstance();
     if (manager == NULL) {
         /*
         ERRORLOG
@@ -132,8 +115,8 @@ EJ_ToFUnit* EJ_ToFUnit_Manager::createToFUnit(uint8_t id, uint8_t address)
         return NULL;
     }
     if (manager->_instanceList[id] == NULL) {
-        EJ_ToFUnit *instance = new EJ_ToFUnit(address);
-        if (instance == NULL || instance->_error) {
+        EJ_I2CHub *instance = new EJ_I2CHub(address);
+        if (instance == NULL) {
             /*
             ERRORLOG
                 内容：インスタンス生成に失敗した
@@ -147,9 +130,9 @@ EJ_ToFUnit* EJ_ToFUnit_Manager::createToFUnit(uint8_t id, uint8_t address)
     return manager->_instanceList[id];
 }
 
-EJ_ToFUnit* EJ_ToFUnit_Manager::getToFUnit(uint8_t id)
+EJ_I2CHub* EJ_I2CHub_Manager::getI2CHub(uint8_t id)
 {
-    EJ_ToFUnit_Manager *manager = EJ_ToFUnit_Manager::getInstance();
+    EJ_I2CHub_Manager *manager = EJ_I2CHub_Manager::getInstance();
     if (manager == NULL) {
         /*
         ERRORLOG
