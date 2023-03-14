@@ -32,7 +32,6 @@ EJ_DCMotor::EJ_DCMotor(uint8_t pin1, uint8_t pin2, int8_t en)
 {
     if (_en >= 0) {
         _enablePWM = true;
-        M5.Lcd.printf("enable PWM\n");
     }
     pinMode(_pin1, OUTPUT);
     pinMode(_pin2, OUTPUT);
