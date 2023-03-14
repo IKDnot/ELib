@@ -43,6 +43,7 @@ typedef struct
     uint8_t pin2; /**< モーターの接続ピン2 */
     uint8_t enc1; /**< エンコーダの接続ピン1 */
     uint8_t enc2; /**< エンコーダの接続ピン1 */
+    int8_t en;    /**< PWM設定ピン (負値: PWM無効) */
     uint8_t id;   /**< モーターの識別番号 */
 } EncoderMotorDef;
 
@@ -59,8 +60,9 @@ private:
      * @param pin2 モーターの接続ピン2
      * @param enc1 エンコーダの接続ピン1
      * @param enc2 エンコーダの接続ピン2
+     * @param en   PWM設定ピン (負値: PWM無効)   
      */
-    EJ_EncoderMotor(uint8_t pin1 = 0, uint8_t pin2 = 0, uint8_t enc1 = 0, uint8_t enc2 = 0);
+    EJ_EncoderMotor(uint8_t pin1 = 0, uint8_t pin2 = 0, uint8_t enc1 = 0, uint8_t enc2 = 0, int8_t en = -1);
 
     friend class EJ_EncoderMotor_Manager;
 
@@ -78,10 +80,26 @@ public:
     void move(long relativePosition);
 
     /**
+     * @brief 現在位置から相対移動 (PWM制御)
+     * @param relativePosition 現在位置からの相対位置
+     * @details _enablePWMがfalseの時はコールされても何もしない。
+     * @param duty Duty比 (0: 停止, -100: 最大出力で逆転, 100: 最大出力で正転)
+     */
+    void move(long relativePosition, int16_t duty);
+
+    /**
      * @brief 絶対位置まで絶対移動
      * @param absolutePosition 目標位置
      */
     void moveTo(long absolutePosition);
+    
+        /**
+     * @brief 絶対位置まで絶対移動 (PWM制御)
+     * @param absolutePosition 目標位置
+     * @details _enablePWMがfalseの時はコールされても何もしない。
+     * @param duty Duty比 (0: 停止, -100: 最大出力で逆転, 100: 最大出力で正転)
+     */
+    void moveTo(long absolutePosition, int16_t duty);
     
     /**
      * @brief 目標位置を設定する
@@ -97,8 +115,6 @@ public:
 
 private:
     static const char* _classname;
-    uint8_t _pin1;
-    uint8_t _pin2;
     uint8_t _enc1;
     uint8_t _enc2;
     long _target;
@@ -153,10 +169,11 @@ public:
      * @details 生成したインスタンスはgetMotor関数で取得できるように同時に自身の_instanceList配列に記憶しておく
      * @param pin1 モータの接続ピン1
      * @param pin2 モータの接続ピン2
+     * @param en PWM設定ピン (負値: PWM無効)
      * @param id モーターの識別番号
      * @return EJ_EncoderMotorクラスのインスタンスを指すポインタ
      */
-    static EJ_EncoderMotor *createEncoderMotor(uint8_t pin1, uint8_t pin2, uint8_t enc1, uint8_t enc2, uint8_t id);
+    static EJ_EncoderMotor *createEncoderMotor(uint8_t pin1, uint8_t pin2, uint8_t enc1, uint8_t enc2, int8_t en, uint8_t id);
 
     /**
      * @brief EJ_EncoderMotorクラスのインスタンスを取得する
