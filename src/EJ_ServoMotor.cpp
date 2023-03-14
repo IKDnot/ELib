@@ -1,5 +1,13 @@
 #include "EJ_ServoMotor.h"
-#include "M5Core2.h"
+
+#ifdef M5CORE2
+#include <M5Core2.h>
+#elif M5STICKCPLUS
+#include <M5StickCPlus.h>
+#else
+#undef M5_DEBUG
+#endif
+
 #ifdef M5_DEBUG
 #define ERRORLOG() M5.Lcd.printf("[ERROR] Class:%s, Line:%d\n", _classname, __LINE__)
 #else
