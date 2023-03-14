@@ -39,6 +39,7 @@ typedef struct
 {
     uint8_t pin1; /**< モーターの接続ピン1 */
     uint8_t pin2; /**< モーターの接続ピン2 */
+    int8_t en;    /**< PWM設定ピン (負値: PWM無効) */
     uint8_t id;   /**< モーターの識別番号 */
 } MotorDef;
 
@@ -53,8 +54,9 @@ protected:
      * @brief EJ_DCMotorクラスのコンストラクタ
      * @param pin1 モーターの接続ピン1
      * @param pin2 モーターの接続ピン2
+     * @param en   PWM設定ピン (負値: PWM無効)   
      */
-    EJ_DCMotor(uint8_t pin1 = 0, uint8_t pin2 = 0);
+    EJ_DCMotor(uint8_t pin1 = 0, uint8_t pin2 = 0, int8_t en = -1);
 
     friend class EJ_DCMotor_Manager;
 
@@ -88,10 +90,30 @@ public:
      */
     void stop();
 
+    /**
+     * @brief Duty比を設定する (範囲: -100%~100%)
+     * @details PWM制御におけるDuty比を-100%~100%の間で設定する。0を指定すると停止する。
+     * @details _enablePWMがfalseの時はコールされても何もしない。
+     * @param duty Duty比 (0: 停止, -100: 最大出力で逆転, 100: 最大出力で正転)
+     */
+    void setPWM(int16_t duty);
+
+    /**
+     * @brief 設定されているDuty比を取得する (範囲: -100%~100%)
+     * @details _enablePWMがfalseの時はコールされても何もしない。
+     * @return Duty比
+     */
+    int16_t getPWM();
+
+protected:
+    bool _enablePWM;
+
 private:
     static const char* _classname;
     uint8_t _pin1;
     uint8_t _pin2;
+    uint8_t _en;
+    int8_t _duty;
 };
 
 /**
@@ -143,10 +165,11 @@ public:
      * @details 生成したインスタンスはgetMotor関数で取得できるように同時に自身の_instanceList配列に記憶しておく
      * @param pin1 モータの接続ピン1
      * @param pin2 モータの接続ピン2
+     * @param en PWM設定ピン (負値: PWM無効)
      * @param id モーターの識別番号
      * @return EJ_DCMotorクラスのインスタンスを指すポインタ
      */
-    static EJ_DCMotor *createMotor(uint8_t pin1, uint8_t pin2, uint8_t id);
+    static EJ_DCMotor *createMotor(uint8_t pin1, uint8_t pin2, int8_t en,  uint8_t id);
 
     /**
      * @brief EJ_DCMotorクラスのインスタンスを取得する

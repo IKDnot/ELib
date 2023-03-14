@@ -1,4 +1,5 @@
 #include "EJ_DCMotor.h"
+#include <math.h>
 
 #ifdef M5CORE2
 #include <M5Core2.h>
@@ -22,14 +23,22 @@ class EJ_DCMotor
 const char* EJ_DCMotor::_classname = "EJ_DCMotor";
 
 /* private method */
-EJ_DCMotor::EJ_DCMotor(uint8_t pin1, uint8_t pin2)
+EJ_DCMotor::EJ_DCMotor(uint8_t pin1, uint8_t pin2, int8_t en)
 :   _pin1(pin1),
-    _pin2(pin2)
+    _pin2(pin2),
+    _en(en),
+    _enablePWM(false),
+    _duty(0)
 {
+    if (_en >= 0) {
+        _enablePWM = true;
+        M5.Lcd.printf("enable PWM\n");
+    }
     pinMode(_pin1, OUTPUT);
     pinMode(_pin2, OUTPUT);
-    digitalWrite(_pin1, LOW);
-    digitalWrite(_pin2, LOW);
+    pinMode(_en, OUTPUT);
+    setPWM(_duty);
+    stop();
 }
 
 void EJ_DCMotor::write(uint8_t bit1, uint8_t bit2)
@@ -55,6 +64,29 @@ void EJ_DCMotor::reverse()
 void EJ_DCMotor::stop()
 {
     write(LOW, LOW);
+}
+
+void EJ_DCMotor::setPWM(int16_t duty)
+{
+    if (!_enablePWM) return;
+
+    _duty = constrain(duty, -100, 100);
+    uint8_t setVal = map(abs(_duty), 0, 100, 0, 254);
+
+    analogWrite(_en, setVal);
+
+    if (_duty > 0) {
+        forward();
+    } else if (_duty < 0) {
+        reverse();
+    } else {
+        stop();
+    }
+}
+
+int16_t EJ_DCMotor::getPWM()
+{
+    return _duty;
 }
 
 /*----------------------
@@ -131,10 +163,10 @@ bool EJ_DCMotor_Manager::configure(size_t maxInstanceSize)
 
 EJ_DCMotor* EJ_DCMotor_Manager::createMotor(MotorDef motor)
 {
-    return EJ_DCMotor_Manager::createMotor(motor.pin1, motor.pin2, motor.id);
+    return EJ_DCMotor_Manager::createMotor(motor.pin1, motor.pin2, motor.en, motor.id);
 }
 
-EJ_DCMotor* EJ_DCMotor_Manager::createMotor(uint8_t pin1, uint8_t pin2, uint8_t id)
+EJ_DCMotor* EJ_DCMotor_Manager::createMotor(uint8_t pin1, uint8_t pin2, int8_t en, uint8_t id)
 {
     EJ_DCMotor_Manager *manager = EJ_DCMotor_Manager::getInstance();
     if (manager == NULL) {
@@ -154,7 +186,7 @@ EJ_DCMotor* EJ_DCMotor_Manager::createMotor(uint8_t pin1, uint8_t pin2, uint8_t 
         return NULL;
     }
     if (manager->_instanceList[id] == NULL) {
-        EJ_DCMotor *instance = new EJ_DCMotor(pin1, pin2);
+        EJ_DCMotor *instance = new EJ_DCMotor(pin1, pin2, en);
         if (instance == NULL) {
             /*
             ERRORLOG
@@ -180,7 +212,7 @@ EJ_DCMotor* EJ_DCMotor_Manager::getMotor(MotorDef motor)
         ERRORLOG();
         return NULL;
     }
-    if (instance->_pin1 != motor.pin1 || instance->_pin2 != motor.pin2) {
+    if (instance->_pin1 != motor.pin1 || instance->_pin2 != motor.pin2 || instance->_en != motor.en) {
         /*
         ERROLOG
             内容：指定されたidが指すインスタンスと、確保済みの同じidのインスタンスが一致しない

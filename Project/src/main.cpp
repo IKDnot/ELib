@@ -65,7 +65,7 @@ void setupMotor() {
     M5.shutdown();
   }
   
-  invalidMotor = EJ_DCMotor_Manager::createMotor(1,3,5); // Error 出力テスト用
+  invalidMotor = EJ_DCMotor_Manager::createMotor(1,3,-1,5); // Error 出力テスト用
   if (invalidMotor == NULL) {
     /*
     ERRORLOG
