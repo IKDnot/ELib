@@ -22,12 +22,11 @@ class EJ_EncoderMotor
 const char* EJ_EncoderMotor::_classname = "EJ_EncoderMotor";
 
 /* private method */
-EJ_EncoderMotor::EJ_EncoderMotor(uint8_t pin1, uint8_t pin2, uint8_t enc1, uint8_t enc2)
-:   _pin1(pin1),
-    _pin2(pin2),
-    _enc1(enc1),
+EJ_EncoderMotor::EJ_EncoderMotor(uint8_t pin1, uint8_t pin2, uint8_t enc1, uint8_t enc2, int8_t en)
+:   _enc1(enc1),
     _enc2(enc2),
-    EJ_DCMotor(_pin1, _pin2),
+    _target(0),
+    EJ_DCMotor(pin1, pin2, en),
     Encoder(_enc1, _enc2)
 {}
 
@@ -48,9 +47,28 @@ void EJ_EncoderMotor::move(long relativePosition) {
     EJ_DCMotor::stop();
 }
 
-void EJ_EncoderMotor::moveTo(long absolutePosition) {
-    move(absolutePosition - Encoder::read());
+void EJ_EncoderMotor::move(long relativePosition, int16_t duty) {
+    if (!EJ_DCMotor::_enablePWM) return;
+    if (relativePosition * duty < 0) {
+        /*
+        ERRORLOG
+            内容：目標方向とduty比で表現する進行方向が不一致
+        */
+        ERRORLOG();
+        return;
+    }
+    _target = Encoder::read() + relativePosition;
+    EJ_DCMotor::setPWM(duty);
+    while (!isTargetReached()) {
+        delay(1);
+    }
+    EJ_DCMotor::stop();
 }
+
+void EJ_EncoderMotor::moveTo(long absolutePosition, int16_t duty) {
+    move(absolutePosition - Encoder::read(), duty);
+}
+
 
 void EJ_EncoderMotor::setTarget(long targetPosition) {
     _target = targetPosition;
@@ -78,9 +96,9 @@ bool EJ_EncoderMotor::isTargetReached() {
 }
 */
 
-/*----------------------
+/*---------------------------
 class EJ_EncoderMotor_Manager 
-----------------------*/
+---------------------------*/
 
 /* static member */
 EJ_EncoderMotor_Manager* EJ_EncoderMotor_Manager::_singleton = NULL;
@@ -152,10 +170,10 @@ bool EJ_EncoderMotor_Manager::configure(size_t maxInstanceSize)
 
 EJ_EncoderMotor* EJ_EncoderMotor_Manager::createEncoderMotor(EncoderMotorDef motor)
 {
-    return EJ_EncoderMotor_Manager::createEncoderMotor(motor.pin1, motor.pin2, motor.enc1, motor.enc2, motor.id);
+    return EJ_EncoderMotor_Manager::createEncoderMotor(motor.pin1, motor.pin2, motor.enc1, motor.enc2, motor.en, motor.id);
 }
 
-EJ_EncoderMotor* EJ_EncoderMotor_Manager::createEncoderMotor(uint8_t pin1, uint8_t pin2, uint8_t enc1, uint8_t enc2, uint8_t id)
+EJ_EncoderMotor* EJ_EncoderMotor_Manager::createEncoderMotor(uint8_t pin1, uint8_t pin2, uint8_t enc1, uint8_t enc2, int8_t en, uint8_t id)
 {
     EJ_EncoderMotor_Manager *manager = EJ_EncoderMotor_Manager::getInstance();
     if (manager == NULL) {
@@ -175,7 +193,7 @@ EJ_EncoderMotor* EJ_EncoderMotor_Manager::createEncoderMotor(uint8_t pin1, uint8
         return NULL;
     }
     if (manager->_instanceList[id] == NULL) {
-        EJ_EncoderMotor *instance = new EJ_EncoderMotor(pin1, pin2, enc1, enc2);
+        EJ_EncoderMotor *instance = new EJ_EncoderMotor(pin1, pin2, enc1, enc2, en);
         if (instance == NULL) {
             /*
             ERRORLOG
@@ -201,7 +219,7 @@ EJ_EncoderMotor* EJ_EncoderMotor_Manager::getEncoderMotor(EncoderMotorDef motor)
         ERRORLOG();
         return NULL;
     }
-    if (instance->_pin1 != motor.pin1 || instance->_pin2 != motor.pin2 || instance->_enc1 != motor.enc1 || instance->_enc2 != motor.enc2) {
+    if (instance->_enc1 != motor.enc1 || instance->_enc2 != motor.enc2) {
         /*
         ERROLOG
             内容：指定されたidが指すインスタンスと、確保済みの同じidのインスタンスが一致しない
