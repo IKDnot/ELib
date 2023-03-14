@@ -70,7 +70,7 @@ void EJ_DCMotor::setPWM(int16_t duty)
     if (!_enablePWM) return;
 
     _duty = constrain(duty, -100, 100);
-    uint8_t setVal = map(abs(_duty), 0, 100, 0, 254);
+    uint8_t setVal = map(abs(_duty), 0, 100, 0, 255);
 
     analogWrite(_en, setVal);
 
