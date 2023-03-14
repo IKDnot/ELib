@@ -84,6 +84,7 @@ $(document).ready(function(){initNavTree('classEJ__DCMotor.html',''); initResiza
   <div class="summary">
 <a href="#pub-methods">公開メンバ関数</a> &#124;
 <a href="#pro-methods">限定公開メンバ関数</a> &#124;
+<a href="#pro-attribs">限定公開変数類</a> &#124;
 <a href="#friends">フレンド</a> &#124;
 <a href="classEJ__DCMotor-members.html">全メンバ一覧</a>  </div>
   <div class="headertitle">
@@ -119,12 +120,23 @@ EJ_DCMotor の継承関係図</div>
 <tr class="memitem:a219456d25f8f6061bde0d2124ad57e5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEJ__DCMotor.html#a219456d25f8f6061bde0d2124ad57e5d">stop</a> ()</td></tr>
 <tr class="memdesc:a219456d25f8f6061bde0d2124ad57e5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">モーターを停止させる  <a href="classEJ__DCMotor.html#a219456d25f8f6061bde0d2124ad57e5d">[詳解]</a><br /></td></tr>
 <tr class="separator:a219456d25f8f6061bde0d2124ad57e5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf5aa5783190529694a7fcffb9289dc2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEJ__DCMotor.html#acf5aa5783190529694a7fcffb9289dc2">setPWM</a> (int16_t duty)</td></tr>
+<tr class="memdesc:acf5aa5783190529694a7fcffb9289dc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duty比を設定する (範囲: -100%~100%)  <a href="classEJ__DCMotor.html#acf5aa5783190529694a7fcffb9289dc2">[詳解]</a><br /></td></tr>
+<tr class="separator:acf5aa5783190529694a7fcffb9289dc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13e79e909564fb563d2ab74ee8e3fabf"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEJ__DCMotor.html#a13e79e909564fb563d2ab74ee8e3fabf">getPWM</a> ()</td></tr>
+<tr class="memdesc:a13e79e909564fb563d2ab74ee8e3fabf"><td class="mdescLeft">&#160;</td><td class="mdescRight">設定されているDuty比を取得する (範囲: -100%~100%)  <a href="classEJ__DCMotor.html#a13e79e909564fb563d2ab74ee8e3fabf">[詳解]</a><br /></td></tr>
+<tr class="separator:a13e79e909564fb563d2ab74ee8e3fabf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 限定公開メンバ関数</h2></td></tr>
-<tr class="memitem:a4d1e01bd9a226a2bf44d82ab3d24996a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEJ__DCMotor.html#a4d1e01bd9a226a2bf44d82ab3d24996a">EJ_DCMotor</a> (uint8_t pin1=0, uint8_t pin2=0)</td></tr>
-<tr class="memdesc:a4d1e01bd9a226a2bf44d82ab3d24996a"><td class="mdescLeft">&#160;</td><td class="mdescRight">EJ_DCMotorクラスのコンストラクタ  <a href="classEJ__DCMotor.html#a4d1e01bd9a226a2bf44d82ab3d24996a">[詳解]</a><br /></td></tr>
-<tr class="separator:a4d1e01bd9a226a2bf44d82ab3d24996a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37bfe14feb3da04d9113c9a8c07052f1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEJ__DCMotor.html#a37bfe14feb3da04d9113c9a8c07052f1">EJ_DCMotor</a> (uint8_t pin1=0, uint8_t pin2=0, int8_t en=-1)</td></tr>
+<tr class="memdesc:a37bfe14feb3da04d9113c9a8c07052f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">EJ_DCMotorクラスのコンストラクタ  <a href="classEJ__DCMotor.html#a37bfe14feb3da04d9113c9a8c07052f1">[詳解]</a><br /></td></tr>
+<tr class="separator:a37bfe14feb3da04d9113c9a8c07052f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+限定公開変数類</h2></td></tr>
+<tr class="memitem:a9d9ed02affc50dfb679b97e514d60453"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEJ__DCMotor.html#a9d9ed02affc50dfb679b97e514d60453">_enablePWM</a></td></tr>
+<tr class="separator:a9d9ed02affc50dfb679b97e514d60453"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 フレンド</h2></td></tr>
@@ -135,10 +147,10 @@ EJ_DCMotor の継承関係図</div>
 <div class="textblock"><p>DCモーターを制御するクラス </p>
 <p>*注意:本クラスのインスタンスはEJ_DCMotor_Managerクラス以外からは生成できない </p>
 
-<p class="definition"> <a class="el" href="EJ__DCMotor_8h_source.html">EJ_DCMotor.h</a> の <a class="el" href="EJ__DCMotor_8h_source.html#l00049">49</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="EJ__DCMotor_8h_source.html">EJ_DCMotor.h</a> の <a class="el" href="EJ__DCMotor_8h_source.html#l00050">50</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
-<a id="a4d1e01bd9a226a2bf44d82ab3d24996a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d1e01bd9a226a2bf44d82ab3d24996a">&#9670;&nbsp;</a></span>EJ_DCMotor()</h2>
+<a id="a37bfe14feb3da04d9113c9a8c07052f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37bfe14feb3da04d9113c9a8c07052f1">&#9670;&nbsp;</a></span>EJ_DCMotor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -156,7 +168,13 @@ EJ_DCMotor の継承関係図</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>pin2</em> = <code>0</code>&#160;</td>
+          <td class="paramname"><em>pin2</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int8_t&#160;</td>
+          <td class="paramname"><em>en</em> = <code>-1</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -176,11 +194,13 @@ EJ_DCMotor の継承関係図</div>
   <table class="params">
     <tr><td class="paramname">pin1</td><td>モーターの接続ピン1 </td></tr>
     <tr><td class="paramname">pin2</td><td>モーターの接続ピン2 </td></tr>
+    <tr><td class="paramname">en</td><td>PWM設定ピン (負値: PWM無効) <br  />
+ </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="EJ__DCMotor_8cpp_source.html">EJ_DCMotor.cpp</a> の <a class="el" href="EJ__DCMotor_8cpp_source.html#l00025">25</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="EJ__DCMotor_8cpp_source.html">EJ_DCMotor.cpp</a> の <a class="el" href="EJ__DCMotor_8cpp_source.html#l00026">26</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -201,7 +221,7 @@ EJ_DCMotor の継承関係図</div>
 
 <p><a class="el" href="classEJ__DCMotor.html" title="DCモーターを制御するクラス">EJ_DCMotor</a> クラスのデストラクタ </p>
 
-<p class="definition"> <a class="el" href="EJ__DCMotor_8cpp_source.html">EJ_DCMotor.cpp</a> の <a class="el" href="EJ__DCMotor_8cpp_source.html#l00042">42</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="EJ__DCMotor_8cpp_source.html">EJ_DCMotor.cpp</a> の <a class="el" href="EJ__DCMotor_8cpp_source.html#l00050">50</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -223,7 +243,29 @@ EJ_DCMotor の継承関係図</div>
 
 <p>モーターを正転させる </p>
 
-<p class="definition"> <a class="el" href="EJ__DCMotor_8cpp_source.html">EJ_DCMotor.cpp</a> の <a class="el" href="EJ__DCMotor_8cpp_source.html#l00045">45</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="EJ__DCMotor_8cpp_source.html">EJ_DCMotor.cpp</a> の <a class="el" href="EJ__DCMotor_8cpp_source.html#l00053">53</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a13e79e909564fb563d2ab74ee8e3fabf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13e79e909564fb563d2ab74ee8e3fabf">&#9670;&nbsp;</a></span>getPWM()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t EJ_DCMotor::getPWM </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>設定されているDuty比を取得する (範囲: -100%~100%) </p>
+<p>_enablePWMがfalseの時はコールされても何もしない。 </p><dl class="section return"><dt>戻り値</dt><dd>Duty比 </dd></dl>
+
+<p class="definition"> <a class="el" href="EJ__DCMotor_8cpp_source.html">EJ_DCMotor.cpp</a> の <a class="el" href="EJ__DCMotor_8cpp_source.html#l00086">86</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -244,7 +286,36 @@ EJ_DCMotor の継承関係図</div>
 
 <p>モーターを逆転させる </p>
 
-<p class="definition"> <a class="el" href="EJ__DCMotor_8cpp_source.html">EJ_DCMotor.cpp</a> の <a class="el" href="EJ__DCMotor_8cpp_source.html#l00050">50</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="EJ__DCMotor_8cpp_source.html">EJ_DCMotor.cpp</a> の <a class="el" href="EJ__DCMotor_8cpp_source.html#l00058">58</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="acf5aa5783190529694a7fcffb9289dc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf5aa5783190529694a7fcffb9289dc2">&#9670;&nbsp;</a></span>setPWM()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EJ_DCMotor::setPWM </td>
+          <td>(</td>
+          <td class="paramtype">int16_t&#160;</td>
+          <td class="paramname"><em>duty</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Duty比を設定する (範囲: -100%~100%) </p>
+<p>PWM制御におけるDuty比を-100%~100の間で設定する。0を指定すると停止する。</p>
+<p>_enablePWMがfalseの時はコールされても何もしない。 </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">duty</td><td>Duty比 (0: 停止, -100: 最大出力で逆転, 100: 最大出力で正転) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="EJ__DCMotor_8cpp_source.html">EJ_DCMotor.cpp</a> の <a class="el" href="EJ__DCMotor_8cpp_source.html#l00068">68</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -265,7 +336,7 @@ EJ_DCMotor の継承関係図</div>
 
 <p>モーターを停止させる </p>
 
-<p class="definition"> <a class="el" href="EJ__DCMotor_8cpp_source.html">EJ_DCMotor.cpp</a> の <a class="el" href="EJ__DCMotor_8cpp_source.html#l00055">55</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="EJ__DCMotor_8cpp_source.html">EJ_DCMotor.cpp</a> の <a class="el" href="EJ__DCMotor_8cpp_source.html#l00063">63</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -290,7 +361,32 @@ EJ_DCMotor の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="EJ__DCMotor_8h_source.html">EJ_DCMotor.h</a> の <a class="el" href="EJ__DCMotor_8h_source.html#l00059">59</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="EJ__DCMotor_8h_source.html">EJ_DCMotor.h</a> の <a class="el" href="EJ__DCMotor_8h_source.html#l00061">61</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a9d9ed02affc50dfb679b97e514d60453"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d9ed02affc50dfb679b97e514d60453">&#9670;&nbsp;</a></span>_enablePWM</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool EJ_DCMotor::_enablePWM</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="EJ__DCMotor_8h_source.html">EJ_DCMotor.h</a> の <a class="el" href="EJ__DCMotor_8h_source.html#l00109">109</a> 行目に定義があります。</p>
 
 </div>
 </div>

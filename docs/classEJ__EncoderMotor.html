@@ -112,9 +112,15 @@ EJ_EncoderMotor の継承関係図</div>
 <tr class="memitem:a834fd81327b4586b3f55f07c9b5006cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEJ__EncoderMotor.html#a834fd81327b4586b3f55f07c9b5006cd">move</a> (long relativePosition)</td></tr>
 <tr class="memdesc:a834fd81327b4586b3f55f07c9b5006cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">現在位置から相対移動  <a href="classEJ__EncoderMotor.html#a834fd81327b4586b3f55f07c9b5006cd">[詳解]</a><br /></td></tr>
 <tr class="separator:a834fd81327b4586b3f55f07c9b5006cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76ba4bb353966608ffdc29d2f416b359"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEJ__EncoderMotor.html#a76ba4bb353966608ffdc29d2f416b359">move</a> (long relativePosition, int16_t duty)</td></tr>
+<tr class="memdesc:a76ba4bb353966608ffdc29d2f416b359"><td class="mdescLeft">&#160;</td><td class="mdescRight">現在位置から相対移動 (PWM制御)  <a href="classEJ__EncoderMotor.html#a76ba4bb353966608ffdc29d2f416b359">[詳解]</a><br /></td></tr>
+<tr class="separator:a76ba4bb353966608ffdc29d2f416b359"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08a311b027203ea71708711704bb95b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEJ__EncoderMotor.html#a08a311b027203ea71708711704bb95b4">moveTo</a> (long absolutePosition)</td></tr>
 <tr class="memdesc:a08a311b027203ea71708711704bb95b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">絶対位置まで絶対移動  <a href="classEJ__EncoderMotor.html#a08a311b027203ea71708711704bb95b4">[詳解]</a><br /></td></tr>
 <tr class="separator:a08a311b027203ea71708711704bb95b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac59def7a12e664538482ad913e7d4a59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEJ__EncoderMotor.html#ac59def7a12e664538482ad913e7d4a59">moveTo</a> (long absolutePosition, int16_t duty)</td></tr>
+<tr class="memdesc:ac59def7a12e664538482ad913e7d4a59"><td class="mdescLeft">&#160;</td><td class="mdescRight">絶対位置まで絶対移動 (PWM制御)  <a href="classEJ__EncoderMotor.html#ac59def7a12e664538482ad913e7d4a59">[詳解]</a><br /></td></tr>
+<tr class="separator:ac59def7a12e664538482ad913e7d4a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41d1ea2dde6e2fa405b094a8dfa3e036"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEJ__EncoderMotor.html#a41d1ea2dde6e2fa405b094a8dfa3e036">setTarget</a> (long targetPosition)</td></tr>
 <tr class="memdesc:a41d1ea2dde6e2fa405b094a8dfa3e036"><td class="mdescLeft">&#160;</td><td class="mdescRight">目標位置を設定する  <a href="classEJ__EncoderMotor.html#a41d1ea2dde6e2fa405b094a8dfa3e036">[詳解]</a><br /></td></tr>
 <tr class="separator:a41d1ea2dde6e2fa405b094a8dfa3e036"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,6 +140,12 @@ EJ_EncoderMotor の継承関係図</div>
 <tr class="memitem:a219456d25f8f6061bde0d2124ad57e5d inherit pub_methods_classEJ__DCMotor"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEJ__DCMotor.html#a219456d25f8f6061bde0d2124ad57e5d">stop</a> ()</td></tr>
 <tr class="memdesc:a219456d25f8f6061bde0d2124ad57e5d inherit pub_methods_classEJ__DCMotor"><td class="mdescLeft">&#160;</td><td class="mdescRight">モーターを停止させる  <a href="classEJ__DCMotor.html#a219456d25f8f6061bde0d2124ad57e5d">[詳解]</a><br /></td></tr>
 <tr class="separator:a219456d25f8f6061bde0d2124ad57e5d inherit pub_methods_classEJ__DCMotor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf5aa5783190529694a7fcffb9289dc2 inherit pub_methods_classEJ__DCMotor"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEJ__DCMotor.html#acf5aa5783190529694a7fcffb9289dc2">setPWM</a> (int16_t duty)</td></tr>
+<tr class="memdesc:acf5aa5783190529694a7fcffb9289dc2 inherit pub_methods_classEJ__DCMotor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duty比を設定する (範囲: -100%~100%)  <a href="classEJ__DCMotor.html#acf5aa5783190529694a7fcffb9289dc2">[詳解]</a><br /></td></tr>
+<tr class="separator:acf5aa5783190529694a7fcffb9289dc2 inherit pub_methods_classEJ__DCMotor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13e79e909564fb563d2ab74ee8e3fabf inherit pub_methods_classEJ__DCMotor"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEJ__DCMotor.html#a13e79e909564fb563d2ab74ee8e3fabf">getPWM</a> ()</td></tr>
+<tr class="memdesc:a13e79e909564fb563d2ab74ee8e3fabf inherit pub_methods_classEJ__DCMotor"><td class="mdescLeft">&#160;</td><td class="mdescRight">設定されているDuty比を取得する (範囲: -100%~100%)  <a href="classEJ__DCMotor.html#a13e79e909564fb563d2ab74ee8e3fabf">[詳解]</a><br /></td></tr>
+<tr class="separator:a13e79e909564fb563d2ab74ee8e3fabf inherit pub_methods_classEJ__DCMotor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 フレンド</h2></td></tr>
@@ -143,15 +155,18 @@ EJ_EncoderMotor の継承関係図</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 その他の継承メンバ</h2></td></tr>
 <tr class="inherit_header pro_methods_classEJ__DCMotor"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classEJ__DCMotor')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classEJ__DCMotor.html">EJ_DCMotor</a> に属する継承限定公開メンバ関数</td></tr>
-<tr class="memitem:a4d1e01bd9a226a2bf44d82ab3d24996a inherit pro_methods_classEJ__DCMotor"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEJ__DCMotor.html#a4d1e01bd9a226a2bf44d82ab3d24996a">EJ_DCMotor</a> (uint8_t pin1=0, uint8_t pin2=0)</td></tr>
-<tr class="memdesc:a4d1e01bd9a226a2bf44d82ab3d24996a inherit pro_methods_classEJ__DCMotor"><td class="mdescLeft">&#160;</td><td class="mdescRight">EJ_DCMotorクラスのコンストラクタ  <a href="classEJ__DCMotor.html#a4d1e01bd9a226a2bf44d82ab3d24996a">[詳解]</a><br /></td></tr>
-<tr class="separator:a4d1e01bd9a226a2bf44d82ab3d24996a inherit pro_methods_classEJ__DCMotor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37bfe14feb3da04d9113c9a8c07052f1 inherit pro_methods_classEJ__DCMotor"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEJ__DCMotor.html#a37bfe14feb3da04d9113c9a8c07052f1">EJ_DCMotor</a> (uint8_t pin1=0, uint8_t pin2=0, int8_t en=-1)</td></tr>
+<tr class="memdesc:a37bfe14feb3da04d9113c9a8c07052f1 inherit pro_methods_classEJ__DCMotor"><td class="mdescLeft">&#160;</td><td class="mdescRight">EJ_DCMotorクラスのコンストラクタ  <a href="classEJ__DCMotor.html#a37bfe14feb3da04d9113c9a8c07052f1">[詳解]</a><br /></td></tr>
+<tr class="separator:a37bfe14feb3da04d9113c9a8c07052f1 inherit pro_methods_classEJ__DCMotor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classEJ__DCMotor"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classEJ__DCMotor')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classEJ__DCMotor.html">EJ_DCMotor</a> に属する継承限定公開変数類</td></tr>
+<tr class="memitem:a9d9ed02affc50dfb679b97e514d60453 inherit pro_attribs_classEJ__DCMotor"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEJ__DCMotor.html#a9d9ed02affc50dfb679b97e514d60453">_enablePWM</a></td></tr>
+<tr class="separator:a9d9ed02affc50dfb679b97e514d60453 inherit pro_attribs_classEJ__DCMotor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>エンコーダ付きモーターを制御するクラス </p>
 <p>*注意:本クラスのインスタンスはEJ_EncoderMotor_Managerクラス以外からは生成できない </p>
 
-<p class="definition"> <a class="el" href="EJ__EncoderMotor_8h_source.html">EJ_EncoderMotor.h</a> の <a class="el" href="EJ__EncoderMotor_8h_source.html#l00053">53</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="EJ__EncoderMotor_8h_source.html">EJ_EncoderMotor.h</a> の <a class="el" href="EJ__EncoderMotor_8h_source.html#l00054">54</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
 <a id="a041b73fcc952a37bdcea255a1db2f022"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a041b73fcc952a37bdcea255a1db2f022">&#9670;&nbsp;</a></span>~EJ_EncoderMotor()</h2>
@@ -170,7 +185,7 @@ EJ_EncoderMotor の継承関係図</div>
 
 <p><a class="el" href="classEJ__EncoderMotor.html" title="エンコーダ付きモーターを制御するクラス">EJ_EncoderMotor</a> クラスのデストラクタ </p>
 
-<p class="definition"> <a class="el" href="EJ__EncoderMotor_8cpp_source.html">EJ_EncoderMotor.cpp</a> の <a class="el" href="EJ__EncoderMotor_8cpp_source.html#l00035">35</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="EJ__EncoderMotor_8cpp_source.html">EJ_EncoderMotor.cpp</a> の <a class="el" href="EJ__EncoderMotor_8cpp_source.html#l00034">34</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -193,12 +208,12 @@ EJ_EncoderMotor の継承関係図</div>
 <p>目標位置に到達したかどうか判定する </p>
 <dl class="section return"><dt>戻り値</dt><dd>true: 目標位置に到達 / false: 目標位置に未達 </dd></dl>
 
-<p class="definition"> <a class="el" href="EJ__EncoderMotor_8cpp_source.html">EJ_EncoderMotor.cpp</a> の <a class="el" href="EJ__EncoderMotor_8cpp_source.html#l00059">59</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="EJ__EncoderMotor_8cpp_source.html">EJ_EncoderMotor.cpp</a> の <a class="el" href="EJ__EncoderMotor_8cpp_source.html#l00077">77</a> 行目に定義があります。</p>
 
 </div>
 </div>
 <a id="a834fd81327b4586b3f55f07c9b5006cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a834fd81327b4586b3f55f07c9b5006cd">&#9670;&nbsp;</a></span>move()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a834fd81327b4586b3f55f07c9b5006cd">&#9670;&nbsp;</a></span>move() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -221,12 +236,56 @@ EJ_EncoderMotor の継承関係図</div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="EJ__EncoderMotor_8cpp_source.html">EJ_EncoderMotor.cpp</a> の <a class="el" href="EJ__EncoderMotor_8cpp_source.html#l00038">38</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="EJ__EncoderMotor_8cpp_source.html">EJ_EncoderMotor.cpp</a> の <a class="el" href="EJ__EncoderMotor_8cpp_source.html#l00037">37</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a76ba4bb353966608ffdc29d2f416b359"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76ba4bb353966608ffdc29d2f416b359">&#9670;&nbsp;</a></span>move() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EJ_EncoderMotor::move </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>relativePosition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int16_t&#160;</td>
+          <td class="paramname"><em>duty</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>現在位置から相対移動 (PWM制御) </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">relativePosition</td><td>現在位置からの相対位置</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>_enablePWMがfalseの時はコールされても何もしない。 </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">duty</td><td>Duty比 (0: 停止, -100: 最大出力で逆転, 100: 最大出力で正転) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="EJ__EncoderMotor_8cpp_source.html">EJ_EncoderMotor.cpp</a> の <a class="el" href="EJ__EncoderMotor_8cpp_source.html#l00050">50</a> 行目に定義があります。</p>
 
 </div>
 </div>
 <a id="a08a311b027203ea71708711704bb95b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08a311b027203ea71708711704bb95b4">&#9670;&nbsp;</a></span>moveTo()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a08a311b027203ea71708711704bb95b4">&#9670;&nbsp;</a></span>moveTo() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -249,7 +308,49 @@ EJ_EncoderMotor の継承関係図</div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="EJ__EncoderMotor_8cpp_source.html">EJ_EncoderMotor.cpp</a> の <a class="el" href="EJ__EncoderMotor_8cpp_source.html#l00051">51</a> 行目に定義があります。</p>
+</div>
+</div>
+<a id="ac59def7a12e664538482ad913e7d4a59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac59def7a12e664538482ad913e7d4a59">&#9670;&nbsp;</a></span>moveTo() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EJ_EncoderMotor::moveTo </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>absolutePosition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int16_t&#160;</td>
+          <td class="paramname"><em>duty</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>絶対位置まで絶対移動 (PWM制御) </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">absolutePosition</td><td>目標位置</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>_enablePWMがfalseの時はコールされても何もしない。 </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">duty</td><td>Duty比 (0: 停止, -100: 最大出力で逆転, 100: 最大出力で正転) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="EJ__EncoderMotor_8cpp_source.html">EJ_EncoderMotor.cpp</a> の <a class="el" href="EJ__EncoderMotor_8cpp_source.html#l00068">68</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -277,7 +378,7 @@ EJ_EncoderMotor の継承関係図</div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="EJ__EncoderMotor_8cpp_source.html">EJ_EncoderMotor.cpp</a> の <a class="el" href="EJ__EncoderMotor_8cpp_source.html#l00055">55</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="EJ__EncoderMotor_8cpp_source.html">EJ_EncoderMotor.cpp</a> の <a class="el" href="EJ__EncoderMotor_8cpp_source.html#l00073">73</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -302,7 +403,7 @@ EJ_EncoderMotor の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="EJ__EncoderMotor_8h_source.html">EJ_EncoderMotor.h</a> の <a class="el" href="EJ__EncoderMotor_8h_source.html#l00065">65</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="EJ__EncoderMotor_8h_source.html">EJ_EncoderMotor.h</a> の <a class="el" href="EJ__EncoderMotor_8h_source.html#l00067">67</a> 行目に定義があります。</p>
 
 </div>
 </div>

@@ -109,9 +109,9 @@ $(document).ready(function(){initNavTree('classEJ__DCMotor__Manager.html',''); i
 <tr class="memitem:a0347df3c51144cf13e702ca025740413"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classEJ__DCMotor.html">EJ_DCMotor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEJ__DCMotor__Manager.html#a0347df3c51144cf13e702ca025740413">createMotor</a> (<a class="el" href="structMotorDef.html">MotorDef</a> <a class="el" href="main_8cpp.html#a644fcbd84e8709ecffe4f8ceb8db4dab">motor</a>)</td></tr>
 <tr class="memdesc:a0347df3c51144cf13e702ca025740413"><td class="mdescLeft">&#160;</td><td class="mdescRight">EJ_DCMotorクラスのインスタンスを生成する  <a href="classEJ__DCMotor__Manager.html#a0347df3c51144cf13e702ca025740413">[詳解]</a><br /></td></tr>
 <tr class="separator:a0347df3c51144cf13e702ca025740413"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48593ffddd8cf4e300ea8260acc048a5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classEJ__DCMotor.html">EJ_DCMotor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEJ__DCMotor__Manager.html#a48593ffddd8cf4e300ea8260acc048a5">createMotor</a> (uint8_t pin1, uint8_t pin2, uint8_t id)</td></tr>
-<tr class="memdesc:a48593ffddd8cf4e300ea8260acc048a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">EJ_DCMotorクラスのインスタンスを生成する  <a href="classEJ__DCMotor__Manager.html#a48593ffddd8cf4e300ea8260acc048a5">[詳解]</a><br /></td></tr>
-<tr class="separator:a48593ffddd8cf4e300ea8260acc048a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62ee559aa8cb718b7e2b23144a5598ba"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classEJ__DCMotor.html">EJ_DCMotor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEJ__DCMotor__Manager.html#a62ee559aa8cb718b7e2b23144a5598ba">createMotor</a> (uint8_t pin1, uint8_t pin2, int8_t en, uint8_t id)</td></tr>
+<tr class="memdesc:a62ee559aa8cb718b7e2b23144a5598ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">EJ_DCMotorクラスのインスタンスを生成する  <a href="classEJ__DCMotor__Manager.html#a62ee559aa8cb718b7e2b23144a5598ba">[詳解]</a><br /></td></tr>
+<tr class="separator:a62ee559aa8cb718b7e2b23144a5598ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc721dde48d0e9f0d692ef3d3da85e50"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classEJ__DCMotor.html">EJ_DCMotor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEJ__DCMotor__Manager.html#afc721dde48d0e9f0d692ef3d3da85e50">getMotor</a> (<a class="el" href="structMotorDef.html">MotorDef</a> <a class="el" href="main_8cpp.html#a644fcbd84e8709ecffe4f8ceb8db4dab">motor</a>)</td></tr>
 <tr class="memdesc:afc721dde48d0e9f0d692ef3d3da85e50"><td class="mdescLeft">&#160;</td><td class="mdescRight">EJ_DCMotorクラスのインスタンスを取得する  <a href="classEJ__DCMotor__Manager.html#afc721dde48d0e9f0d692ef3d3da85e50">[詳解]</a><br /></td></tr>
 <tr class="separator:afc721dde48d0e9f0d692ef3d3da85e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -123,7 +123,7 @@ $(document).ready(function(){initNavTree('classEJ__DCMotor__Manager.html',''); i
 <div class="textblock"><p>EJ_DCMotorクラスのインスタンスを生成、管理するクラス </p>
 <p>本クラスはシングルトンで提供され、configure()メソッドにのみよってインスタンスが1つだけ生成される </p>
 
-<p class="definition"> <a class="el" href="EJ__DCMotor_8h_source.html">EJ_DCMotor.h</a> の <a class="el" href="EJ__DCMotor_8h_source.html#l00101">101</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="EJ__DCMotor_8h_source.html">EJ_DCMotor.h</a> の <a class="el" href="EJ__DCMotor_8h_source.html#l00123">123</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
 <a id="ad67723b950e7ad5b410ddfb6e6129482"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad67723b950e7ad5b410ddfb6e6129482">&#9670;&nbsp;</a></span>~EJ_DCMotor_Manager()</h2>
@@ -143,7 +143,7 @@ $(document).ready(function(){initNavTree('classEJ__DCMotor__Manager.html',''); i
 <p>EJ_DCMotor_Managerクラスのデストラクタ </p>
 <p>本クラスによって生成されたEJ_DCMotorクラスのインスタンスをすべて解放する </p>
 
-<p class="definition"> <a class="el" href="EJ__DCMotor_8cpp_source.html">EJ_DCMotor.cpp</a> の <a class="el" href="EJ__DCMotor_8cpp_source.html#l00103">103</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="EJ__DCMotor_8cpp_source.html">EJ_DCMotor.cpp</a> の <a class="el" href="EJ__DCMotor_8cpp_source.html#l00134">134</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -181,7 +181,7 @@ $(document).ready(function(){initNavTree('classEJ__DCMotor__Manager.html',''); i
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>true: 生成成功 / false: 生成失敗 </dd></dl>
 
-<p class="definition"> <a class="el" href="EJ__DCMotor_8cpp_source.html">EJ_DCMotor.cpp</a> の <a class="el" href="EJ__DCMotor_8cpp_source.html#l00116">116</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="EJ__DCMotor_8cpp_source.html">EJ_DCMotor.cpp</a> の <a class="el" href="EJ__DCMotor_8cpp_source.html#l00147">147</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -218,12 +218,12 @@ $(document).ready(function(){initNavTree('classEJ__DCMotor__Manager.html',''); i
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>EJ_DCMotorクラスのインスタンスを指すポインタ </dd></dl>
 
-<p class="definition"> <a class="el" href="EJ__DCMotor_8cpp_source.html">EJ_DCMotor.cpp</a> の <a class="el" href="EJ__DCMotor_8cpp_source.html#l00132">132</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="EJ__DCMotor_8cpp_source.html">EJ_DCMotor.cpp</a> の <a class="el" href="EJ__DCMotor_8cpp_source.html#l00163">163</a> 行目に定義があります。</p>
 
 </div>
 </div>
-<a id="a48593ffddd8cf4e300ea8260acc048a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48593ffddd8cf4e300ea8260acc048a5">&#9670;&nbsp;</a></span>createMotor() <span class="overload">[2/2]</span></h2>
+<a id="a62ee559aa8cb718b7e2b23144a5598ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62ee559aa8cb718b7e2b23144a5598ba">&#9670;&nbsp;</a></span>createMotor() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -242,6 +242,12 @@ $(document).ready(function(){initNavTree('classEJ__DCMotor__Manager.html',''); i
           <td></td>
           <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>pin2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int8_t&#160;</td>
+          <td class="paramname"><em>en</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -267,13 +273,14 @@ $(document).ready(function(){initNavTree('classEJ__DCMotor__Manager.html',''); i
   <table class="params">
     <tr><td class="paramname">pin1</td><td>モータの接続ピン1 </td></tr>
     <tr><td class="paramname">pin2</td><td>モータの接続ピン2 </td></tr>
+    <tr><td class="paramname">en</td><td>PWM設定ピン (負値: PWM無効) </td></tr>
     <tr><td class="paramname">id</td><td>モーターの識別番号 </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>EJ_DCMotorクラスのインスタンスを指すポインタ </dd></dl>
 
-<p class="definition"> <a class="el" href="EJ__DCMotor_8cpp_source.html">EJ_DCMotor.cpp</a> の <a class="el" href="EJ__DCMotor_8cpp_source.html#l00137">137</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="EJ__DCMotor_8cpp_source.html">EJ_DCMotor.cpp</a> の <a class="el" href="EJ__DCMotor_8cpp_source.html#l00168">168</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -310,7 +317,7 @@ $(document).ready(function(){initNavTree('classEJ__DCMotor__Manager.html',''); i
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>EJ_DCMotorクラスのインスタンスを指すポインタ </dd></dl>
 
-<p class="definition"> <a class="el" href="EJ__DCMotor_8cpp_source.html">EJ_DCMotor.cpp</a> の <a class="el" href="EJ__DCMotor_8cpp_source.html#l00172">172</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="EJ__DCMotor_8cpp_source.html">EJ_DCMotor.cpp</a> の <a class="el" href="EJ__DCMotor_8cpp_source.html#l00203">203</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -347,7 +354,7 @@ $(document).ready(function(){initNavTree('classEJ__DCMotor__Manager.html',''); i
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>EJ_DCMotorクラスのインスタンスを指すポインタ </dd></dl>
 
-<p class="definition"> <a class="el" href="EJ__DCMotor_8cpp_source.html">EJ_DCMotor.cpp</a> の <a class="el" href="EJ__DCMotor_8cpp_source.html#l00194">194</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="EJ__DCMotor_8cpp_source.html">EJ_DCMotor.cpp</a> の <a class="el" href="EJ__DCMotor_8cpp_source.html#l00225">225</a> 行目に定義があります。</p>
 
 </div>
 </div>

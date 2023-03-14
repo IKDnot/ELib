@@ -25,12 +25,21 @@ void \mbox{\hyperlink{classEJ__DCMotor_a20dff4f90b0eba50cb6193ac815ae970}{forwar
 void \mbox{\hyperlink{classEJ__DCMotor_af29356a1a185a6bfd734e1cf416824ee}{reverse}} ()
 \begin{DoxyCompactList}\small\item\em モーターを逆転させる \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classEJ__DCMotor_a219456d25f8f6061bde0d2124ad57e5d}{stop}} ()
-\begin{DoxyCompactList}\small\item\em モーターを停止させる \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em モーターを停止させる \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEJ__DCMotor_acf5aa5783190529694a7fcffb9289dc2}{set\+PWM}} (int16\+\_\+t duty)
+\begin{DoxyCompactList}\small\item\em Duty比を設定する (範囲\+: -\/100\%$\sim$100\%) \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classEJ__DCMotor_a13e79e909564fb563d2ab74ee8e3fabf}{get\+PWM}} ()
+\begin{DoxyCompactList}\small\item\em 設定されている\+Duty比を取得する (範囲\+: -\/100\%$\sim$100\%) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{限定公開メンバ関数}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classEJ__DCMotor_a4d1e01bd9a226a2bf44d82ab3d24996a}{EJ\+\_\+\+DCMotor}} (uint8\+\_\+t pin1=0, uint8\+\_\+t pin2=0)
+\mbox{\hyperlink{classEJ__DCMotor_a37bfe14feb3da04d9113c9a8c07052f1}{EJ\+\_\+\+DCMotor}} (uint8\+\_\+t pin1=0, uint8\+\_\+t pin2=0, int8\+\_\+t en=-\/1)
 \begin{DoxyCompactList}\small\item\em EJ\+\_\+\+DCMotorクラスのコンストラクタ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{限定公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classEJ__DCMotor_a9d9ed02affc50dfb679b97e514d60453}{\+\_\+enable\+PWM}}
+\end{DoxyCompactItemize}
 \doxysubsection*{フレンド}
 \begin{DoxyCompactItemize}
 \item 
@@ -43,16 +52,16 @@ DCモーターを制御するクラス
 
 $\ast$注意\+:本クラスのインスタンスは\+EJ\+\_\+\+DCMotor\+\_\+\+Managerクラス以外からは生成できない 
 
- EJ\+\_\+\+DCMotor.\+h の 49 行目に定義があります。
+ EJ\+\_\+\+DCMotor.\+h の 50 行目に定義があります。
 
 
 
 \doxysubsection{構築子と解体子}
-\mbox{\Hypertarget{classEJ__DCMotor_a4d1e01bd9a226a2bf44d82ab3d24996a}\label{classEJ__DCMotor_a4d1e01bd9a226a2bf44d82ab3d24996a}} 
+\mbox{\Hypertarget{classEJ__DCMotor_a37bfe14feb3da04d9113c9a8c07052f1}\label{classEJ__DCMotor_a37bfe14feb3da04d9113c9a8c07052f1}} 
 \index{EJ\_DCMotor@{EJ\_DCMotor}!EJ\_DCMotor@{EJ\_DCMotor}}
 \index{EJ\_DCMotor@{EJ\_DCMotor}!EJ\_DCMotor@{EJ\_DCMotor}}
 \doxysubsubsection{\texorpdfstring{EJ\_DCMotor()}{EJ\_DCMotor()}}
-{\footnotesize\ttfamily EJ\+\_\+\+DCMotor\+::\+EJ\+\_\+\+DCMotor (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pin1 = {\ttfamily 0},  }\item[{uint8\+\_\+t}]{pin2 = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily EJ\+\_\+\+DCMotor\+::\+EJ\+\_\+\+DCMotor (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pin1 = {\ttfamily 0},  }\item[{uint8\+\_\+t}]{pin2 = {\ttfamily 0},  }\item[{int8\+\_\+t}]{en = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -64,10 +73,13 @@ EJ\+\_\+\+DCMotorクラスのコンストラクタ
 \hline
 {\em pin2} & モーターの接続ピン2 \\
 \hline
+{\em en} & PWM設定ピン (負値\+: PWM無効) ~\newline
+ \\
+\hline
 \end{DoxyParams}
 
 
- EJ\+\_\+\+DCMotor.\+cpp の 25 行目に定義があります。
+ EJ\+\_\+\+DCMotor.\+cpp の 26 行目に定義があります。
 
 \mbox{\Hypertarget{classEJ__DCMotor_aff80c1e18eb655f6fa17a72b452153c7}\label{classEJ__DCMotor_aff80c1e18eb655f6fa17a72b452153c7}} 
 \index{EJ\_DCMotor@{EJ\_DCMotor}!````~EJ\_DCMotor@{$\sim$EJ\_DCMotor}}
@@ -81,7 +93,7 @@ EJ\+\_\+\+DCMotorクラスのコンストラクタ
 
 
 
- EJ\+\_\+\+DCMotor.\+cpp の 42 行目に定義があります。
+ EJ\+\_\+\+DCMotor.\+cpp の 50 行目に定義があります。
 
 
 
@@ -98,7 +110,24 @@ EJ\+\_\+\+DCMotorクラスのコンストラクタ
 
 
 
- EJ\+\_\+\+DCMotor.\+cpp の 45 行目に定義があります。
+ EJ\+\_\+\+DCMotor.\+cpp の 53 行目に定義があります。
+
+\mbox{\Hypertarget{classEJ__DCMotor_a13e79e909564fb563d2ab74ee8e3fabf}\label{classEJ__DCMotor_a13e79e909564fb563d2ab74ee8e3fabf}} 
+\index{EJ\_DCMotor@{EJ\_DCMotor}!getPWM@{getPWM}}
+\index{getPWM@{getPWM}!EJ\_DCMotor@{EJ\_DCMotor}}
+\doxysubsubsection{\texorpdfstring{getPWM()}{getPWM()}}
+{\footnotesize\ttfamily int16\+\_\+t EJ\+\_\+\+DCMotor\+::get\+PWM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+設定されている\+Duty比を取得する (範囲\+: -\/100\%$\sim$100\%) 
+
+\+\_\+enable\+PWMがfalseの時はコールされても何もしない。 \begin{DoxyReturn}{戻り値}
+Duty比 
+\end{DoxyReturn}
+
+
+ EJ\+\_\+\+DCMotor.\+cpp の 86 行目に定義があります。
 
 \mbox{\Hypertarget{classEJ__DCMotor_af29356a1a185a6bfd734e1cf416824ee}\label{classEJ__DCMotor_af29356a1a185a6bfd734e1cf416824ee}} 
 \index{EJ\_DCMotor@{EJ\_DCMotor}!reverse@{reverse}}
@@ -112,7 +141,28 @@ EJ\+\_\+\+DCMotorクラスのコンストラクタ
 
 
 
- EJ\+\_\+\+DCMotor.\+cpp の 50 行目に定義があります。
+ EJ\+\_\+\+DCMotor.\+cpp の 58 行目に定義があります。
+
+\mbox{\Hypertarget{classEJ__DCMotor_acf5aa5783190529694a7fcffb9289dc2}\label{classEJ__DCMotor_acf5aa5783190529694a7fcffb9289dc2}} 
+\index{EJ\_DCMotor@{EJ\_DCMotor}!setPWM@{setPWM}}
+\index{setPWM@{setPWM}!EJ\_DCMotor@{EJ\_DCMotor}}
+\doxysubsubsection{\texorpdfstring{setPWM()}{setPWM()}}
+{\footnotesize\ttfamily void EJ\+\_\+\+DCMotor\+::set\+PWM (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{duty }\end{DoxyParamCaption})}
+
+
+
+Duty比を設定する (範囲\+: -\/100\%$\sim$100\%) 
+
+PWM制御における\+Duty比を-\/100\%$\sim$100の間で設定する。0を指定すると停止する。
+
+\+\_\+enable\+PWMがfalseの時はコールされても何もしない。 
+\begin{DoxyParams}{引数}
+{\em duty} & Duty比 (0\+: 停止, -\/100\+: 最大出力で逆転, 100\+: 最大出力で正転) \\
+\hline
+\end{DoxyParams}
+
+
+ EJ\+\_\+\+DCMotor.\+cpp の 68 行目に定義があります。
 
 \mbox{\Hypertarget{classEJ__DCMotor_a219456d25f8f6061bde0d2124ad57e5d}\label{classEJ__DCMotor_a219456d25f8f6061bde0d2124ad57e5d}} 
 \index{EJ\_DCMotor@{EJ\_DCMotor}!stop@{stop}}
@@ -126,7 +176,7 @@ EJ\+\_\+\+DCMotorクラスのコンストラクタ
 
 
 
- EJ\+\_\+\+DCMotor.\+cpp の 55 行目に定義があります。
+ EJ\+\_\+\+DCMotor.\+cpp の 63 行目に定義があります。
 
 
 
@@ -139,7 +189,20 @@ EJ\+\_\+\+DCMotorクラスのコンストラクタ
 
 
 
- EJ\+\_\+\+DCMotor.\+h の 59 行目に定義があります。
+ EJ\+\_\+\+DCMotor.\+h の 61 行目に定義があります。
+
+
+
+\doxysubsection{メンバ詳解}
+\mbox{\Hypertarget{classEJ__DCMotor_a9d9ed02affc50dfb679b97e514d60453}\label{classEJ__DCMotor_a9d9ed02affc50dfb679b97e514d60453}} 
+\index{EJ\_DCMotor@{EJ\_DCMotor}!\_enablePWM@{\_enablePWM}}
+\index{\_enablePWM@{\_enablePWM}!EJ\_DCMotor@{EJ\_DCMotor}}
+\doxysubsubsection{\texorpdfstring{\_enablePWM}{\_enablePWM}}
+{\footnotesize\ttfamily bool EJ\+\_\+\+DCMotor\+::\+\_\+enable\+PWM\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+ EJ\+\_\+\+DCMotor.\+h の 109 行目に定義があります。
 
 
 

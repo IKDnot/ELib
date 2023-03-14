@@ -1,5 +1,6 @@
 var structEncoderMotorDef =
 [
+    [ "en", "structEncoderMotorDef.html#a0fab85e19edb8aa99f2fe2a60b06ebb5", null ],
     [ "enc1", "structEncoderMotorDef.html#a28812fb9bc5a28dae88b918c9ed07014", null ],
     [ "enc2", "structEncoderMotorDef.html#afa81b82d8e5e282632bdacef54b70101", null ],
     [ "id", "structEncoderMotorDef.html#a61aa416a8e55b97ee4e729a6b8869efc", null ],

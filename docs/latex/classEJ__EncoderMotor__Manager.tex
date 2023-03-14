@@ -21,7 +21,7 @@ static bool \mbox{\hyperlink{classEJ__EncoderMotor__Manager_ad100a4459348cefce72
 \begin{DoxyCompactList}\small\item\em EJ\+\_\+\+Encoder\+Motor\+\_\+\+Managerのインスタンスを生成する \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{classEJ__EncoderMotor}{EJ\+\_\+\+Encoder\+Motor}} $\ast$ \mbox{\hyperlink{classEJ__EncoderMotor__Manager_a524274c5566dbef1dafc20df2462e9df}{create\+Encoder\+Motor}} (\mbox{\hyperlink{structEncoderMotorDef}{Encoder\+Motor\+Def}} \mbox{\hyperlink{main_8cpp_a644fcbd84e8709ecffe4f8ceb8db4dab}{motor}})
 \begin{DoxyCompactList}\small\item\em EJ\+\_\+\+Encoder\+Motorクラスのインスタンスを生成する \end{DoxyCompactList}\item 
-static \mbox{\hyperlink{classEJ__EncoderMotor}{EJ\+\_\+\+Encoder\+Motor}} $\ast$ \mbox{\hyperlink{classEJ__EncoderMotor__Manager_a93e437abc1a147730f0310aa03d74e81}{create\+Encoder\+Motor}} (uint8\+\_\+t pin1, uint8\+\_\+t pin2, uint8\+\_\+t enc1, uint8\+\_\+t enc2, uint8\+\_\+t id)
+static \mbox{\hyperlink{classEJ__EncoderMotor}{EJ\+\_\+\+Encoder\+Motor}} $\ast$ \mbox{\hyperlink{classEJ__EncoderMotor__Manager_af2c8d0f39fb297920967b6d89ab9f598}{create\+Encoder\+Motor}} (uint8\+\_\+t pin1, uint8\+\_\+t pin2, uint8\+\_\+t enc1, uint8\+\_\+t enc2, int8\+\_\+t en, uint8\+\_\+t id)
 \begin{DoxyCompactList}\small\item\em EJ\+\_\+\+Encoder\+Motorクラスのインスタンスを生成する \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{classEJ__EncoderMotor}{EJ\+\_\+\+Encoder\+Motor}} $\ast$ \mbox{\hyperlink{classEJ__EncoderMotor__Manager_a07d0a76ed8ad4d18a814ca6d1255d893}{get\+Encoder\+Motor}} (\mbox{\hyperlink{structEncoderMotorDef}{Encoder\+Motor\+Def}} \mbox{\hyperlink{main_8cpp_a644fcbd84e8709ecffe4f8ceb8db4dab}{motor}})
 \begin{DoxyCompactList}\small\item\em EJ\+\_\+\+Encoder\+Motorクラスのインスタンスを取得する \end{DoxyCompactList}\item 
@@ -34,7 +34,7 @@ EJ\+\_\+\+Encoder\+Motorクラスのインスタンスを生成、管理する�
 
 本クラスはシングルトンで提供され、configure()メソッドにのみよってインスタンスが1つだけ生成される 
 
- EJ\+\_\+\+Encoder\+Motor.\+h の 111 行目に定義があります。
+ EJ\+\_\+\+Encoder\+Motor.\+h の 127 行目に定義があります。
 
 
 
@@ -51,7 +51,7 @@ EJ\+\_\+\+Encoder\+Motor\+\_\+\+Managerクラスのデストラクタ
 
 本クラスによって生成された\+EJ\+\_\+\+Encoder\+Motorクラスのインスタンスをすべて解放する 
 
- EJ\+\_\+\+Encoder\+Motor.\+cpp の 124 行目に定義があります。
+ EJ\+\_\+\+Encoder\+Motor.\+cpp の 142 行目に定義があります。
 
 
 
@@ -76,7 +76,7 @@ true\+: 生成成功 / false\+: 生成失敗
 \end{DoxyReturn}
 
 
- EJ\+\_\+\+Encoder\+Motor.\+cpp の 137 行目に定義があります。
+ EJ\+\_\+\+Encoder\+Motor.\+cpp の 155 行目に定義があります。
 
 \mbox{\Hypertarget{classEJ__EncoderMotor__Manager_a524274c5566dbef1dafc20df2462e9df}\label{classEJ__EncoderMotor__Manager_a524274c5566dbef1dafc20df2462e9df}} 
 \index{EJ\_EncoderMotor\_Manager@{EJ\_EncoderMotor\_Manager}!createEncoderMotor@{createEncoderMotor}}
@@ -98,13 +98,13 @@ EJ\+\_\+\+Encoder\+Motorクラスのインスタンスを指すポインタ
 \end{DoxyReturn}
 
 
- EJ\+\_\+\+Encoder\+Motor.\+cpp の 153 行目に定義があります。
+ EJ\+\_\+\+Encoder\+Motor.\+cpp の 171 行目に定義があります。
 
-\mbox{\Hypertarget{classEJ__EncoderMotor__Manager_a93e437abc1a147730f0310aa03d74e81}\label{classEJ__EncoderMotor__Manager_a93e437abc1a147730f0310aa03d74e81}} 
+\mbox{\Hypertarget{classEJ__EncoderMotor__Manager_af2c8d0f39fb297920967b6d89ab9f598}\label{classEJ__EncoderMotor__Manager_af2c8d0f39fb297920967b6d89ab9f598}} 
 \index{EJ\_EncoderMotor\_Manager@{EJ\_EncoderMotor\_Manager}!createEncoderMotor@{createEncoderMotor}}
 \index{createEncoderMotor@{createEncoderMotor}!EJ\_EncoderMotor\_Manager@{EJ\_EncoderMotor\_Manager}}
 \doxysubsubsection{\texorpdfstring{createEncoderMotor()}{createEncoderMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classEJ__EncoderMotor}{EJ\+\_\+\+Encoder\+Motor}} $\ast$ EJ\+\_\+\+Encoder\+Motor\+\_\+\+Manager\+::create\+Encoder\+Motor (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pin1,  }\item[{uint8\+\_\+t}]{pin2,  }\item[{uint8\+\_\+t}]{enc1,  }\item[{uint8\+\_\+t}]{enc2,  }\item[{uint8\+\_\+t}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEJ__EncoderMotor}{EJ\+\_\+\+Encoder\+Motor}} $\ast$ EJ\+\_\+\+Encoder\+Motor\+\_\+\+Manager\+::create\+Encoder\+Motor (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pin1,  }\item[{uint8\+\_\+t}]{pin2,  }\item[{uint8\+\_\+t}]{enc1,  }\item[{uint8\+\_\+t}]{enc2,  }\item[{int8\+\_\+t}]{en,  }\item[{uint8\+\_\+t}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -116,6 +116,8 @@ EJ\+\_\+\+Encoder\+Motorクラスのインスタンスを生成する
 \hline
 {\em pin2} & モータの接続ピン2 \\
 \hline
+{\em en} & PWM設定ピン (負値\+: PWM無効) \\
+\hline
 {\em id} & モーターの識別番号 \\
 \hline
 \end{DoxyParams}
@@ -124,7 +126,7 @@ EJ\+\_\+\+Encoder\+Motorクラスのインスタンスを指すポインタ
 \end{DoxyReturn}
 
 
- EJ\+\_\+\+Encoder\+Motor.\+cpp の 158 行目に定義があります。
+ EJ\+\_\+\+Encoder\+Motor.\+cpp の 176 行目に定義があります。
 
 \mbox{\Hypertarget{classEJ__EncoderMotor__Manager_a07d0a76ed8ad4d18a814ca6d1255d893}\label{classEJ__EncoderMotor__Manager_a07d0a76ed8ad4d18a814ca6d1255d893}} 
 \index{EJ\_EncoderMotor\_Manager@{EJ\_EncoderMotor\_Manager}!getEncoderMotor@{getEncoderMotor}}
@@ -146,7 +148,7 @@ EJ\+\_\+\+Encoder\+Motorクラスのインスタンスを指すポインタ
 \end{DoxyReturn}
 
 
- EJ\+\_\+\+Encoder\+Motor.\+cpp の 193 行目に定義があります。
+ EJ\+\_\+\+Encoder\+Motor.\+cpp の 211 行目に定義があります。
 
 \mbox{\Hypertarget{classEJ__EncoderMotor__Manager_af46bc887a99260541c8e72738f6c01e5}\label{classEJ__EncoderMotor__Manager_af46bc887a99260541c8e72738f6c01e5}} 
 \index{EJ\_EncoderMotor\_Manager@{EJ\_EncoderMotor\_Manager}!getEncoderMotor@{getEncoderMotor}}
@@ -168,7 +170,7 @@ EJ\+\_\+\+Encoder\+Motorクラスのインスタンスを指すポインタ
 \end{DoxyReturn}
 
 
- EJ\+\_\+\+Encoder\+Motor.\+cpp の 215 行目に定義があります。
+ EJ\+\_\+\+Encoder\+Motor.\+cpp の 233 行目に定義があります。
 
 
 
