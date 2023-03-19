@@ -33,8 +33,19 @@
 #include "ClosedCube_TCA9548A.h"
 
 /**
- * @brief ToFセンサユニットを制御するクラス
+ * @struct I2CHubDef
+ * @brief 1つのI2CHubを定義する構造体
+ */
+typedef struct
+{
+    uint8_t address; /**< I2CHubのアドレス */
+    uint8_t id;      /**< I2CHubの識別番号 */
+} I2CHubDef;
+
+/**
+ * @brief I2CHubユニットを制御するクラス
  * @details *注意:本クラスのインスタンスはEJ_I2CHub_Managerクラス以外からは生成できない
+ * @details uint8_t selectChannel(uint8_t channel); メソッドの引数に 0~6 のチャンネルを指定して接続先を切り替え
  */
 class EJ_I2CHub : public ClosedCube::Wired::TCA9548A
 {
@@ -93,6 +104,14 @@ public:
      * @return true: 生成成功 / false: 生成失敗
      */
     static bool configure(size_t maxInstanceSize);
+
+    /**
+     * @brief EJ_I2CHubクラスのインスタンスを生成する
+     * @details 生成したインスタンスはgetI2CHub関数で取得できるように同時に自身の_instanceList配列に記憶しておく
+     * @param I2CHubDef 参照
+     * @return EJ_I2CHubクラスのインスタンスを指すポインタ
+     */
+    static EJ_I2CHub *createI2CHub(I2CHubDef i2chub);
 
     /**
      * @brief EJ_I2CHubクラスのインスタンスを生成する
