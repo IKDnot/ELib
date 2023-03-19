@@ -32,6 +32,7 @@ var menudata={children:[
 {text:"クラスメンバ",url:"functions.html",children:[
 {text:"全て",url:"functions.html",children:[
 {text:"_",url:"functions.html#index__5F"},
+{text:"a",url:"functions.html#index_a"},
 {text:"c",url:"functions.html#index_c"},
 {text:"e",url:"functions.html#index_e"},
 {text:"f",url:"functions.html#index_f"},

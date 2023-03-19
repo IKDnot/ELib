@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Elib: EJ_I2CHub クラス</title>
+<title>Elib: I2CHubDef 構造体</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('classEJ__I2CHub.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('structI2CHubDef.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -82,99 +82,73 @@ $(document).ready(function(){initNavTree('classEJ__I2CHub.html',''); initResizab
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">公開メンバ関数</a> &#124;
-<a href="#friends">フレンド</a> &#124;
-<a href="classEJ__I2CHub-members.html">全メンバ一覧</a>  </div>
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="structI2CHubDef-members.html">全メンバ一覧</a>  </div>
   <div class="headertitle">
-<div class="title">EJ_I2CHub クラス</div>  </div>
+<div class="title">I2CHubDef 構造体</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>I2CHubユニットを制御するクラス  
- <a href="classEJ__I2CHub.html#details">[詳解]</a></p>
+<p>1つのI2CHubを定義する構造体  
+ <a href="structI2CHubDef.html#details">[詳解]</a></p>
 
 <p><code>#include &lt;<a class="el" href="EJ__I2CHub_8h_source.html">EJ_I2CHub.h</a>&gt;</code></p>
-<div class="dynheader">
-EJ_I2CHub の継承関係図</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="classEJ__I2CHub.png" alt=""/>
- </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-公開メンバ関数</h2></td></tr>
-<tr class="memitem:a3f3aa30fb2ebdbc14c13a1a902910e42"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEJ__I2CHub.html#a3f3aa30fb2ebdbc14c13a1a902910e42">~EJ_I2CHub</a> ()</td></tr>
-<tr class="memdesc:a3f3aa30fb2ebdbc14c13a1a902910e42"><td class="mdescLeft">&#160;</td><td class="mdescRight">EJ_I2CHubクラスのデストラクタ  <a href="classEJ__I2CHub.html#a3f3aa30fb2ebdbc14c13a1a902910e42">[詳解]</a><br /></td></tr>
-<tr class="separator:a3f3aa30fb2ebdbc14c13a1a902910e42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
-フレンド</h2></td></tr>
-<tr class="memitem:a15dcd50d6806768dfb6310289a83a64c"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEJ__I2CHub.html#a15dcd50d6806768dfb6310289a83a64c">EJ_I2CHub_Manager</a></td></tr>
-<tr class="separator:a15dcd50d6806768dfb6310289a83a64c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:aaa7cada64eaa0da56ced1c336ef97901"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structI2CHubDef.html#aaa7cada64eaa0da56ced1c336ef97901">address</a></td></tr>
+<tr class="separator:aaa7cada64eaa0da56ced1c336ef97901"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0e259794223f1849e4ff1510e3a753a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structI2CHubDef.html#ac0e259794223f1849e4ff1510e3a753a">id</a></td></tr>
+<tr class="separator:ac0e259794223f1849e4ff1510e3a753a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
-<div class="textblock"><p>I2CHubユニットを制御するクラス </p>
-<p>*注意:本クラスのインスタンスはEJ_I2CHub_Managerクラス以外からは生成できない</p>
-<p>uint8_t selectChannel(uint8_t channel); メソッドの引数に 0~6 のチャンネルを指定して接続先を切り替え </p>
+<div class="textblock"><p>1つのI2CHubを定義する構造体 </p>
 
-<p class="definition"> <a class="el" href="EJ__I2CHub_8h_source.html">EJ_I2CHub.h</a> の <a class="el" href="EJ__I2CHub_8h_source.html#l00050">50</a> 行目に定義があります。</p>
-</div><h2 class="groupheader">構築子と解体子</h2>
-<a id="a3f3aa30fb2ebdbc14c13a1a902910e42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f3aa30fb2ebdbc14c13a1a902910e42">&#9670;&nbsp;</a></span>~EJ_I2CHub()</h2>
+<p class="definition"> <a class="el" href="EJ__I2CHub_8h_source.html">EJ_I2CHub.h</a> の <a class="el" href="EJ__I2CHub_8h_source.html#l00039">39</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">メンバ詳解</h2>
+<a id="aaa7cada64eaa0da56ced1c336ef97901"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa7cada64eaa0da56ced1c336ef97901">&#9670;&nbsp;</a></span>address</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">EJ_I2CHub::~EJ_I2CHub </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">uint8_t I2CHubDef::address</td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>I2CHubのアドレス </p>
 
-<p>EJ_I2CHubクラスのデストラクタ </p>
-
-<p class="definition"> <a class="el" href="EJ__I2CHub_8cpp_source.html">EJ_I2CHub.cpp</a> の <a class="el" href="EJ__I2CHub_8cpp_source.html#l00031">31</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="EJ__I2CHub_8h_source.html">EJ_I2CHub.h</a> の <a class="el" href="EJ__I2CHub_8h_source.html#l00041">41</a> 行目に定義があります。</p>
 
 </div>
 </div>
-<h2 class="groupheader">フレンドと関連関数の詳解</h2>
-<a id="a15dcd50d6806768dfb6310289a83a64c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15dcd50d6806768dfb6310289a83a64c">&#9670;&nbsp;</a></span>EJ_I2CHub_Manager</h2>
+<a id="ac0e259794223f1849e4ff1510e3a753a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0e259794223f1849e4ff1510e3a753a">&#9670;&nbsp;</a></span>id</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">friend class <a class="el" href="classEJ__I2CHub__Manager.html">EJ_I2CHub_Manager</a></td>
+          <td class="memname">uint8_t I2CHubDef::id</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
+<p>I2CHubの識別番号 </p>
 
-<p class="definition"> <a class="el" href="EJ__I2CHub_8h_source.html">EJ_I2CHub.h</a> の <a class="el" href="EJ__I2CHub_8h_source.html#l00059">59</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="EJ__I2CHub_8h_source.html">EJ_I2CHub.h</a> の <a class="el" href="EJ__I2CHub_8h_source.html#l00042">42</a> 行目に定義があります。</p>
 
 </div>
 </div>
-<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<hr/>この構造体詳解は次のファイルから抽出されました:<ul>
 <li>Project/include/<a class="el" href="EJ__I2CHub_8h_source.html">EJ_I2CHub.h</a></li>
-<li>Project/src/<a class="el" href="EJ__I2CHub_8cpp_source.html">EJ_I2CHub.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="classEJ__I2CHub.html">EJ_I2CHub</a></li>
+    <li class="navelem"><a class="el" href="structI2CHubDef.html">I2CHubDef</a></li>
     <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

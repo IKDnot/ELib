@@ -11,6 +11,7 @@ var annotated_dup =
     [ "EJ_ToFUnit", "classEJ__ToFUnit.html", "classEJ__ToFUnit" ],
     [ "EJ_ToFUnit_Manager", "classEJ__ToFUnit__Manager.html", "classEJ__ToFUnit__Manager" ],
     [ "EncoderMotorDef", "structEncoderMotorDef.html", "structEncoderMotorDef" ],
+    [ "I2CHubDef", "structI2CHubDef.html", "structI2CHubDef" ],
     [ "MotorDef", "structMotorDef.html", "structMotorDef" ],
     [ "ServoDef", "structServoDef.html", "structServoDef" ]
 ];

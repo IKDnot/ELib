@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['screen_5fx_185',['SCREEN_X',['../main_8cpp.html#a60bd75e3e4fe4d20e6cf526e65a83cb6',1,'main.cpp']]],
-  ['screen_5fy_186',['SCREEN_Y',['../main_8cpp.html#a38913f1040cc7bd0f1ab8b6d7ae2f7e6',1,'main.cpp']]],
-  ['servo_187',['servo',['../main_8cpp.html#a76ffe5860735d6110228cef9dd1831ac',1,'main.cpp']]],
-  ['servo1_188',['SERVO1',['../PinAssign_8h.html#a17eacc7a8896ca1c33d883a130d123bc',1,'PinAssign.h']]],
-  ['servoalias_189',['servoAlias',['../main_8cpp.html#a82aa2cf01ebac4fe0c5ca1060af6c7ea',1,'main.cpp']]]
+  ['pin_186',['pin',['../structServoDef.html#ae450f6594fef38e6945ec860b500fcdf',1,'ServoDef']]],
+  ['pin1_187',['pin1',['../structMotorDef.html#aef6a2e6a35c8af7a1f40d20f897f6557',1,'MotorDef::pin1()'],['../structEncoderMotorDef.html#aa843dc3080cd170f678903515bff59ae',1,'EncoderMotorDef::pin1()']]],
+  ['pin2_188',['pin2',['../structMotorDef.html#a3c8a8496eabbce67500c55ac87314c71',1,'MotorDef::pin2()'],['../structEncoderMotorDef.html#abd0d6da2c60c18f1c2a892e35c631e37',1,'EncoderMotorDef::pin2()']]]
 ];

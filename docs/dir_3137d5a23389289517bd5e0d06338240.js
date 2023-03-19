@@ -11,6 +11,7 @@ var dir_3137d5a23389289517bd5e0d06338240 =
       [ "EJ_EncoderMotor_Manager", "classEJ__EncoderMotor__Manager.html", "classEJ__EncoderMotor__Manager" ]
     ] ],
     [ "EJ_I2CHub.h", "EJ__I2CHub_8h.html", [
+      [ "I2CHubDef", "structI2CHubDef.html", "structI2CHubDef" ],
       [ "EJ_I2CHub", "classEJ__I2CHub.html", "classEJ__I2CHub" ],
       [ "EJ_I2CHub_Manager", "classEJ__I2CHub__Manager.html", "classEJ__I2CHub__Manager" ]
     ] ],

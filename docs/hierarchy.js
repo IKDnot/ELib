@@ -12,6 +12,7 @@ var hierarchy =
       [ "EJ_EncoderMotor", "classEJ__EncoderMotor.html", null ]
     ] ],
     [ "EncoderMotorDef", "structEncoderMotorDef.html", null ],
+    [ "I2CHubDef", "structI2CHubDef.html", null ],
     [ "MotorDef", "structMotorDef.html", null ],
     [ "Servo", null, [
       [ "EJ_ServoMotor", "classEJ__ServoMotor.html", null ]

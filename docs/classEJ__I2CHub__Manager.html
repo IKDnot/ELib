@@ -106,6 +106,9 @@ $(document).ready(function(){initNavTree('classEJ__I2CHub__Manager.html',''); in
 <tr class="memitem:a5c0a394d0710805ea91260ab7cf635d8"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEJ__I2CHub__Manager.html#a5c0a394d0710805ea91260ab7cf635d8">configure</a> (size_t maxInstanceSize)</td></tr>
 <tr class="memdesc:a5c0a394d0710805ea91260ab7cf635d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">EJ_I2CHub_Managerのインスタンスを生成する  <a href="classEJ__I2CHub__Manager.html#a5c0a394d0710805ea91260ab7cf635d8">[詳解]</a><br /></td></tr>
 <tr class="separator:a5c0a394d0710805ea91260ab7cf635d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4138109f9944cf6eb250d676fe1ebcc4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classEJ__I2CHub.html">EJ_I2CHub</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEJ__I2CHub__Manager.html#a4138109f9944cf6eb250d676fe1ebcc4">createI2CHub</a> (<a class="el" href="structI2CHubDef.html">I2CHubDef</a> i2chub)</td></tr>
+<tr class="memdesc:a4138109f9944cf6eb250d676fe1ebcc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">EJ_I2CHubクラスのインスタンスを生成する  <a href="classEJ__I2CHub__Manager.html#a4138109f9944cf6eb250d676fe1ebcc4">[詳解]</a><br /></td></tr>
+<tr class="separator:a4138109f9944cf6eb250d676fe1ebcc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea95ab83c46c437c1737fdaa605f02a2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classEJ__I2CHub.html">EJ_I2CHub</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEJ__I2CHub__Manager.html#aea95ab83c46c437c1737fdaa605f02a2">createI2CHub</a> (uint8_t id, uint8_t address=0x70)</td></tr>
 <tr class="memdesc:aea95ab83c46c437c1737fdaa605f02a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">EJ_I2CHubクラスのインスタンスを生成する  <a href="classEJ__I2CHub__Manager.html#aea95ab83c46c437c1737fdaa605f02a2">[詳解]</a><br /></td></tr>
 <tr class="separator:aea95ab83c46c437c1737fdaa605f02a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -117,7 +120,7 @@ $(document).ready(function(){initNavTree('classEJ__I2CHub__Manager.html',''); in
 <div class="textblock"><p>EJ_I2CHubクラスのインスタンスを生成、管理するクラス </p>
 <p>本クラスはシングルトンで提供され、configure()メソッドにのみよってインスタンスが1つだけ生成される </p>
 
-<p class="definition"> <a class="el" href="EJ__I2CHub_8h_source.html">EJ_I2CHub.h</a> の <a class="el" href="EJ__I2CHub_8h_source.html#l00065">65</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="EJ__I2CHub_8h_source.html">EJ_I2CHub.h</a> の <a class="el" href="EJ__I2CHub_8h_source.html#l00076">76</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
 <a id="a06b94098bef13d6ae7e44d4d849a7b50"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a06b94098bef13d6ae7e44d4d849a7b50">&#9670;&nbsp;</a></span>~EJ_I2CHub_Manager()</h2>
@@ -179,8 +182,45 @@ $(document).ready(function(){initNavTree('classEJ__I2CHub__Manager.html',''); in
 
 </div>
 </div>
+<a id="a4138109f9944cf6eb250d676fe1ebcc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4138109f9944cf6eb250d676fe1ebcc4">&#9670;&nbsp;</a></span>createI2CHub() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEJ__I2CHub.html">EJ_I2CHub</a> * EJ_I2CHub_Manager::createI2CHub </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structI2CHubDef.html">I2CHubDef</a>&#160;</td>
+          <td class="paramname"><em>i2chub</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>EJ_I2CHubクラスのインスタンスを生成する </p>
+<p>生成したインスタンスはgetI2CHub関数で取得できるように同時に自身の_instanceList配列に記憶しておく </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="structI2CHubDef.html" title="1つのI2CHubを定義する構造体">I2CHubDef</a></td><td>参照 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>EJ_I2CHubクラスのインスタンスを指すポインタ </dd></dl>
+
+<p class="definition"> <a class="el" href="EJ__I2CHub_8cpp_source.html">EJ_I2CHub.cpp</a> の <a class="el" href="EJ__I2CHub_8cpp_source.html#l00106">106</a> 行目に定義があります。</p>
+
+</div>
+</div>
 <a id="aea95ab83c46c437c1737fdaa605f02a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea95ab83c46c437c1737fdaa605f02a2">&#9670;&nbsp;</a></span>createI2CHub()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aea95ab83c46c437c1737fdaa605f02a2">&#9670;&nbsp;</a></span>createI2CHub() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -223,7 +263,7 @@ $(document).ready(function(){initNavTree('classEJ__I2CHub__Manager.html',''); in
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>EJ_I2CHubクラスのインスタンスを指すポインタ </dd></dl>
 
-<p class="definition"> <a class="el" href="EJ__I2CHub_8cpp_source.html">EJ_I2CHub.cpp</a> の <a class="el" href="EJ__I2CHub_8cpp_source.html#l00106">106</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="EJ__I2CHub_8cpp_source.html">EJ_I2CHub.cpp</a> の <a class="el" href="EJ__I2CHub_8cpp_source.html#l00111">111</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -260,7 +300,7 @@ $(document).ready(function(){initNavTree('classEJ__I2CHub__Manager.html',''); in
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>EJ_I2CHubクラスのインスタンスを指すポインタ </dd></dl>
 
-<p class="definition"> <a class="el" href="EJ__I2CHub_8cpp_source.html">EJ_I2CHub.cpp</a> の <a class="el" href="EJ__I2CHub_8cpp_source.html#l00141">141</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="EJ__I2CHub_8cpp_source.html">EJ_I2CHub.cpp</a> の <a class="el" href="EJ__I2CHub_8cpp_source.html#l00146">146</a> 行目に定義があります。</p>
 
 </div>
 </div>

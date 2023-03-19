@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['write_84',['write',['../classEJ__ServoMotor.html#ab23d9ee0cd1b40e2fb592c32db9f3849',1,'EJ_ServoMotor']]],
-  ['writemicroseconds_85',['writeMicroseconds',['../classEJ__ServoMotor.html#ac0522386851faafefe2f1916be4ae888',1,'EJ_ServoMotor']]]
+  ['tof_85',['tof',['../main_8cpp.html#a522dc6bd963dc80e6f75687c70a7c706',1,'main.cpp']]]
 ];

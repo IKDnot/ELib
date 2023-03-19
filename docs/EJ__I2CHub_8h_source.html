@@ -91,54 +91,65 @@ $(document).ready(function(){initNavTree('EJ__I2CHub_8h_source.html',''); initRe
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;ClosedCube_TCA9548A.h&quot;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classEJ__I2CHub.html">   39</a></span>&#160;<span class="keyword">class </span><a class="code" href="classEJ__I2CHub.html">EJ_I2CHub</a> : <span class="keyword">public</span> ClosedCube::Wired::TCA9548A</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="structI2CHubDef.html">   39</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="classEJ__I2CHub.html">EJ_I2CHub</a>(uint8_t address);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classEJ__I2CHub.html#a15dcd50d6806768dfb6310289a83a64c">   48</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classEJ__I2CHub__Manager.html">EJ_I2CHub_Manager</a>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="classEJ__I2CHub.html#a3f3aa30fb2ebdbc14c13a1a902910e42">~EJ_I2CHub</a>();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* _classname;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    uint8_t _address;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structI2CHubDef.html#aaa7cada64eaa0da56ced1c336ef97901">   41</a></span>&#160;    uint8_t <a class="code" href="structI2CHubDef.html#aaa7cada64eaa0da56ced1c336ef97901">address</a>; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="structI2CHubDef.html#ac0e259794223f1849e4ff1510e3a753a">   42</a></span>&#160;    uint8_t <a class="code" href="structI2CHubDef.html#ac0e259794223f1849e4ff1510e3a753a">id</a>;      </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;} <a class="code" href="structI2CHubDef.html">I2CHubDef</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classEJ__I2CHub.html">   50</a></span>&#160;<span class="keyword">class </span><a class="code" href="classEJ__I2CHub.html">EJ_I2CHub</a> : <span class="keyword">public</span> ClosedCube::Wired::TCA9548A</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="classEJ__I2CHub.html">EJ_I2CHub</a>(uint8_t address);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classEJ__I2CHub.html#a15dcd50d6806768dfb6310289a83a64c">   59</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classEJ__I2CHub__Manager.html">EJ_I2CHub_Manager</a>;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classEJ__I2CHub__Manager.html">   65</a></span>&#160;<span class="keyword">class </span><a class="code" href="classEJ__I2CHub__Manager.html">EJ_I2CHub_Manager</a></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="classEJ__I2CHub.html#a3f3aa30fb2ebdbc14c13a1a902910e42">~EJ_I2CHub</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="classEJ__I2CHub__Manager.html">EJ_I2CHub_Manager</a>(<span class="keywordtype">size_t</span> maxInstanceSize);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">static</span> <a class="code" href="classEJ__I2CHub__Manager.html">EJ_I2CHub_Manager</a>* getInstance();</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="classEJ__I2CHub__Manager.html#a06b94098bef13d6ae7e44d4d849a7b50">~EJ_I2CHub_Manager</a>();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classEJ__I2CHub__Manager.html#a5c0a394d0710805ea91260ab7cf635d8">configure</a>(<span class="keywordtype">size_t</span> maxInstanceSize);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keyword">static</span> <a class="code" href="classEJ__I2CHub.html">EJ_I2CHub</a> *<a class="code" href="classEJ__I2CHub__Manager.html#aea95ab83c46c437c1737fdaa605f02a2">createI2CHub</a>(uint8_t <span class="keywordtype">id</span>, uint8_t address = 0x70);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keyword">static</span> <a class="code" href="classEJ__I2CHub.html">EJ_I2CHub</a> *<a class="code" href="classEJ__I2CHub__Manager.html#ad806eb09a96e63db298c4f62d1e879b7">getI2CHub</a>(uint8_t <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* _classname;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keyword">static</span> <a class="code" href="classEJ__I2CHub__Manager.html">EJ_I2CHub_Manager</a> *_singleton;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">size_t</span> _maxInstanceSize;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <a class="code" href="classEJ__I2CHub.html">EJ_I2CHub</a> **_instanceList;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;};</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EJI2CHub</span></div>
-<div class="ttc" id="aclassEJ__I2CHub__Manager_html"><div class="ttname"><a href="classEJ__I2CHub__Manager.html">EJ_I2CHub_Manager</a></div><div class="ttdoc">EJ_I2CHubクラスのインスタンスを生成、管理するクラス</div><div class="ttdef"><b>Definition:</b> <a href="EJ__I2CHub_8h_source.html#l00065">EJ_I2CHub.h:66</a></div></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* _classname;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    uint8_t _address;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classEJ__I2CHub__Manager.html">   76</a></span>&#160;<span class="keyword">class </span><a class="code" href="classEJ__I2CHub__Manager.html">EJ_I2CHub_Manager</a></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="classEJ__I2CHub__Manager.html">EJ_I2CHub_Manager</a>(<span class="keywordtype">size_t</span> maxInstanceSize);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">static</span> <a class="code" href="classEJ__I2CHub__Manager.html">EJ_I2CHub_Manager</a>* getInstance();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="classEJ__I2CHub__Manager.html#a06b94098bef13d6ae7e44d4d849a7b50">~EJ_I2CHub_Manager</a>();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classEJ__I2CHub__Manager.html#a5c0a394d0710805ea91260ab7cf635d8">configure</a>(<span class="keywordtype">size_t</span> maxInstanceSize);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keyword">static</span> <a class="code" href="classEJ__I2CHub.html">EJ_I2CHub</a> *<a class="code" href="classEJ__I2CHub__Manager.html#a4138109f9944cf6eb250d676fe1ebcc4">createI2CHub</a>(<a class="code" href="structI2CHubDef.html">I2CHubDef</a> i2chub);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keyword">static</span> <a class="code" href="classEJ__I2CHub.html">EJ_I2CHub</a> *<a class="code" href="classEJ__I2CHub__Manager.html#a4138109f9944cf6eb250d676fe1ebcc4">createI2CHub</a>(uint8_t <span class="keywordtype">id</span>, uint8_t address = 0x70);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keyword">static</span> <a class="code" href="classEJ__I2CHub.html">EJ_I2CHub</a> *<a class="code" href="classEJ__I2CHub__Manager.html#ad806eb09a96e63db298c4f62d1e879b7">getI2CHub</a>(uint8_t <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* _classname;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keyword">static</span> <a class="code" href="classEJ__I2CHub__Manager.html">EJ_I2CHub_Manager</a> *_singleton;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">size_t</span> _maxInstanceSize;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <a class="code" href="classEJ__I2CHub.html">EJ_I2CHub</a> **_instanceList;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;};</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// EJI2CHub</span></div>
+<div class="ttc" id="aclassEJ__I2CHub__Manager_html"><div class="ttname"><a href="classEJ__I2CHub__Manager.html">EJ_I2CHub_Manager</a></div><div class="ttdoc">EJ_I2CHubクラスのインスタンスを生成、管理するクラス</div><div class="ttdef"><b>Definition:</b> <a href="EJ__I2CHub_8h_source.html#l00076">EJ_I2CHub.h:77</a></div></div>
 <div class="ttc" id="aclassEJ__I2CHub__Manager_html_a06b94098bef13d6ae7e44d4d849a7b50"><div class="ttname"><a href="classEJ__I2CHub__Manager.html#a06b94098bef13d6ae7e44d4d849a7b50">EJ_I2CHub_Manager::~EJ_I2CHub_Manager</a></div><div class="ttdeci">~EJ_I2CHub_Manager()</div><div class="ttdoc">EJ_I2CHub_Managerクラスのデストラクタ</div><div class="ttdef"><b>Definition:</b> <a href="EJ__I2CHub_8cpp_source.html#l00077">EJ_I2CHub.cpp:77</a></div></div>
+<div class="ttc" id="aclassEJ__I2CHub__Manager_html_a4138109f9944cf6eb250d676fe1ebcc4"><div class="ttname"><a href="classEJ__I2CHub__Manager.html#a4138109f9944cf6eb250d676fe1ebcc4">EJ_I2CHub_Manager::createI2CHub</a></div><div class="ttdeci">static EJ_I2CHub * createI2CHub(I2CHubDef i2chub)</div><div class="ttdoc">EJ_I2CHubクラスのインスタンスを生成する</div><div class="ttdef"><b>Definition:</b> <a href="EJ__I2CHub_8cpp_source.html#l00106">EJ_I2CHub.cpp:106</a></div></div>
 <div class="ttc" id="aclassEJ__I2CHub__Manager_html_a5c0a394d0710805ea91260ab7cf635d8"><div class="ttname"><a href="classEJ__I2CHub__Manager.html#a5c0a394d0710805ea91260ab7cf635d8">EJ_I2CHub_Manager::configure</a></div><div class="ttdeci">static bool configure(size_t maxInstanceSize)</div><div class="ttdoc">EJ_I2CHub_Managerのインスタンスを生成する</div><div class="ttdef"><b>Definition:</b> <a href="EJ__I2CHub_8cpp_source.html#l00090">EJ_I2CHub.cpp:90</a></div></div>
-<div class="ttc" id="aclassEJ__I2CHub__Manager_html_ad806eb09a96e63db298c4f62d1e879b7"><div class="ttname"><a href="classEJ__I2CHub__Manager.html#ad806eb09a96e63db298c4f62d1e879b7">EJ_I2CHub_Manager::getI2CHub</a></div><div class="ttdeci">static EJ_I2CHub * getI2CHub(uint8_t id)</div><div class="ttdoc">EJ_I2CHubクラスのインスタンスを取得する</div><div class="ttdef"><b>Definition:</b> <a href="EJ__I2CHub_8cpp_source.html#l00141">EJ_I2CHub.cpp:141</a></div></div>
-<div class="ttc" id="aclassEJ__I2CHub__Manager_html_aea95ab83c46c437c1737fdaa605f02a2"><div class="ttname"><a href="classEJ__I2CHub__Manager.html#aea95ab83c46c437c1737fdaa605f02a2">EJ_I2CHub_Manager::createI2CHub</a></div><div class="ttdeci">static EJ_I2CHub * createI2CHub(uint8_t id, uint8_t address=0x70)</div><div class="ttdoc">EJ_I2CHubクラスのインスタンスを生成する</div><div class="ttdef"><b>Definition:</b> <a href="EJ__I2CHub_8cpp_source.html#l00106">EJ_I2CHub.cpp:106</a></div></div>
-<div class="ttc" id="aclassEJ__I2CHub_html"><div class="ttname"><a href="classEJ__I2CHub.html">EJ_I2CHub</a></div><div class="ttdoc">ToFセンサユニットを制御するクラス</div><div class="ttdef"><b>Definition:</b> <a href="EJ__I2CHub_8h_source.html#l00039">EJ_I2CHub.h:40</a></div></div>
+<div class="ttc" id="aclassEJ__I2CHub__Manager_html_ad806eb09a96e63db298c4f62d1e879b7"><div class="ttname"><a href="classEJ__I2CHub__Manager.html#ad806eb09a96e63db298c4f62d1e879b7">EJ_I2CHub_Manager::getI2CHub</a></div><div class="ttdeci">static EJ_I2CHub * getI2CHub(uint8_t id)</div><div class="ttdoc">EJ_I2CHubクラスのインスタンスを取得する</div><div class="ttdef"><b>Definition:</b> <a href="EJ__I2CHub_8cpp_source.html#l00146">EJ_I2CHub.cpp:146</a></div></div>
+<div class="ttc" id="aclassEJ__I2CHub_html"><div class="ttname"><a href="classEJ__I2CHub.html">EJ_I2CHub</a></div><div class="ttdoc">I2CHubユニットを制御するクラス</div><div class="ttdef"><b>Definition:</b> <a href="EJ__I2CHub_8h_source.html#l00050">EJ_I2CHub.h:51</a></div></div>
 <div class="ttc" id="aclassEJ__I2CHub_html_a3f3aa30fb2ebdbc14c13a1a902910e42"><div class="ttname"><a href="classEJ__I2CHub.html#a3f3aa30fb2ebdbc14c13a1a902910e42">EJ_I2CHub::~EJ_I2CHub</a></div><div class="ttdeci">~EJ_I2CHub()</div><div class="ttdoc">EJ_I2CHubクラスのデストラクタ</div><div class="ttdef"><b>Definition:</b> <a href="EJ__I2CHub_8cpp_source.html#l00031">EJ_I2CHub.cpp:31</a></div></div>
+<div class="ttc" id="astructI2CHubDef_html"><div class="ttname"><a href="structI2CHubDef.html">I2CHubDef</a></div><div class="ttdoc">1つのI2CHubを定義する構造体</div><div class="ttdef"><b>Definition:</b> <a href="EJ__I2CHub_8h_source.html#l00039">EJ_I2CHub.h:40</a></div></div>
+<div class="ttc" id="astructI2CHubDef_html_aaa7cada64eaa0da56ced1c336ef97901"><div class="ttname"><a href="structI2CHubDef.html#aaa7cada64eaa0da56ced1c336ef97901">I2CHubDef::address</a></div><div class="ttdeci">uint8_t address</div><div class="ttdef"><b>Definition:</b> <a href="EJ__I2CHub_8h_source.html#l00041">EJ_I2CHub.h:41</a></div></div>
+<div class="ttc" id="astructI2CHubDef_html_ac0e259794223f1849e4ff1510e3a753a"><div class="ttname"><a href="structI2CHubDef.html#ac0e259794223f1849e4ff1510e3a753a">I2CHubDef::id</a></div><div class="ttdeci">uint8_t id</div><div class="ttdef"><b>Definition:</b> <a href="EJ__I2CHub_8h_source.html#l00042">EJ_I2CHub.h:42</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

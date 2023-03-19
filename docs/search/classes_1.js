@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['motordef_107',['MotorDef',['../structMotorDef.html',1,'']]]
+  ['i2chubdef_109',['I2CHubDef',['../structI2CHubDef.html',1,'']]]
 ];
