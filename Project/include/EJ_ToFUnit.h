@@ -33,6 +33,16 @@
 #include <VL53L0X.h>
 
 /**
+ * @struct ToFUnitDef
+ * @brief 1つのToFUnitを定義する構造体
+ */
+typedef struct
+{
+    uint8_t address; /**< ToFUnitのアドレス */
+    uint8_t id;      /**< ToFUnitの識別番号 */
+} ToFUnitDef;
+
+/**
  * @brief ToFセンサユニットを制御するクラス
  * @details *注意:本クラスのインスタンスはEJ_ToFUnit_Managerクラス以外からは生成できない
  */
@@ -100,6 +110,14 @@ public:
      * @return true: 生成成功 / false: 生成失敗
      */
     static bool configure(size_t maxInstanceSize);
+
+    /**
+     * @brief EJ_ToFUnitクラスのインスタンスを生成する
+     * @details 生成したインスタンスはgetToFUnit関数で取得できるように同時に自身の_instanceList配列に記憶しておく
+     * @param ToFUnitDef 参照
+     * @return EJ_ToFUnitクラスのインスタンスを指すポインタ
+     */
+    static EJ_ToFUnit *createToFUnit(ToFUnitDef tof);
 
     /**
      * @brief EJ_ToFUnitクラスのインスタンスを生成する

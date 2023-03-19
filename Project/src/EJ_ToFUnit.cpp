@@ -120,6 +120,11 @@ bool EJ_ToFUnit_Manager::configure(size_t maxInstanceSize)
     return true;
 }
 
+EJ_ToFUnit* EJ_ToFUnit_Manager::createToFUnit(ToFUnitDef tof)
+{
+    return EJ_ToFUnit_Manager::createToFUnit(tof.id, tof.address);
+}
+
 EJ_ToFUnit* EJ_ToFUnit_Manager::createToFUnit(uint8_t id, uint8_t address)
 {
     EJ_ToFUnit_Manager *manager = EJ_ToFUnit_Manager::getInstance();
