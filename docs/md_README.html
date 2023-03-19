@@ -88,7 +88,7 @@ $(document).ready(function(){initNavTree('md_README.html',''); initResizable(); 
 <div class="textblock"><ul>
 <li>ESP32、M5Stack向け自作汎用ライブラリ置き場</li>
 <li>センサ、アクチュエータを制御する EJ_XXX クラスと EJ_XXX クラスを管理する EJ_XXX_Manager クラスを提供</li>
-<li>EJ_XXX_Managerクラスによって実世界のオブジェクトとソフトウェア内のインスタンスをstrictに紐づけ、管理可能</li>
+<li>EJ_XXX_Managerクラスによって実世界のオブジェクトとソフトウェア内のインスタンスをstrictに紐づけ、管理、制御が可能</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md1"></a>
 仕様</h1>
@@ -110,8 +110,8 @@ Platform.io下での環境構築</h1>
 <div class="line"> board = m5stack-core2</div>
 <div class="line"> framework = arduino</div>
 <div class="line"> lib_deps = </div>
-<div class="line"> m5stack/M5Core2@^0.1.5</div>
-<div class="line"> madhephaestus/ESP32Servo@^0.12.1</div>
+<div class="line">     m5stack/M5Core2@^0.1.5</div>
+<div class="line">     madhephaestus/ESP32Servo@^0.12.1</div>
 <div class="line"> Elib ; ←これを追記する</div>
 </div><!-- fragment --><ol type="1">
 <li>使いたいファイルでファイルをインクルードする</li>
@@ -133,7 +133,7 @@ Platform.io下での環境構築</h1>
 <li>制御クラスのインスタンスをマネージャクラス経由で生成する</li>
 </ol>
 <div class="fragment"><div class="line"><a class="code" href="classEJ__DCMotor.html">EJ_DCMotor</a>* <a class="code" href="main_8cpp.html#a644fcbd84e8709ecffe4f8ceb8db4dab">motor</a> = NULL;</div>
-<div class="line"><a class="code" href="main_8cpp.html#a644fcbd84e8709ecffe4f8ceb8db4dab">motor</a> = <a class="code" href="classEJ__DCMotor__Manager.html#a0347df3c51144cf13e702ca025740413">EJ_DCMotor_Manager::createMotor</a>(13, 14, 0); <span class="comment">/* ピン1, ピン2, インスタンス識別id */</span></div>
+<div class="line"><a class="code" href="main_8cpp.html#a644fcbd84e8709ecffe4f8ceb8db4dab">motor</a> = <a class="code" href="classEJ__DCMotor__Manager.html#a0347df3c51144cf13e702ca025740413">EJ_DCMotor_Manager::createMotor</a>(13, 14, -1, 0); <span class="comment">/* ピン1, ピン2, enableピン, インスタンス識別id */</span></div>
 <div class="line"><a class="code" href="main_8cpp.html#a8dc3f522415638cc2f4b9a5ae4333a8c">motorAlias</a> = <a class="code" href="classEJ__DCMotor__Manager.html#afc721dde48d0e9f0d692ef3d3da85e50">EJ_DCMotor_Manager::getMotor</a>(0);</div>
 <div class="line"><span class="comment">/* motorとmotorAliasは同一のポインタを返します */</span></div>
 <div class="ttc" id="aclassEJ__DCMotor__Manager_html_a0347df3c51144cf13e702ca025740413"><div class="ttname"><a href="classEJ__DCMotor__Manager.html#a0347df3c51144cf13e702ca025740413">EJ_DCMotor_Manager::createMotor</a></div><div class="ttdeci">static EJ_DCMotor * createMotor(MotorDef motor)</div><div class="ttdoc">EJ_DCMotorクラスのインスタンスを生成する</div><div class="ttdef"><b>Definition:</b> <a href="EJ__DCMotor_8cpp_source.html#l00163">EJ_DCMotor.cpp:163</a></div></div>
@@ -148,7 +148,7 @@ Platform.io下での環境構築</h1>
 </ol>
 <h1><a class="anchor" id="autotoc_md4"></a>
 DEBUG MODE</h1>
-<p>platformio.ini のbuild_flagにM5_DEBUGを定義することで M5系列の開発ボードでエラーログを出力可能です。</p>
+<p>platformio.ini のbuild_flagにM5_DEBUGとボードを定義することで M5系列の開発ボードでエラーログを出力可能です。 2023/03/19時点、M5Core2とM5StickCPlusに対応</p>
 <div class="fragment"><div class="line">[env:m5stack-core2]</div>
 <div class="line">platform = espressif32</div>
 <div class="line">board = m5stack-core2</div>
@@ -158,6 +158,7 @@ DEBUG MODE</h1>
 <div class="line">    madhephaestus/ESP32Servo@^0.12.1</div>
 <div class="line">build_flags = ; ←これを追記する</div>
 <div class="line">  -D M5_DEBUG ; ←これを追記する</div>
+<div class="line">  -D M5CORE2 ; ←これを追記する (M5StickCPlusの場合はM5STICKCPLUS)</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
