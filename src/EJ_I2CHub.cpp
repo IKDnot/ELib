@@ -103,6 +103,11 @@ bool EJ_I2CHub_Manager::configure(size_t maxInstanceSize)
     return true;
 }
 
+EJ_I2CHub* EJ_I2CHub_Manager::createI2CHub(I2CHubDef i2chub)
+{
+    return EJ_I2CHub_Manager::createI2CHub(i2chub.id, i2chub.address);
+}
+
 EJ_I2CHub* EJ_I2CHub_Manager::createI2CHub(uint8_t id, uint8_t address)
 {
     EJ_I2CHub_Manager *manager = EJ_I2CHub_Manager::getInstance();
