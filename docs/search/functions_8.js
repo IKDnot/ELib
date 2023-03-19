@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['setpwm_146',['setPWM',['../classEJ__DCMotor.html#acf5aa5783190529694a7fcffb9289dc2',1,'EJ_DCMotor']]],
-  ['settarget_147',['setTarget',['../classEJ__EncoderMotor.html#a41d1ea2dde6e2fa405b094a8dfa3e036',1,'EJ_EncoderMotor']]],
-  ['setup_148',['setup',['../main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d',1,'main.cpp']]],
-  ['setupi2chubunit_149',['setupI2CHubUnit',['../main_8cpp.html#a6c8cc91ae3f592c07e20a9b0966b5f3d',1,'main.cpp']]],
-  ['setupmotor_150',['setupMotor',['../main_8cpp.html#a7876749fb7e23571c7248d80ae0332ef',1,'main.cpp']]],
-  ['setupservo_151',['setupServo',['../main_8cpp.html#a01a2cf0eea853a579e9474d0c6d350d8',1,'main.cpp']]],
-  ['setuptofunit_152',['setupToFUnit',['../main_8cpp.html#a32b29b8c13d75a4dc29af25f58b85f4f',1,'main.cpp']]],
-  ['stop_153',['stop',['../classEJ__DCMotor.html#a219456d25f8f6061bde0d2124ad57e5d',1,'EJ_DCMotor']]]
+  ['setpwm_148',['setPWM',['../classEJ__DCMotor.html#acf5aa5783190529694a7fcffb9289dc2',1,'EJ_DCMotor']]],
+  ['settarget_149',['setTarget',['../classEJ__EncoderMotor.html#a41d1ea2dde6e2fa405b094a8dfa3e036',1,'EJ_EncoderMotor']]],
+  ['setup_150',['setup',['../main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d',1,'main.cpp']]],
+  ['setupi2chubunit_151',['setupI2CHubUnit',['../main_8cpp.html#a6c8cc91ae3f592c07e20a9b0966b5f3d',1,'main.cpp']]],
+  ['setupmotor_152',['setupMotor',['../main_8cpp.html#a7876749fb7e23571c7248d80ae0332ef',1,'main.cpp']]],
+  ['setupservo_153',['setupServo',['../main_8cpp.html#a01a2cf0eea853a579e9474d0c6d350d8',1,'main.cpp']]],
+  ['setuptofunit_154',['setupToFUnit',['../main_8cpp.html#a32b29b8c13d75a4dc29af25f58b85f4f',1,'main.cpp']]],
+  ['stop_155',['stop',['../classEJ__DCMotor.html#a219456d25f8f6061bde0d2124ad57e5d',1,'EJ_DCMotor']]]
 ];

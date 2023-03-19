@@ -92,10 +92,11 @@ var NAVTREEINDEX0 =
 "classEJ__ToFUnit.html#a26fbfaf0f1973cae873610b3b583c101":[1,0,8,1],
 "classEJ__ToFUnit.html#ab6ac85fce81350a08b057f7e374f57dc":[1,0,8,0],
 "classEJ__ToFUnit__Manager.html":[1,0,9],
-"classEJ__ToFUnit__Manager.html#a16b49a53458b620c862229fc873f3a1f":[1,0,9,3],
-"classEJ__ToFUnit__Manager.html#a434fda1d4e309051cfa0498f3a71ac69":[1,0,9,2],
+"classEJ__ToFUnit__Manager.html#a16b49a53458b620c862229fc873f3a1f":[1,0,9,4],
+"classEJ__ToFUnit__Manager.html#a434fda1d4e309051cfa0498f3a71ac69":[1,0,9,3],
 "classEJ__ToFUnit__Manager.html#a4a1e26e1ce72109ae6d136c9e90c69ba":[1,0,9,1],
 "classEJ__ToFUnit__Manager.html#a8d1c7d41da4410ec2b195d61ca34b5e8":[1,0,9,0],
+"classEJ__ToFUnit__Manager.html#af25334ab4a081d807e05cdb733697c8e":[1,0,9,2],
 "classes.html":[1,1],
 "dir_3137d5a23389289517bd5e0d06338240.html":[2,0,0,0],
 "dir_ca517da7c0ff3c5dcf7de7aebdabe148.html":[2,0,0,1],
@@ -161,5 +162,8 @@ var NAVTREEINDEX0 =
 "structMotorDef.html#aef6a2e6a35c8af7a1f40d20f897f6557":[1,0,12,2],
 "structServoDef.html":[1,0,13],
 "structServoDef.html#a84b15a8a2f16c2d3eb276300a171b3c5":[1,0,13,0],
-"structServoDef.html#ae450f6594fef38e6945ec860b500fcdf":[1,0,13,1]
+"structServoDef.html#ae450f6594fef38e6945ec860b500fcdf":[1,0,13,1],
+"structToFUnitDef.html":[1,0,14],
+"structToFUnitDef.html#a65b2ead482212359379064a3baf659d1":[1,0,14,1],
+"structToFUnitDef.html#ad681c01d9874acebb36c2e9095155ca2":[1,0,14,0]
 };

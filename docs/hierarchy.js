@@ -21,6 +21,7 @@ var hierarchy =
     [ "ClosedCube::Wired::TCA9548A", null, [
       [ "EJ_I2CHub", "classEJ__I2CHub.html", null ]
     ] ],
+    [ "ToFUnitDef", "structToFUnitDef.html", null ],
     [ "VL53L0X", null, [
       [ "EJ_ToFUnit", "classEJ__ToFUnit.html", null ]
     ] ]

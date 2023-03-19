@@ -13,5 +13,6 @@ var annotated_dup =
     [ "EncoderMotorDef", "structEncoderMotorDef.html", "structEncoderMotorDef" ],
     [ "I2CHubDef", "structI2CHubDef.html", "structI2CHubDef" ],
     [ "MotorDef", "structMotorDef.html", "structMotorDef" ],
-    [ "ServoDef", "structServoDef.html", "structServoDef" ]
+    [ "ServoDef", "structServoDef.html", "structServoDef" ],
+    [ "ToFUnitDef", "structToFUnitDef.html", "structToFUnitDef" ]
 ];
