@@ -6,6 +6,8 @@ var annotated_dup =
     [ "EJ_EncoderMotor_Manager", "classEJ__EncoderMotor__Manager.html", "classEJ__EncoderMotor__Manager" ],
     [ "EJ_I2CHub", "classEJ__I2CHub.html", "classEJ__I2CHub" ],
     [ "EJ_I2CHub_Manager", "classEJ__I2CHub__Manager.html", "classEJ__I2CHub__Manager" ],
+    [ "EJ_PhotoInterrupter", "classEJ__PhotoInterrupter.html", "classEJ__PhotoInterrupter" ],
+    [ "EJ_PhotoInterrupter_Manager", "classEJ__PhotoInterrupter__Manager.html", "classEJ__PhotoInterrupter__Manager" ],
     [ "EJ_ServoMotor", "classEJ__ServoMotor.html", "classEJ__ServoMotor" ],
     [ "EJ_ServoMotor_Manager", "classEJ__ServoMotor__Manager.html", "classEJ__ServoMotor__Manager" ],
     [ "EJ_ToFUnit", "classEJ__ToFUnit.html", "classEJ__ToFUnit" ],
@@ -13,6 +15,7 @@ var annotated_dup =
     [ "EncoderMotorDef", "structEncoderMotorDef.html", "structEncoderMotorDef" ],
     [ "I2CHubDef", "structI2CHubDef.html", "structI2CHubDef" ],
     [ "MotorDef", "structMotorDef.html", "structMotorDef" ],
+    [ "PhotoInterrupterDef", "structPhotoInterrupterDef.html", "structPhotoInterrupterDef" ],
     [ "ServoDef", "structServoDef.html", "structServoDef" ],
     [ "ToFUnitDef", "structToFUnitDef.html", "structToFUnitDef" ]
 ];

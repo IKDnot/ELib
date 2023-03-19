@@ -1,0 +1,108 @@
+\hypertarget{classEJ__PhotoInterrupter}{}\doxysection{EJ\+\_\+\+Photo\+Interrupter クラス}
+\label{classEJ__PhotoInterrupter}\index{EJ\_PhotoInterrupter@{EJ\_PhotoInterrupter}}
+
+
+フォトインタラプタを制御するクラス  
+
+
+
+
+{\ttfamily \#include $<$EJ\+\_\+\+Photo\+Interrupter.\+h$>$}
+
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEJ__PhotoInterrupter_a6d7460bf64c23c032f32e6c0b81881c0}{$\sim$\+EJ\+\_\+\+Photo\+Interrupter}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classEJ__PhotoInterrupter}{EJ\+\_\+\+Photo\+Interrupter}} クラスのデストラクタ \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classEJ__PhotoInterrupter_ac9fedea01ca684eb4efdcc0ba0a3d3df}{is\+Interrupted}} ()
+\begin{DoxyCompactList}\small\item\em フォトインタラプタの発光部/受光部間の物体有無 (≒遮断されたか) を判定する \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{限定公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEJ__PhotoInterrupter_a579280b1faff39eb5977cc4b406e038f}{EJ\+\_\+\+Photo\+Interrupter}} (uint8\+\_\+t pin=0)
+\begin{DoxyCompactList}\small\item\em EJ\+\_\+\+Photo\+Interrupterクラスのコンストラクタ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{フレンド}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classEJ__PhotoInterrupter_aa46f6869a80e352b787454f4e45429e8}{EJ\+\_\+\+Photo\+Interrupter\+\_\+\+Manager}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{詳解}
+フォトインタラプタを制御するクラス 
+
+$\ast$注意\+:本クラスのインスタンスは\+EJ\+\_\+\+Photo\+Interrupter\+\_\+\+Managerクラス以外からは生成できない 
+
+ EJ\+\_\+\+Photo\+Interrupter.\+h の 48 行目に定義があります。
+
+
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{classEJ__PhotoInterrupter_a579280b1faff39eb5977cc4b406e038f}\label{classEJ__PhotoInterrupter_a579280b1faff39eb5977cc4b406e038f}} 
+\index{EJ\_PhotoInterrupter@{EJ\_PhotoInterrupter}!EJ\_PhotoInterrupter@{EJ\_PhotoInterrupter}}
+\index{EJ\_PhotoInterrupter@{EJ\_PhotoInterrupter}!EJ\_PhotoInterrupter@{EJ\_PhotoInterrupter}}
+\doxysubsubsection{\texorpdfstring{EJ\_PhotoInterrupter()}{EJ\_PhotoInterrupter()}}
+{\footnotesize\ttfamily EJ\+\_\+\+Photo\+Interrupter\+::\+EJ\+\_\+\+Photo\+Interrupter (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pin = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+EJ\+\_\+\+Photo\+Interrupterクラスのコンストラクタ 
+
+
+\begin{DoxyParams}{引数}
+{\em pin1} & フォトインタラプタの接続ピン \\
+\hline
+\end{DoxyParams}
+
+
+ EJ\+\_\+\+Photo\+Interrupter.\+cpp の 25 行目に定義があります。
+
+\mbox{\Hypertarget{classEJ__PhotoInterrupter_a6d7460bf64c23c032f32e6c0b81881c0}\label{classEJ__PhotoInterrupter_a6d7460bf64c23c032f32e6c0b81881c0}} 
+\index{EJ\_PhotoInterrupter@{EJ\_PhotoInterrupter}!````~EJ\_PhotoInterrupter@{$\sim$EJ\_PhotoInterrupter}}
+\index{````~EJ\_PhotoInterrupter@{$\sim$EJ\_PhotoInterrupter}!EJ\_PhotoInterrupter@{EJ\_PhotoInterrupter}}
+\doxysubsubsection{\texorpdfstring{$\sim$EJ\_PhotoInterrupter()}{~EJ\_PhotoInterrupter()}}
+{\footnotesize\ttfamily EJ\+\_\+\+Photo\+Interrupter\+::$\sim$\+EJ\+\_\+\+Photo\+Interrupter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classEJ__PhotoInterrupter}{EJ\+\_\+\+Photo\+Interrupter}} クラスのデストラクタ 
+
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{classEJ__PhotoInterrupter_ac9fedea01ca684eb4efdcc0ba0a3d3df}\label{classEJ__PhotoInterrupter_ac9fedea01ca684eb4efdcc0ba0a3d3df}} 
+\index{EJ\_PhotoInterrupter@{EJ\_PhotoInterrupter}!isInterrupted@{isInterrupted}}
+\index{isInterrupted@{isInterrupted}!EJ\_PhotoInterrupter@{EJ\_PhotoInterrupter}}
+\doxysubsubsection{\texorpdfstring{isInterrupted()}{isInterrupted()}}
+{\footnotesize\ttfamily bool EJ\+\_\+\+Photo\+Interrupter\+::is\+Interrupted (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+フォトインタラプタの発光部/受光部間の物体有無 (≒遮断されたか) を判定する 
+
+\begin{DoxyReturn}{戻り値}
+true\+: 遮断された / false\+: 遮断されていない 
+\end{DoxyReturn}
+
+
+ EJ\+\_\+\+Photo\+Interrupter.\+cpp の 32 行目に定義があります。
+
+
+
+\doxysubsection{フレンドと関連関数の詳解}
+\mbox{\Hypertarget{classEJ__PhotoInterrupter_aa46f6869a80e352b787454f4e45429e8}\label{classEJ__PhotoInterrupter_aa46f6869a80e352b787454f4e45429e8}} 
+\index{EJ\_PhotoInterrupter@{EJ\_PhotoInterrupter}!EJ\_PhotoInterrupter\_Manager@{EJ\_PhotoInterrupter\_Manager}}
+\index{EJ\_PhotoInterrupter\_Manager@{EJ\_PhotoInterrupter\_Manager}!EJ\_PhotoInterrupter@{EJ\_PhotoInterrupter}}
+\doxysubsubsection{\texorpdfstring{EJ\_PhotoInterrupter\_Manager}{EJ\_PhotoInterrupter\_Manager}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classEJ__PhotoInterrupter__Manager}{EJ\+\_\+\+Photo\+Interrupter\+\_\+\+Manager}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+ EJ\+\_\+\+Photo\+Interrupter.\+h の 57 行目に定義があります。
+
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+Project/include/\mbox{\hyperlink{EJ__PhotoInterrupter_8h}{EJ\+\_\+\+Photo\+Interrupter.\+h}}\item 
+Project/src/\mbox{\hyperlink{EJ__PhotoInterrupter_8cpp}{EJ\+\_\+\+Photo\+Interrupter.\+cpp}}\end{DoxyCompactItemize}

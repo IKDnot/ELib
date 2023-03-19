@@ -6,6 +6,8 @@ var hierarchy =
     [ "EJ_DCMotor_Manager", "classEJ__DCMotor__Manager.html", null ],
     [ "EJ_EncoderMotor_Manager", "classEJ__EncoderMotor__Manager.html", null ],
     [ "EJ_I2CHub_Manager", "classEJ__I2CHub__Manager.html", null ],
+    [ "EJ_PhotoInterrupter", "classEJ__PhotoInterrupter.html", null ],
+    [ "EJ_PhotoInterrupter_Manager", "classEJ__PhotoInterrupter__Manager.html", null ],
     [ "EJ_ServoMotor_Manager", "classEJ__ServoMotor__Manager.html", null ],
     [ "EJ_ToFUnit_Manager", "classEJ__ToFUnit__Manager.html", null ],
     [ "Encoder", null, [
@@ -14,6 +16,7 @@ var hierarchy =
     [ "EncoderMotorDef", "structEncoderMotorDef.html", null ],
     [ "I2CHubDef", "structI2CHubDef.html", null ],
     [ "MotorDef", "structMotorDef.html", null ],
+    [ "PhotoInterrupterDef", "structPhotoInterrupterDef.html", null ],
     [ "Servo", null, [
       [ "EJ_ServoMotor", "classEJ__ServoMotor.html", null ]
     ] ],

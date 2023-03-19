@@ -15,6 +15,11 @@ var dir_3137d5a23389289517bd5e0d06338240 =
       [ "EJ_I2CHub", "classEJ__I2CHub.html", "classEJ__I2CHub" ],
       [ "EJ_I2CHub_Manager", "classEJ__I2CHub__Manager.html", "classEJ__I2CHub__Manager" ]
     ] ],
+    [ "EJ_PhotoInterrupter.h", "EJ__PhotoInterrupter_8h.html", [
+      [ "PhotoInterrupterDef", "structPhotoInterrupterDef.html", "structPhotoInterrupterDef" ],
+      [ "EJ_PhotoInterrupter", "classEJ__PhotoInterrupter.html", "classEJ__PhotoInterrupter" ],
+      [ "EJ_PhotoInterrupter_Manager", "classEJ__PhotoInterrupter__Manager.html", "classEJ__PhotoInterrupter__Manager" ]
+    ] ],
     [ "EJ_ServoMotor.h", "EJ__ServoMotor_8h.html", [
       [ "ServoDef", "structServoDef.html", "structServoDef" ],
       [ "EJ_ServoMotor", "classEJ__ServoMotor.html", "classEJ__ServoMotor" ],
