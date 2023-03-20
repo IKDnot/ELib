@@ -33,4 +33,5 @@
 #include "EJ_ToFUnit.h"
 #include "EJ_I2CHub.h"
 #include "EJ_EncoderMotor.h"
+#include "EJ_PhotoInterrupter.h"
 #endif // ELIB
