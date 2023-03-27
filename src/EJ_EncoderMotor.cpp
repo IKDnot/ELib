@@ -18,7 +18,7 @@
 class EJ_EncoderMotor
 -------------------*/
 
-/* static menber */
+/* static member */
 const char* EJ_EncoderMotor::_classname = "EJ_EncoderMotor";
 
 /* private method */
