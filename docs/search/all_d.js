@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['tof_93',['tof',['../main_8cpp.html#a522dc6bd963dc80e6f75687c70a7c706',1,'main.cpp']]],
-  ['tofunitdef_94',['ToFUnitDef',['../structToFUnitDef.html',1,'']]]
+  ['write_79',['write',['../classEJ__ServoMotor.html#ab23d9ee0cd1b40e2fb592c32db9f3849',1,'EJ_ServoMotor']]],
+  ['writemicroseconds_80',['writeMicroseconds',['../classEJ__ServoMotor.html#ac0522386851faafefe2f1916be4ae888',1,'EJ_ServoMotor']]]
 ];
