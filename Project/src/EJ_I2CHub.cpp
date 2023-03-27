@@ -18,7 +18,7 @@
 class EJ_I2CHub
 --------------*/
 
-/* static menber */
+/* static member */
 const char* EJ_I2CHub::_classname = "EJ_I2CHub";
 
 /* private method */

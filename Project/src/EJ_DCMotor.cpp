@@ -19,7 +19,7 @@
 class EJ_DCMotor
 --------------*/
 
-/* static menber */
+/* static member */
 const char* EJ_DCMotor::_classname = "EJ_DCMotor";
 
 /* private method */

@@ -18,7 +18,7 @@
 class EJ_PhotoInterrupter
 -----------------------*/
 
-/* static menber */
+/* static member */
 const char* EJ_PhotoInterrupter::_classname = "EJ_PhotoInterrupter";
 
 /* private method */
