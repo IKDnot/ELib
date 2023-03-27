@@ -35,6 +35,9 @@ bool EJ_PhotoInterrupter::isInterrupted()
     return (value == HIGH) ? true : false;
 }
 
+EJ_PhotoInterrupter::~EJ_PhotoInterrupter()
+{}
+
 /*-------------------------------
 class EJ_PhotoInterrupter_Manager 
 -------------------------------*/
