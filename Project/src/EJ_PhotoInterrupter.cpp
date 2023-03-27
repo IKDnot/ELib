@@ -18,7 +18,7 @@
 class EJ_PhotoInterrupter
 -----------------------*/
 
-/* static menber */
+/* static member */
 const char* EJ_PhotoInterrupter::_classname = "EJ_PhotoInterrupter";
 
 /* private method */
@@ -34,6 +34,9 @@ bool EJ_PhotoInterrupter::isInterrupted()
     int value = digitalRead(_pin);
     return (value == HIGH) ? true : false;
 }
+
+EJ_PhotoInterrupter::~EJ_PhotoInterrupter()
+{}
 
 /*-------------------------------
 class EJ_PhotoInterrupter_Manager 

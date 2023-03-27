@@ -18,7 +18,7 @@
 class EJ_ServoMotor
 -------------------*/
 
-/* static menber */
+/* static member */
 const char* EJ_ServoMotor::_classname = "EJ_ServoMotor";
 
 /* private method */

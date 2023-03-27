@@ -18,7 +18,7 @@
 class EJ_ToFUnit
 --------------*/
 
-/* static menber */
+/* static member */
 const char* EJ_ToFUnit::_classname = "EJ_ToFUnit";
 
 /* private method */
