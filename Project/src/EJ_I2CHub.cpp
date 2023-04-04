@@ -16,8 +16,10 @@ const char* EJ_I2CHub::_classname = "EJ_I2CHub";
 /* private method */
 EJ_I2CHub::EJ_I2CHub(uint8_t address)
 :   _address(address),
-    ClosedCube::Wired::TCA9548A(_address)
-{}
+    ClosedCube::Wired::TCA9548A()
+{
+    ClosedCube::Wired::TCA9548A::address(_address);
+}
 
 /* public method */
 EJ_I2CHub::~EJ_I2CHub()
