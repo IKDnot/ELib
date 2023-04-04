@@ -21,8 +21,9 @@ class EJ_Encoder
 
 /* static member */
 const char* EJ_Encoder::_classname = "EJ_Encoder";
+EJ_Encoder* EJ_Encoder::_instance = NULL;
 
-/* private method */
+/* public method */
 EJ_Encoder::EJ_Encoder(uint8_t a, uint8_t b)
 :   _a(a),
     _b(b),
@@ -33,8 +34,9 @@ EJ_Encoder::EJ_Encoder(uint8_t a, uint8_t b)
     pinMode(_b, INPUT);
     digitalWrite(_a, HIGH);
     digitalWrite(_b, HIGH);
-    attachInterrupt(digitalPinToInterrupt(_a), this->onInterrupt, CHANGE);
-    attachInterrupt(digitalPinToInterrupt(_b), this->onInterrupt, CHANGE);
+    _instance = this;
+    attachInterrupt(digitalPinToInterrupt(_a), onInterrupt, CHANGE);
+    attachInterrupt(digitalPinToInterrupt(_b), onInterrupt, CHANGE);
 }
 
 /* public method */
@@ -43,29 +45,37 @@ EJ_Encoder::~EJ_Encoder()
 
 void EJ_Encoder::onInterrupt() 
 {
-    int MSB = digitalRead(_a);
-    int LSB = digitalRead(_b);
-    int encoded = (MSB << 1) | LSB;
-    int sum = (_lastEncoded << 2) | encoded;
-    if (sum == 0b1101 || sum == 0b0100 || sum == 0b0010 || sum == 0b1011) {
-    _count += (sum == 0b1101 || sum == 0b0100) ? -1 : 1;
+    if (_instance != NULL) {
+        int MSB = digitalRead(_instance->_a);
+        int LSB = digitalRead(_instance->_b);
+        int encoded = (MSB << 1) | LSB;
+        int sum = (_instance->_lastEncoded << 2) | encoded;
+        if (sum == 0b1101 || sum == 0b0100 || sum == 0b0010 || sum == 0b1011) {
+        _instance->_count += (sum == 0b1101 || sum == 0b0100) ? -1 : 1;
+        }
+        _instance->_lastEncoded = encoded;
     }
-    _lastEncoded = encoded;
 }
 
 float EJ_Encoder::getAngle()
 {
-    return this->_count * 360.0 / 1024.0;
+    if (_instance != NULL) {
+        return _instance->_count * 360.0 / 1024.0;
+    }
 }
 
 long long EJ_Encoder::getCount()
 {
-    return this->_count;
+    if (_instance != NULL) {
+        return _instance->_count;
+    }
 }
 
 void EJ_Encoder::reset()
 {
-    this->_count = 0;
+    if (_instance != NULL) {
+        _instance->_count = 0;
+    }
 }
 
 /*----------------------

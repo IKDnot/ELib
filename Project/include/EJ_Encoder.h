@@ -48,7 +48,7 @@ typedef struct
  */
 class EJ_Encoder
 {
-protected:
+public:
     /**
      * @brief EJ_Encoderクラスのコンストラクタ
      * @param pin1 A相接続ピン
@@ -82,14 +82,15 @@ public:
     /**
      * @brief ピン割り込み時にコールされる関数
      */
-    void onInterrupt();
+    static void onInterrupt();
 
 private:
     static const char* _classname;
+    static EJ_Encoder* _instance;
     uint8_t _a;
     uint8_t _b;
-    long long _count;
-    int _lastEncoded;
+    volatile long long _count;
+    volatile int _lastEncoded;
 };
 
 /**
