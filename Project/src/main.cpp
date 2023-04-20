@@ -18,7 +18,7 @@ const uint8_t SCREEN_Y = 20;
 const uint8_t LINE_HEIGHT = 20;
 
 /* GPIO */
-EJ_EncoderMotor* motor = NULL;
+EJ_PhotoInterrupter* photo = NULL;
 
 void setup() {
   { /* 共通初期化 */
@@ -28,16 +28,14 @@ void setup() {
     M5.Lcd.setTextSize(2);
   }
 
-  {
-    EJ_EncoderMotor_Manager::configure(1);
-    motor = EJ_EncoderMotor_Manager::createEncoderMotor(25, 26, 35, 36, -1, 0);
-  }
+  EJ_PhotoInterrupter_Manager::configure(1);
+  photo = EJ_PhotoInterrupter_Manager::createPhotoInterrupter(19,0);
 }
 
 void loop() {
-  motor->forward();
-  delay(2000);
-  motor->reverse();
-  delay(2000);
-  M5.lcd.println(motor->read());
+  if(photo->isInterrupted())
+  {
+    M5.Lcd.println("interrupted");
+  }
+  delay(10);
 }
